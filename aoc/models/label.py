@@ -27,6 +27,10 @@ class Label(object):
     openapi_types = {
         'cluster_num': 'int',
         'clusters': 'list[NestedCluster]',
+        'consistency_group_num': 'int',
+        'consistency_group_snapshot_num': 'int',
+        'consistency_group_snapshots': 'list[NestedConsistencyGroupSnapshot]',
+        'consistency_groups': 'list[NestedConsistencyGroup]',
         'content_library_image_num': 'int',
         'content_library_images': 'list[NestedContentLibraryImage]',
         'content_library_vm_template_num': 'int',
@@ -35,6 +39,7 @@ class Label(object):
         'datacenter_num': 'int',
         'datacenters': 'list[NestedDatacenter]',
         'disk_num': 'int',
+        'disks': 'list[NestedDisk]',
         'elf_image_num': 'int',
         'elf_images': 'list[NestedElfImage]',
         'gpu_device_num': 'int',
@@ -44,14 +49,29 @@ class Label(object):
         'id': 'str',
         'iscsi_lun_num': 'int',
         'iscsi_lun_snapshot_num': 'int',
+        'iscsi_lun_snapshots': 'list[NestedIscsiLunSnapshot]',
         'iscsi_luns': 'list[NestedIscsiLun]',
         'iscsi_target_num': 'int',
         'iscsi_targets': 'list[NestedIscsiTarget]',
         'isolation_policies': 'list[NestedIsolationPolicy]',
+        'isolation_policy_num': 'int',
         'key': 'str',
+        'namespace_group_num': 'int',
+        'namespace_groups': 'list[NestedNamespaceGroup]',
+        'nfs_export_num': 'int',
+        'nfs_exports': 'list[NestedNfsExport]',
+        'nfs_inode_num': 'int',
+        'nfs_inodes': 'list[NestedNfsInode]',
         'nic_num': 'int',
         'nics': 'list[NestedNic]',
+        'nvmf_namespace_num': 'int',
+        'nvmf_namespace_snapshot_num': 'int',
+        'nvmf_namespace_snapshots': 'list[NestedNvmfNamespaceSnapshot]',
+        'nvmf_namespaces': 'list[NestedNvmfNamespace]',
+        'nvmf_subsystem_num': 'int',
+        'nvmf_subsystems': 'list[NestedNvmfSubsystem]',
         'security_policies': 'list[NestedSecurityPolicy]',
+        'security_policy_num': 'int',
         'system_vlan_num': 'int',
         'total_num': 'int',
         'value': 'str',
@@ -74,6 +94,10 @@ class Label(object):
     attribute_map = {
         'cluster_num': 'cluster_num',
         'clusters': 'clusters',
+        'consistency_group_num': 'consistency_group_num',
+        'consistency_group_snapshot_num': 'consistency_group_snapshot_num',
+        'consistency_group_snapshots': 'consistency_group_snapshots',
+        'consistency_groups': 'consistency_groups',
         'content_library_image_num': 'content_library_image_num',
         'content_library_images': 'content_library_images',
         'content_library_vm_template_num': 'content_library_vm_template_num',
@@ -82,6 +106,7 @@ class Label(object):
         'datacenter_num': 'datacenter_num',
         'datacenters': 'datacenters',
         'disk_num': 'disk_num',
+        'disks': 'disks',
         'elf_image_num': 'elf_image_num',
         'elf_images': 'elf_images',
         'gpu_device_num': 'gpu_device_num',
@@ -91,14 +116,29 @@ class Label(object):
         'id': 'id',
         'iscsi_lun_num': 'iscsi_lun_num',
         'iscsi_lun_snapshot_num': 'iscsi_lun_snapshot_num',
+        'iscsi_lun_snapshots': 'iscsi_lun_snapshots',
         'iscsi_luns': 'iscsi_luns',
         'iscsi_target_num': 'iscsi_target_num',
         'iscsi_targets': 'iscsi_targets',
         'isolation_policies': 'isolation_policies',
+        'isolation_policy_num': 'isolation_policy_num',
         'key': 'key',
+        'namespace_group_num': 'namespace_group_num',
+        'namespace_groups': 'namespace_groups',
+        'nfs_export_num': 'nfs_export_num',
+        'nfs_exports': 'nfs_exports',
+        'nfs_inode_num': 'nfs_inode_num',
+        'nfs_inodes': 'nfs_inodes',
         'nic_num': 'nic_num',
         'nics': 'nics',
+        'nvmf_namespace_num': 'nvmf_namespace_num',
+        'nvmf_namespace_snapshot_num': 'nvmf_namespace_snapshot_num',
+        'nvmf_namespace_snapshots': 'nvmf_namespace_snapshots',
+        'nvmf_namespaces': 'nvmf_namespaces',
+        'nvmf_subsystem_num': 'nvmf_subsystem_num',
+        'nvmf_subsystems': 'nvmf_subsystems',
         'security_policies': 'security_policies',
+        'security_policy_num': 'security_policy_num',
         'system_vlan_num': 'system_vlan_num',
         'total_num': 'total_num',
         'value': 'value',
@@ -124,6 +164,10 @@ class Label(object):
 
         self._cluster_num = None
         self._clusters = None
+        self._consistency_group_num = None
+        self._consistency_group_snapshot_num = None
+        self._consistency_group_snapshots = None
+        self._consistency_groups = None
         self._content_library_image_num = None
         self._content_library_images = None
         self._content_library_vm_template_num = None
@@ -132,6 +176,7 @@ class Label(object):
         self._datacenter_num = None
         self._datacenters = None
         self._disk_num = None
+        self._disks = None
         self._elf_image_num = None
         self._elf_images = None
         self._gpu_device_num = None
@@ -141,14 +186,29 @@ class Label(object):
         self._id = None
         self._iscsi_lun_num = None
         self._iscsi_lun_snapshot_num = None
+        self._iscsi_lun_snapshots = None
         self._iscsi_luns = None
         self._iscsi_target_num = None
         self._iscsi_targets = None
         self._isolation_policies = None
+        self._isolation_policy_num = None
         self._key = None
+        self._namespace_group_num = None
+        self._namespace_groups = None
+        self._nfs_export_num = None
+        self._nfs_exports = None
+        self._nfs_inode_num = None
+        self._nfs_inodes = None
         self._nic_num = None
         self._nics = None
+        self._nvmf_namespace_num = None
+        self._nvmf_namespace_snapshot_num = None
+        self._nvmf_namespace_snapshots = None
+        self._nvmf_namespaces = None
+        self._nvmf_subsystem_num = None
+        self._nvmf_subsystems = None
         self._security_policies = None
+        self._security_policy_num = None
         self._system_vlan_num = None
         self._total_num = None
         self._value = None
@@ -170,6 +230,10 @@ class Label(object):
 
         self.cluster_num = kwargs.get("cluster_num", None)
         self.clusters = kwargs.get("clusters", None)
+        self.consistency_group_num = kwargs.get("consistency_group_num", None)
+        self.consistency_group_snapshot_num = kwargs.get("consistency_group_snapshot_num", None)
+        self.consistency_group_snapshots = kwargs.get("consistency_group_snapshots", None)
+        self.consistency_groups = kwargs.get("consistency_groups", None)
         self.content_library_image_num = kwargs.get("content_library_image_num", None)
         self.content_library_images = kwargs.get("content_library_images", None)
         self.content_library_vm_template_num = kwargs.get("content_library_vm_template_num", None)
@@ -179,6 +243,7 @@ class Label(object):
         self.datacenter_num = kwargs.get("datacenter_num", None)
         self.datacenters = kwargs.get("datacenters", None)
         self.disk_num = kwargs.get("disk_num", None)
+        self.disks = kwargs.get("disks", None)
         self.elf_image_num = kwargs.get("elf_image_num", None)
         self.elf_images = kwargs.get("elf_images", None)
         self.gpu_device_num = kwargs.get("gpu_device_num", None)
@@ -189,15 +254,30 @@ class Label(object):
             self.id = kwargs["id"]
         self.iscsi_lun_num = kwargs.get("iscsi_lun_num", None)
         self.iscsi_lun_snapshot_num = kwargs.get("iscsi_lun_snapshot_num", None)
+        self.iscsi_lun_snapshots = kwargs.get("iscsi_lun_snapshots", None)
         self.iscsi_luns = kwargs.get("iscsi_luns", None)
         self.iscsi_target_num = kwargs.get("iscsi_target_num", None)
         self.iscsi_targets = kwargs.get("iscsi_targets", None)
         self.isolation_policies = kwargs.get("isolation_policies", None)
+        self.isolation_policy_num = kwargs.get("isolation_policy_num", None)
         if "key" in kwargs:
             self.key = kwargs["key"]
+        self.namespace_group_num = kwargs.get("namespace_group_num", None)
+        self.namespace_groups = kwargs.get("namespace_groups", None)
+        self.nfs_export_num = kwargs.get("nfs_export_num", None)
+        self.nfs_exports = kwargs.get("nfs_exports", None)
+        self.nfs_inode_num = kwargs.get("nfs_inode_num", None)
+        self.nfs_inodes = kwargs.get("nfs_inodes", None)
         self.nic_num = kwargs.get("nic_num", None)
         self.nics = kwargs.get("nics", None)
+        self.nvmf_namespace_num = kwargs.get("nvmf_namespace_num", None)
+        self.nvmf_namespace_snapshot_num = kwargs.get("nvmf_namespace_snapshot_num", None)
+        self.nvmf_namespace_snapshots = kwargs.get("nvmf_namespace_snapshots", None)
+        self.nvmf_namespaces = kwargs.get("nvmf_namespaces", None)
+        self.nvmf_subsystem_num = kwargs.get("nvmf_subsystem_num", None)
+        self.nvmf_subsystems = kwargs.get("nvmf_subsystems", None)
         self.security_policies = kwargs.get("security_policies", None)
+        self.security_policy_num = kwargs.get("security_policy_num", None)
         self.system_vlan_num = kwargs.get("system_vlan_num", None)
         self.total_num = kwargs.get("total_num", None)
         self.value = kwargs.get("value", None)
@@ -257,6 +337,90 @@ class Label(object):
         """
 
         self._clusters = clusters
+
+    @property
+    def consistency_group_num(self):
+        """Gets the consistency_group_num of this Label.  # noqa: E501
+
+
+        :return: The consistency_group_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._consistency_group_num
+
+    @consistency_group_num.setter
+    def consistency_group_num(self, consistency_group_num):
+        """Sets the consistency_group_num of this Label.
+
+
+        :param consistency_group_num: The consistency_group_num of this Label.  # noqa: E501
+        :type consistency_group_num: int
+        """
+
+        self._consistency_group_num = consistency_group_num
+
+    @property
+    def consistency_group_snapshot_num(self):
+        """Gets the consistency_group_snapshot_num of this Label.  # noqa: E501
+
+
+        :return: The consistency_group_snapshot_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._consistency_group_snapshot_num
+
+    @consistency_group_snapshot_num.setter
+    def consistency_group_snapshot_num(self, consistency_group_snapshot_num):
+        """Sets the consistency_group_snapshot_num of this Label.
+
+
+        :param consistency_group_snapshot_num: The consistency_group_snapshot_num of this Label.  # noqa: E501
+        :type consistency_group_snapshot_num: int
+        """
+
+        self._consistency_group_snapshot_num = consistency_group_snapshot_num
+
+    @property
+    def consistency_group_snapshots(self):
+        """Gets the consistency_group_snapshots of this Label.  # noqa: E501
+
+
+        :return: The consistency_group_snapshots of this Label.  # noqa: E501
+        :rtype: list[NestedConsistencyGroupSnapshot]
+        """
+        return self._consistency_group_snapshots
+
+    @consistency_group_snapshots.setter
+    def consistency_group_snapshots(self, consistency_group_snapshots):
+        """Sets the consistency_group_snapshots of this Label.
+
+
+        :param consistency_group_snapshots: The consistency_group_snapshots of this Label.  # noqa: E501
+        :type consistency_group_snapshots: list[NestedConsistencyGroupSnapshot]
+        """
+
+        self._consistency_group_snapshots = consistency_group_snapshots
+
+    @property
+    def consistency_groups(self):
+        """Gets the consistency_groups of this Label.  # noqa: E501
+
+
+        :return: The consistency_groups of this Label.  # noqa: E501
+        :rtype: list[NestedConsistencyGroup]
+        """
+        return self._consistency_groups
+
+    @consistency_groups.setter
+    def consistency_groups(self, consistency_groups):
+        """Sets the consistency_groups of this Label.
+
+
+        :param consistency_groups: The consistency_groups of this Label.  # noqa: E501
+        :type consistency_groups: list[NestedConsistencyGroup]
+        """
+
+        self._consistency_groups = consistency_groups
 
     @property
     def content_library_image_num(self):
@@ -427,6 +591,27 @@ class Label(object):
         """
 
         self._disk_num = disk_num
+
+    @property
+    def disks(self):
+        """Gets the disks of this Label.  # noqa: E501
+
+
+        :return: The disks of this Label.  # noqa: E501
+        :rtype: list[NestedDisk]
+        """
+        return self._disks
+
+    @disks.setter
+    def disks(self, disks):
+        """Sets the disks of this Label.
+
+
+        :param disks: The disks of this Label.  # noqa: E501
+        :type disks: list[NestedDisk]
+        """
+
+        self._disks = disks
 
     @property
     def elf_image_num(self):
@@ -620,6 +805,27 @@ class Label(object):
         self._iscsi_lun_snapshot_num = iscsi_lun_snapshot_num
 
     @property
+    def iscsi_lun_snapshots(self):
+        """Gets the iscsi_lun_snapshots of this Label.  # noqa: E501
+
+
+        :return: The iscsi_lun_snapshots of this Label.  # noqa: E501
+        :rtype: list[NestedIscsiLunSnapshot]
+        """
+        return self._iscsi_lun_snapshots
+
+    @iscsi_lun_snapshots.setter
+    def iscsi_lun_snapshots(self, iscsi_lun_snapshots):
+        """Sets the iscsi_lun_snapshots of this Label.
+
+
+        :param iscsi_lun_snapshots: The iscsi_lun_snapshots of this Label.  # noqa: E501
+        :type iscsi_lun_snapshots: list[NestedIscsiLunSnapshot]
+        """
+
+        self._iscsi_lun_snapshots = iscsi_lun_snapshots
+
+    @property
     def iscsi_luns(self):
         """Gets the iscsi_luns of this Label.  # noqa: E501
 
@@ -704,6 +910,27 @@ class Label(object):
         self._isolation_policies = isolation_policies
 
     @property
+    def isolation_policy_num(self):
+        """Gets the isolation_policy_num of this Label.  # noqa: E501
+
+
+        :return: The isolation_policy_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._isolation_policy_num
+
+    @isolation_policy_num.setter
+    def isolation_policy_num(self, isolation_policy_num):
+        """Sets the isolation_policy_num of this Label.
+
+
+        :param isolation_policy_num: The isolation_policy_num of this Label.  # noqa: E501
+        :type isolation_policy_num: int
+        """
+
+        self._isolation_policy_num = isolation_policy_num
+
+    @property
     def key(self):
         """Gets the key of this Label.  # noqa: E501
 
@@ -725,6 +952,132 @@ class Label(object):
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
 
         self._key = key
+
+    @property
+    def namespace_group_num(self):
+        """Gets the namespace_group_num of this Label.  # noqa: E501
+
+
+        :return: The namespace_group_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._namespace_group_num
+
+    @namespace_group_num.setter
+    def namespace_group_num(self, namespace_group_num):
+        """Sets the namespace_group_num of this Label.
+
+
+        :param namespace_group_num: The namespace_group_num of this Label.  # noqa: E501
+        :type namespace_group_num: int
+        """
+
+        self._namespace_group_num = namespace_group_num
+
+    @property
+    def namespace_groups(self):
+        """Gets the namespace_groups of this Label.  # noqa: E501
+
+
+        :return: The namespace_groups of this Label.  # noqa: E501
+        :rtype: list[NestedNamespaceGroup]
+        """
+        return self._namespace_groups
+
+    @namespace_groups.setter
+    def namespace_groups(self, namespace_groups):
+        """Sets the namespace_groups of this Label.
+
+
+        :param namespace_groups: The namespace_groups of this Label.  # noqa: E501
+        :type namespace_groups: list[NestedNamespaceGroup]
+        """
+
+        self._namespace_groups = namespace_groups
+
+    @property
+    def nfs_export_num(self):
+        """Gets the nfs_export_num of this Label.  # noqa: E501
+
+
+        :return: The nfs_export_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._nfs_export_num
+
+    @nfs_export_num.setter
+    def nfs_export_num(self, nfs_export_num):
+        """Sets the nfs_export_num of this Label.
+
+
+        :param nfs_export_num: The nfs_export_num of this Label.  # noqa: E501
+        :type nfs_export_num: int
+        """
+
+        self._nfs_export_num = nfs_export_num
+
+    @property
+    def nfs_exports(self):
+        """Gets the nfs_exports of this Label.  # noqa: E501
+
+
+        :return: The nfs_exports of this Label.  # noqa: E501
+        :rtype: list[NestedNfsExport]
+        """
+        return self._nfs_exports
+
+    @nfs_exports.setter
+    def nfs_exports(self, nfs_exports):
+        """Sets the nfs_exports of this Label.
+
+
+        :param nfs_exports: The nfs_exports of this Label.  # noqa: E501
+        :type nfs_exports: list[NestedNfsExport]
+        """
+
+        self._nfs_exports = nfs_exports
+
+    @property
+    def nfs_inode_num(self):
+        """Gets the nfs_inode_num of this Label.  # noqa: E501
+
+
+        :return: The nfs_inode_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._nfs_inode_num
+
+    @nfs_inode_num.setter
+    def nfs_inode_num(self, nfs_inode_num):
+        """Sets the nfs_inode_num of this Label.
+
+
+        :param nfs_inode_num: The nfs_inode_num of this Label.  # noqa: E501
+        :type nfs_inode_num: int
+        """
+
+        self._nfs_inode_num = nfs_inode_num
+
+    @property
+    def nfs_inodes(self):
+        """Gets the nfs_inodes of this Label.  # noqa: E501
+
+
+        :return: The nfs_inodes of this Label.  # noqa: E501
+        :rtype: list[NestedNfsInode]
+        """
+        return self._nfs_inodes
+
+    @nfs_inodes.setter
+    def nfs_inodes(self, nfs_inodes):
+        """Sets the nfs_inodes of this Label.
+
+
+        :param nfs_inodes: The nfs_inodes of this Label.  # noqa: E501
+        :type nfs_inodes: list[NestedNfsInode]
+        """
+
+        self._nfs_inodes = nfs_inodes
 
     @property
     def nic_num(self):
@@ -769,6 +1122,132 @@ class Label(object):
         self._nics = nics
 
     @property
+    def nvmf_namespace_num(self):
+        """Gets the nvmf_namespace_num of this Label.  # noqa: E501
+
+
+        :return: The nvmf_namespace_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._nvmf_namespace_num
+
+    @nvmf_namespace_num.setter
+    def nvmf_namespace_num(self, nvmf_namespace_num):
+        """Sets the nvmf_namespace_num of this Label.
+
+
+        :param nvmf_namespace_num: The nvmf_namespace_num of this Label.  # noqa: E501
+        :type nvmf_namespace_num: int
+        """
+
+        self._nvmf_namespace_num = nvmf_namespace_num
+
+    @property
+    def nvmf_namespace_snapshot_num(self):
+        """Gets the nvmf_namespace_snapshot_num of this Label.  # noqa: E501
+
+
+        :return: The nvmf_namespace_snapshot_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._nvmf_namespace_snapshot_num
+
+    @nvmf_namespace_snapshot_num.setter
+    def nvmf_namespace_snapshot_num(self, nvmf_namespace_snapshot_num):
+        """Sets the nvmf_namespace_snapshot_num of this Label.
+
+
+        :param nvmf_namespace_snapshot_num: The nvmf_namespace_snapshot_num of this Label.  # noqa: E501
+        :type nvmf_namespace_snapshot_num: int
+        """
+
+        self._nvmf_namespace_snapshot_num = nvmf_namespace_snapshot_num
+
+    @property
+    def nvmf_namespace_snapshots(self):
+        """Gets the nvmf_namespace_snapshots of this Label.  # noqa: E501
+
+
+        :return: The nvmf_namespace_snapshots of this Label.  # noqa: E501
+        :rtype: list[NestedNvmfNamespaceSnapshot]
+        """
+        return self._nvmf_namespace_snapshots
+
+    @nvmf_namespace_snapshots.setter
+    def nvmf_namespace_snapshots(self, nvmf_namespace_snapshots):
+        """Sets the nvmf_namespace_snapshots of this Label.
+
+
+        :param nvmf_namespace_snapshots: The nvmf_namespace_snapshots of this Label.  # noqa: E501
+        :type nvmf_namespace_snapshots: list[NestedNvmfNamespaceSnapshot]
+        """
+
+        self._nvmf_namespace_snapshots = nvmf_namespace_snapshots
+
+    @property
+    def nvmf_namespaces(self):
+        """Gets the nvmf_namespaces of this Label.  # noqa: E501
+
+
+        :return: The nvmf_namespaces of this Label.  # noqa: E501
+        :rtype: list[NestedNvmfNamespace]
+        """
+        return self._nvmf_namespaces
+
+    @nvmf_namespaces.setter
+    def nvmf_namespaces(self, nvmf_namespaces):
+        """Sets the nvmf_namespaces of this Label.
+
+
+        :param nvmf_namespaces: The nvmf_namespaces of this Label.  # noqa: E501
+        :type nvmf_namespaces: list[NestedNvmfNamespace]
+        """
+
+        self._nvmf_namespaces = nvmf_namespaces
+
+    @property
+    def nvmf_subsystem_num(self):
+        """Gets the nvmf_subsystem_num of this Label.  # noqa: E501
+
+
+        :return: The nvmf_subsystem_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._nvmf_subsystem_num
+
+    @nvmf_subsystem_num.setter
+    def nvmf_subsystem_num(self, nvmf_subsystem_num):
+        """Sets the nvmf_subsystem_num of this Label.
+
+
+        :param nvmf_subsystem_num: The nvmf_subsystem_num of this Label.  # noqa: E501
+        :type nvmf_subsystem_num: int
+        """
+
+        self._nvmf_subsystem_num = nvmf_subsystem_num
+
+    @property
+    def nvmf_subsystems(self):
+        """Gets the nvmf_subsystems of this Label.  # noqa: E501
+
+
+        :return: The nvmf_subsystems of this Label.  # noqa: E501
+        :rtype: list[NestedNvmfSubsystem]
+        """
+        return self._nvmf_subsystems
+
+    @nvmf_subsystems.setter
+    def nvmf_subsystems(self, nvmf_subsystems):
+        """Sets the nvmf_subsystems of this Label.
+
+
+        :param nvmf_subsystems: The nvmf_subsystems of this Label.  # noqa: E501
+        :type nvmf_subsystems: list[NestedNvmfSubsystem]
+        """
+
+        self._nvmf_subsystems = nvmf_subsystems
+
+    @property
     def security_policies(self):
         """Gets the security_policies of this Label.  # noqa: E501
 
@@ -788,6 +1267,27 @@ class Label(object):
         """
 
         self._security_policies = security_policies
+
+    @property
+    def security_policy_num(self):
+        """Gets the security_policy_num of this Label.  # noqa: E501
+
+
+        :return: The security_policy_num of this Label.  # noqa: E501
+        :rtype: int
+        """
+        return self._security_policy_num
+
+    @security_policy_num.setter
+    def security_policy_num(self, security_policy_num):
+        """Sets the security_policy_num of this Label.
+
+
+        :param security_policy_num: The security_policy_num of this Label.  # noqa: E501
+        :type security_policy_num: int
+        """
+
+        self._security_policy_num = security_policy_num
 
     @property
     def system_vlan_num(self):

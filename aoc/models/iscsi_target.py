@@ -34,6 +34,8 @@ class IscsiTarget(object):
         'bps_wr': 'int',
         'bps_wr_max': 'int',
         'bps_wr_max_length': 'int',
+        'business_host_groups': 'list[NestedBusinessHostGroup]',
+        'business_hosts': 'list[NestedBusinessHost]',
         'chap_enabled': 'bool',
         'chap_name': 'str',
         'chap_secret': 'str',
@@ -62,6 +64,7 @@ class IscsiTarget(object):
         'ip_whitelist': 'str',
         'iqn_name': 'str',
         'iqn_whitelist': 'str',
+        'iscsi_connections': 'list[NestedIscsiConnection]',
         'iscsi_luns_num': 'int',
         'labels': 'list[NestedLabel]',
         'local_id': 'str',
@@ -85,6 +88,8 @@ class IscsiTarget(object):
         'bps_wr': 'bps_wr',
         'bps_wr_max': 'bps_wr_max',
         'bps_wr_max_length': 'bps_wr_max_length',
+        'business_host_groups': 'business_host_groups',
+        'business_hosts': 'business_hosts',
         'chap_enabled': 'chap_enabled',
         'chap_name': 'chap_name',
         'chap_secret': 'chap_secret',
@@ -113,6 +118,7 @@ class IscsiTarget(object):
         'ip_whitelist': 'ip_whitelist',
         'iqn_name': 'iqn_name',
         'iqn_whitelist': 'iqn_whitelist',
+        'iscsi_connections': 'iscsi_connections',
         'iscsi_luns_num': 'iscsi_luns_num',
         'labels': 'labels',
         'local_id': 'local_id',
@@ -139,6 +145,8 @@ class IscsiTarget(object):
         self._bps_wr = None
         self._bps_wr_max = None
         self._bps_wr_max_length = None
+        self._business_host_groups = None
+        self._business_hosts = None
         self._chap_enabled = None
         self._chap_name = None
         self._chap_secret = None
@@ -167,6 +175,7 @@ class IscsiTarget(object):
         self._ip_whitelist = None
         self._iqn_name = None
         self._iqn_whitelist = None
+        self._iscsi_connections = None
         self._iscsi_luns_num = None
         self._labels = None
         self._local_id = None
@@ -189,6 +198,8 @@ class IscsiTarget(object):
         self.bps_wr = kwargs.get("bps_wr", None)
         self.bps_wr_max = kwargs.get("bps_wr_max", None)
         self.bps_wr_max_length = kwargs.get("bps_wr_max_length", None)
+        self.business_host_groups = kwargs.get("business_host_groups", None)
+        self.business_hosts = kwargs.get("business_hosts", None)
         if "chap_enabled" in kwargs:
             self.chap_enabled = kwargs["chap_enabled"]
         self.chap_name = kwargs.get("chap_name", None)
@@ -226,6 +237,7 @@ class IscsiTarget(object):
             self.iqn_name = kwargs["iqn_name"]
         if "iqn_whitelist" in kwargs:
             self.iqn_whitelist = kwargs["iqn_whitelist"]
+        self.iscsi_connections = kwargs.get("iscsi_connections", None)
         self.iscsi_luns_num = kwargs.get("iscsi_luns_num", None)
         self.labels = kwargs.get("labels", None)
         if "local_id" in kwargs:
@@ -432,6 +444,48 @@ class IscsiTarget(object):
         """
 
         self._bps_wr_max_length = bps_wr_max_length
+
+    @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiTarget.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiTarget.  # noqa: E501
+        :rtype: list[NestedBusinessHostGroup]
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiTarget.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiTarget.  # noqa: E501
+        :type business_host_groups: list[NestedBusinessHostGroup]
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiTarget.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiTarget.  # noqa: E501
+        :rtype: list[NestedBusinessHost]
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiTarget.
+
+
+        :param business_hosts: The business_hosts of this IscsiTarget.  # noqa: E501
+        :type business_hosts: list[NestedBusinessHost]
+        """
+
+        self._business_hosts = business_hosts
 
     @property
     def chap_enabled(self):
@@ -1038,6 +1092,27 @@ class IscsiTarget(object):
             raise ValueError("Invalid value for `iqn_whitelist`, must not be `None`")  # noqa: E501
 
         self._iqn_whitelist = iqn_whitelist
+
+    @property
+    def iscsi_connections(self):
+        """Gets the iscsi_connections of this IscsiTarget.  # noqa: E501
+
+
+        :return: The iscsi_connections of this IscsiTarget.  # noqa: E501
+        :rtype: list[NestedIscsiConnection]
+        """
+        return self._iscsi_connections
+
+    @iscsi_connections.setter
+    def iscsi_connections(self, iscsi_connections):
+        """Sets the iscsi_connections of this IscsiTarget.
+
+
+        :param iscsi_connections: The iscsi_connections of this IscsiTarget.  # noqa: E501
+        :type iscsi_connections: list[NestedIscsiConnection]
+        """
+
+        self._iscsi_connections = iscsi_connections
 
     @property
     def iscsi_luns_num(self):

@@ -37,12 +37,22 @@ class AddLabelsToResourcesParamsData(object):
         'vm_snapshots': 'VmSnapshotWhereInput',
         'vlans': 'VlanWhereInput',
         'vdses': 'VdsWhereInput',
+        'nvmf_subsystems': 'NvmfSubsystemWhereInput',
+        'nvmf_namespace_snapshots': 'NvmfNamespaceSnapshotWhereInput',
+        'nvmf_namespaces': 'NvmfNamespaceWhereInput',
         'nics': 'NicWhereInput',
+        'nfs_inodes': 'NfsInodeWhereInput',
+        'nfs_exports': 'NfsExportWhereInput',
+        'namespace_groups': 'NamespaceGroupWhereInput',
         'iscsi_targets': 'IscsiTargetWhereInput',
+        'iscsi_lun_snapshots': 'IscsiLunSnapshotWhereInput',
         'iscsi_luns': 'IscsiLunWhereInput',
         'hosts': 'HostWhereInput',
         'elf_images': 'ElfImageWhereInput',
+        'disks': 'DiskWhereInput',
         'datacenters': 'DatacenterWhereInput',
+        'consistency_group_snapshots': 'ConsistencyGroupSnapshotWhereInput',
+        'consistency_groups': 'ConsistencyGroupWhereInput',
         'clusters': 'ClusterWhereInput'
     }
 
@@ -59,12 +69,22 @@ class AddLabelsToResourcesParamsData(object):
         'vm_snapshots': 'vm_snapshots',
         'vlans': 'vlans',
         'vdses': 'vdses',
+        'nvmf_subsystems': 'nvmf_subsystems',
+        'nvmf_namespace_snapshots': 'nvmf_namespace_snapshots',
+        'nvmf_namespaces': 'nvmf_namespaces',
         'nics': 'nics',
+        'nfs_inodes': 'nfs_inodes',
+        'nfs_exports': 'nfs_exports',
+        'namespace_groups': 'namespace_groups',
         'iscsi_targets': 'iscsi_targets',
+        'iscsi_lun_snapshots': 'iscsi_lun_snapshots',
         'iscsi_luns': 'iscsi_luns',
         'hosts': 'hosts',
         'elf_images': 'elf_images',
+        'disks': 'disks',
         'datacenters': 'datacenters',
+        'consistency_group_snapshots': 'consistency_group_snapshots',
+        'consistency_groups': 'consistency_groups',
         'clusters': 'clusters'
     }
 
@@ -84,12 +104,22 @@ class AddLabelsToResourcesParamsData(object):
         self._vm_snapshots = None
         self._vlans = None
         self._vdses = None
+        self._nvmf_subsystems = None
+        self._nvmf_namespace_snapshots = None
+        self._nvmf_namespaces = None
         self._nics = None
+        self._nfs_inodes = None
+        self._nfs_exports = None
+        self._namespace_groups = None
         self._iscsi_targets = None
+        self._iscsi_lun_snapshots = None
         self._iscsi_luns = None
         self._hosts = None
         self._elf_images = None
+        self._disks = None
         self._datacenters = None
+        self._consistency_group_snapshots = None
+        self._consistency_groups = None
         self._clusters = None
         self.discriminator = None
 
@@ -117,18 +147,38 @@ class AddLabelsToResourcesParamsData(object):
             self.vlans = kwargs["vlans"]
         if "vdses" in kwargs:
             self.vdses = kwargs["vdses"]
+        if "nvmf_subsystems" in kwargs:
+            self.nvmf_subsystems = kwargs["nvmf_subsystems"]
+        if "nvmf_namespace_snapshots" in kwargs:
+            self.nvmf_namespace_snapshots = kwargs["nvmf_namespace_snapshots"]
+        if "nvmf_namespaces" in kwargs:
+            self.nvmf_namespaces = kwargs["nvmf_namespaces"]
         if "nics" in kwargs:
             self.nics = kwargs["nics"]
+        if "nfs_inodes" in kwargs:
+            self.nfs_inodes = kwargs["nfs_inodes"]
+        if "nfs_exports" in kwargs:
+            self.nfs_exports = kwargs["nfs_exports"]
+        if "namespace_groups" in kwargs:
+            self.namespace_groups = kwargs["namespace_groups"]
         if "iscsi_targets" in kwargs:
             self.iscsi_targets = kwargs["iscsi_targets"]
+        if "iscsi_lun_snapshots" in kwargs:
+            self.iscsi_lun_snapshots = kwargs["iscsi_lun_snapshots"]
         if "iscsi_luns" in kwargs:
             self.iscsi_luns = kwargs["iscsi_luns"]
         if "hosts" in kwargs:
             self.hosts = kwargs["hosts"]
         if "elf_images" in kwargs:
             self.elf_images = kwargs["elf_images"]
+        if "disks" in kwargs:
+            self.disks = kwargs["disks"]
         if "datacenters" in kwargs:
             self.datacenters = kwargs["datacenters"]
+        if "consistency_group_snapshots" in kwargs:
+            self.consistency_group_snapshots = kwargs["consistency_group_snapshots"]
+        if "consistency_groups" in kwargs:
+            self.consistency_groups = kwargs["consistency_groups"]
         if "clusters" in kwargs:
             self.clusters = kwargs["clusters"]
 
@@ -385,6 +435,69 @@ class AddLabelsToResourcesParamsData(object):
         self._vdses = vdses
 
     @property
+    def nvmf_subsystems(self):
+        """Gets the nvmf_subsystems of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The nvmf_subsystems of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NvmfSubsystemWhereInput
+        """
+        return self._nvmf_subsystems
+
+    @nvmf_subsystems.setter
+    def nvmf_subsystems(self, nvmf_subsystems):
+        """Sets the nvmf_subsystems of this AddLabelsToResourcesParamsData.
+
+
+        :param nvmf_subsystems: The nvmf_subsystems of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type nvmf_subsystems: NvmfSubsystemWhereInput
+        """
+
+        self._nvmf_subsystems = nvmf_subsystems
+
+    @property
+    def nvmf_namespace_snapshots(self):
+        """Gets the nvmf_namespace_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The nvmf_namespace_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NvmfNamespaceSnapshotWhereInput
+        """
+        return self._nvmf_namespace_snapshots
+
+    @nvmf_namespace_snapshots.setter
+    def nvmf_namespace_snapshots(self, nvmf_namespace_snapshots):
+        """Sets the nvmf_namespace_snapshots of this AddLabelsToResourcesParamsData.
+
+
+        :param nvmf_namespace_snapshots: The nvmf_namespace_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type nvmf_namespace_snapshots: NvmfNamespaceSnapshotWhereInput
+        """
+
+        self._nvmf_namespace_snapshots = nvmf_namespace_snapshots
+
+    @property
+    def nvmf_namespaces(self):
+        """Gets the nvmf_namespaces of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The nvmf_namespaces of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NvmfNamespaceWhereInput
+        """
+        return self._nvmf_namespaces
+
+    @nvmf_namespaces.setter
+    def nvmf_namespaces(self, nvmf_namespaces):
+        """Sets the nvmf_namespaces of this AddLabelsToResourcesParamsData.
+
+
+        :param nvmf_namespaces: The nvmf_namespaces of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type nvmf_namespaces: NvmfNamespaceWhereInput
+        """
+
+        self._nvmf_namespaces = nvmf_namespaces
+
+    @property
     def nics(self):
         """Gets the nics of this AddLabelsToResourcesParamsData.  # noqa: E501
 
@@ -406,6 +519,69 @@ class AddLabelsToResourcesParamsData(object):
         self._nics = nics
 
     @property
+    def nfs_inodes(self):
+        """Gets the nfs_inodes of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The nfs_inodes of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NfsInodeWhereInput
+        """
+        return self._nfs_inodes
+
+    @nfs_inodes.setter
+    def nfs_inodes(self, nfs_inodes):
+        """Sets the nfs_inodes of this AddLabelsToResourcesParamsData.
+
+
+        :param nfs_inodes: The nfs_inodes of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type nfs_inodes: NfsInodeWhereInput
+        """
+
+        self._nfs_inodes = nfs_inodes
+
+    @property
+    def nfs_exports(self):
+        """Gets the nfs_exports of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The nfs_exports of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NfsExportWhereInput
+        """
+        return self._nfs_exports
+
+    @nfs_exports.setter
+    def nfs_exports(self, nfs_exports):
+        """Sets the nfs_exports of this AddLabelsToResourcesParamsData.
+
+
+        :param nfs_exports: The nfs_exports of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type nfs_exports: NfsExportWhereInput
+        """
+
+        self._nfs_exports = nfs_exports
+
+    @property
+    def namespace_groups(self):
+        """Gets the namespace_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The namespace_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: NamespaceGroupWhereInput
+        """
+        return self._namespace_groups
+
+    @namespace_groups.setter
+    def namespace_groups(self, namespace_groups):
+        """Sets the namespace_groups of this AddLabelsToResourcesParamsData.
+
+
+        :param namespace_groups: The namespace_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type namespace_groups: NamespaceGroupWhereInput
+        """
+
+        self._namespace_groups = namespace_groups
+
+    @property
     def iscsi_targets(self):
         """Gets the iscsi_targets of this AddLabelsToResourcesParamsData.  # noqa: E501
 
@@ -425,6 +601,27 @@ class AddLabelsToResourcesParamsData(object):
         """
 
         self._iscsi_targets = iscsi_targets
+
+    @property
+    def iscsi_lun_snapshots(self):
+        """Gets the iscsi_lun_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The iscsi_lun_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: IscsiLunSnapshotWhereInput
+        """
+        return self._iscsi_lun_snapshots
+
+    @iscsi_lun_snapshots.setter
+    def iscsi_lun_snapshots(self, iscsi_lun_snapshots):
+        """Sets the iscsi_lun_snapshots of this AddLabelsToResourcesParamsData.
+
+
+        :param iscsi_lun_snapshots: The iscsi_lun_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type iscsi_lun_snapshots: IscsiLunSnapshotWhereInput
+        """
+
+        self._iscsi_lun_snapshots = iscsi_lun_snapshots
 
     @property
     def iscsi_luns(self):
@@ -490,6 +687,27 @@ class AddLabelsToResourcesParamsData(object):
         self._elf_images = elf_images
 
     @property
+    def disks(self):
+        """Gets the disks of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The disks of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: DiskWhereInput
+        """
+        return self._disks
+
+    @disks.setter
+    def disks(self, disks):
+        """Sets the disks of this AddLabelsToResourcesParamsData.
+
+
+        :param disks: The disks of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type disks: DiskWhereInput
+        """
+
+        self._disks = disks
+
+    @property
     def datacenters(self):
         """Gets the datacenters of this AddLabelsToResourcesParamsData.  # noqa: E501
 
@@ -509,6 +727,48 @@ class AddLabelsToResourcesParamsData(object):
         """
 
         self._datacenters = datacenters
+
+    @property
+    def consistency_group_snapshots(self):
+        """Gets the consistency_group_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The consistency_group_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: ConsistencyGroupSnapshotWhereInput
+        """
+        return self._consistency_group_snapshots
+
+    @consistency_group_snapshots.setter
+    def consistency_group_snapshots(self, consistency_group_snapshots):
+        """Sets the consistency_group_snapshots of this AddLabelsToResourcesParamsData.
+
+
+        :param consistency_group_snapshots: The consistency_group_snapshots of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type consistency_group_snapshots: ConsistencyGroupSnapshotWhereInput
+        """
+
+        self._consistency_group_snapshots = consistency_group_snapshots
+
+    @property
+    def consistency_groups(self):
+        """Gets the consistency_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+
+
+        :return: The consistency_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :rtype: ConsistencyGroupWhereInput
+        """
+        return self._consistency_groups
+
+    @consistency_groups.setter
+    def consistency_groups(self, consistency_groups):
+        """Sets the consistency_groups of this AddLabelsToResourcesParamsData.
+
+
+        :param consistency_groups: The consistency_groups of this AddLabelsToResourcesParamsData.  # noqa: E501
+        :type consistency_groups: ConsistencyGroupWhereInput
+        """
+
+        self._consistency_groups = consistency_groups
 
     @property
     def clusters(self):

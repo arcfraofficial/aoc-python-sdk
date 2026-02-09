@@ -30,7 +30,8 @@ class GetIscsiLunSnapshotsRequestBody(object):
         'first': 'int',
         'last': 'int',
         'order_by': 'IscsiLunSnapshotOrderByInput',
-        'skip': 'int'
+        'skip': 'int',
+        'where': 'IscsiLunSnapshotWhereInput'
     }
 
     attribute_map = {
@@ -39,7 +40,8 @@ class GetIscsiLunSnapshotsRequestBody(object):
         'first': 'first',
         'last': 'last',
         'order_by': 'orderBy',
-        'skip': 'skip'
+        'skip': 'skip',
+        'where': 'where'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
@@ -52,6 +54,7 @@ class GetIscsiLunSnapshotsRequestBody(object):
         self._last = None
         self._order_by = None
         self._skip = None
+        self._where = None
         self.discriminator = None
 
         self.after = kwargs.get("after", None)
@@ -60,6 +63,7 @@ class GetIscsiLunSnapshotsRequestBody(object):
         self.last = kwargs.get("last", None)
         self.order_by = kwargs.get("order_by", None)
         self.skip = kwargs.get("skip", None)
+        self.where = kwargs.get("where", None)
 
     @property
     def after(self):
@@ -186,6 +190,27 @@ class GetIscsiLunSnapshotsRequestBody(object):
         """
 
         self._skip = skip
+
+    @property
+    def where(self):
+        """Gets the where of this GetIscsiLunSnapshotsRequestBody.  # noqa: E501
+
+
+        :return: The where of this GetIscsiLunSnapshotsRequestBody.  # noqa: E501
+        :rtype: IscsiLunSnapshotWhereInput
+        """
+        return self._where
+
+    @where.setter
+    def where(self, where):
+        """Sets the where of this GetIscsiLunSnapshotsRequestBody.
+
+
+        :param where: The where of this GetIscsiLunSnapshotsRequestBody.  # noqa: E501
+        :type where: IscsiLunSnapshotWhereInput
+        """
+
+        self._where = where
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

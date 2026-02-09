@@ -47,6 +47,7 @@ class VmSnapshot(object):
         'memory': 'int',
         'name': 'str',
         'size': 'int',
+        'snapshot_group': 'NestedSnapshotGroup',
         'vcpu': 'int',
         'vm': 'NestedVm',
         'vm_disks': 'list[NestedFrozenDisks]',
@@ -77,6 +78,7 @@ class VmSnapshot(object):
         'memory': 'memory',
         'name': 'name',
         'size': 'size',
+        'snapshot_group': 'snapshot_group',
         'vcpu': 'vcpu',
         'vm': 'vm',
         'vm_disks': 'vm_disks',
@@ -110,6 +112,7 @@ class VmSnapshot(object):
         self._memory = None
         self._name = None
         self._size = None
+        self._snapshot_group = None
         self._vcpu = None
         self._vm = None
         self._vm_disks = None
@@ -152,6 +155,7 @@ class VmSnapshot(object):
             self.name = kwargs["name"]
         if "size" in kwargs:
             self.size = kwargs["size"]
+        self.snapshot_group = kwargs.get("snapshot_group", None)
         if "vcpu" in kwargs:
             self.vcpu = kwargs["vcpu"]
         self.vm = kwargs.get("vm", None)
@@ -647,6 +651,27 @@ class VmSnapshot(object):
             raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
 
         self._size = size
+
+    @property
+    def snapshot_group(self):
+        """Gets the snapshot_group of this VmSnapshot.  # noqa: E501
+
+
+        :return: The snapshot_group of this VmSnapshot.  # noqa: E501
+        :rtype: NestedSnapshotGroup
+        """
+        return self._snapshot_group
+
+    @snapshot_group.setter
+    def snapshot_group(self, snapshot_group):
+        """Sets the snapshot_group of this VmSnapshot.
+
+
+        :param snapshot_group: The snapshot_group of this VmSnapshot.  # noqa: E501
+        :type snapshot_group: NestedSnapshotGroup
+        """
+
+        self._snapshot_group = snapshot_group
 
     @property
     def vcpu(self):

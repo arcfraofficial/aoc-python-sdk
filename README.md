@@ -10,14 +10,14 @@ Aoc python sdk, require Python 2.7 or 3.4+
 - ### install from whl
 
   ```shell
-  pip install aoc_sdk-1.0.0-py2.py3-none-any.whl
+  pip install aoc_sdk-1.1.0-py2.py3-none-any.whl
   ```
 
 - ### install from tar.gz
 
   ```shell
-  tar xvzf aoc-sdk-1.0.0.tar.gz
-  cd aoc-sdk-1.0.0
+  tar xvzf aoc-sdk-1.1.0.tar.gz
+  cd aoc-sdk-1.1.0
   python setup.py install
   ```
 

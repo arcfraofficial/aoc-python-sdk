@@ -100,6 +100,12 @@ class IscsiTargetWhereInput(object):
         'bps_wr_max_not_in': 'list[int]',
         'bps_wr_not': 'int',
         'bps_wr_not_in': 'list[int]',
+        'business_host_groups_every': 'BusinessHostGroupWhereInput',
+        'business_host_groups_none': 'BusinessHostGroupWhereInput',
+        'business_host_groups_some': 'BusinessHostGroupWhereInput',
+        'business_hosts_every': 'BusinessHostWhereInput',
+        'business_hosts_none': 'BusinessHostWhereInput',
+        'business_hosts_some': 'BusinessHostWhereInput',
         'chap_enabled': 'bool',
         'chap_enabled_not': 'bool',
         'chap_name': 'str',
@@ -315,6 +321,9 @@ class IscsiTargetWhereInput(object):
         'iqn_whitelist_not_in': 'list[str]',
         'iqn_whitelist_not_starts_with': 'str',
         'iqn_whitelist_starts_with': 'str',
+        'iscsi_connections_every': 'IscsiConnectionWhereInput',
+        'iscsi_connections_none': 'IscsiConnectionWhereInput',
+        'iscsi_connections_some': 'IscsiConnectionWhereInput',
         'iscsi_luns_num': 'int',
         'iscsi_luns_num_gt': 'int',
         'iscsi_luns_num_gte': 'int',
@@ -467,6 +476,12 @@ class IscsiTargetWhereInput(object):
         'bps_wr_max_not_in': 'bps_wr_max_not_in',
         'bps_wr_not': 'bps_wr_not',
         'bps_wr_not_in': 'bps_wr_not_in',
+        'business_host_groups_every': 'business_host_groups_every',
+        'business_host_groups_none': 'business_host_groups_none',
+        'business_host_groups_some': 'business_host_groups_some',
+        'business_hosts_every': 'business_hosts_every',
+        'business_hosts_none': 'business_hosts_none',
+        'business_hosts_some': 'business_hosts_some',
         'chap_enabled': 'chap_enabled',
         'chap_enabled_not': 'chap_enabled_not',
         'chap_name': 'chap_name',
@@ -682,6 +697,9 @@ class IscsiTargetWhereInput(object):
         'iqn_whitelist_not_in': 'iqn_whitelist_not_in',
         'iqn_whitelist_not_starts_with': 'iqn_whitelist_not_starts_with',
         'iqn_whitelist_starts_with': 'iqn_whitelist_starts_with',
+        'iscsi_connections_every': 'iscsi_connections_every',
+        'iscsi_connections_none': 'iscsi_connections_none',
+        'iscsi_connections_some': 'iscsi_connections_some',
         'iscsi_luns_num': 'iscsi_luns_num',
         'iscsi_luns_num_gt': 'iscsi_luns_num_gt',
         'iscsi_luns_num_gte': 'iscsi_luns_num_gte',
@@ -837,6 +855,12 @@ class IscsiTargetWhereInput(object):
         self._bps_wr_max_not_in = None
         self._bps_wr_not = None
         self._bps_wr_not_in = None
+        self._business_host_groups_every = None
+        self._business_host_groups_none = None
+        self._business_host_groups_some = None
+        self._business_hosts_every = None
+        self._business_hosts_none = None
+        self._business_hosts_some = None
         self._chap_enabled = None
         self._chap_enabled_not = None
         self._chap_name = None
@@ -1052,6 +1076,9 @@ class IscsiTargetWhereInput(object):
         self._iqn_whitelist_not_in = None
         self._iqn_whitelist_not_starts_with = None
         self._iqn_whitelist_starts_with = None
+        self._iscsi_connections_every = None
+        self._iscsi_connections_none = None
+        self._iscsi_connections_some = None
         self._iscsi_luns_num = None
         self._iscsi_luns_num_gt = None
         self._iscsi_luns_num_gte = None
@@ -1203,6 +1230,12 @@ class IscsiTargetWhereInput(object):
         self.bps_wr_max_not_in = kwargs.get("bps_wr_max_not_in", None)
         self.bps_wr_not = kwargs.get("bps_wr_not", None)
         self.bps_wr_not_in = kwargs.get("bps_wr_not_in", None)
+        self.business_host_groups_every = kwargs.get("business_host_groups_every", None)
+        self.business_host_groups_none = kwargs.get("business_host_groups_none", None)
+        self.business_host_groups_some = kwargs.get("business_host_groups_some", None)
+        self.business_hosts_every = kwargs.get("business_hosts_every", None)
+        self.business_hosts_none = kwargs.get("business_hosts_none", None)
+        self.business_hosts_some = kwargs.get("business_hosts_some", None)
         self.chap_enabled = kwargs.get("chap_enabled", None)
         self.chap_enabled_not = kwargs.get("chap_enabled_not", None)
         self.chap_name = kwargs.get("chap_name", None)
@@ -1418,6 +1451,9 @@ class IscsiTargetWhereInput(object):
         self.iqn_whitelist_not_in = kwargs.get("iqn_whitelist_not_in", None)
         self.iqn_whitelist_not_starts_with = kwargs.get("iqn_whitelist_not_starts_with", None)
         self.iqn_whitelist_starts_with = kwargs.get("iqn_whitelist_starts_with", None)
+        self.iscsi_connections_every = kwargs.get("iscsi_connections_every", None)
+        self.iscsi_connections_none = kwargs.get("iscsi_connections_none", None)
+        self.iscsi_connections_some = kwargs.get("iscsi_connections_some", None)
         self.iscsi_luns_num = kwargs.get("iscsi_luns_num", None)
         self.iscsi_luns_num_gt = kwargs.get("iscsi_luns_num_gt", None)
         self.iscsi_luns_num_gte = kwargs.get("iscsi_luns_num_gte", None)
@@ -3067,6 +3103,132 @@ class IscsiTargetWhereInput(object):
         """
 
         self._bps_wr_not_in = bps_wr_not_in
+
+    @property
+    def business_host_groups_every(self):
+        """Gets the business_host_groups_every of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_every of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_every
+
+    @business_host_groups_every.setter
+    def business_host_groups_every(self, business_host_groups_every):
+        """Sets the business_host_groups_every of this IscsiTargetWhereInput.
+
+
+        :param business_host_groups_every: The business_host_groups_every of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_host_groups_every: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_every = business_host_groups_every
+
+    @property
+    def business_host_groups_none(self):
+        """Gets the business_host_groups_none of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_none of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_none
+
+    @business_host_groups_none.setter
+    def business_host_groups_none(self, business_host_groups_none):
+        """Sets the business_host_groups_none of this IscsiTargetWhereInput.
+
+
+        :param business_host_groups_none: The business_host_groups_none of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_host_groups_none: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_none = business_host_groups_none
+
+    @property
+    def business_host_groups_some(self):
+        """Gets the business_host_groups_some of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_some of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_some
+
+    @business_host_groups_some.setter
+    def business_host_groups_some(self, business_host_groups_some):
+        """Sets the business_host_groups_some of this IscsiTargetWhereInput.
+
+
+        :param business_host_groups_some: The business_host_groups_some of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_host_groups_some: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_some = business_host_groups_some
+
+    @property
+    def business_hosts_every(self):
+        """Gets the business_hosts_every of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_every of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_every
+
+    @business_hosts_every.setter
+    def business_hosts_every(self, business_hosts_every):
+        """Sets the business_hosts_every of this IscsiTargetWhereInput.
+
+
+        :param business_hosts_every: The business_hosts_every of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_hosts_every: BusinessHostWhereInput
+        """
+
+        self._business_hosts_every = business_hosts_every
+
+    @property
+    def business_hosts_none(self):
+        """Gets the business_hosts_none of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_none of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_none
+
+    @business_hosts_none.setter
+    def business_hosts_none(self, business_hosts_none):
+        """Sets the business_hosts_none of this IscsiTargetWhereInput.
+
+
+        :param business_hosts_none: The business_hosts_none of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_hosts_none: BusinessHostWhereInput
+        """
+
+        self._business_hosts_none = business_hosts_none
+
+    @property
+    def business_hosts_some(self):
+        """Gets the business_hosts_some of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_some of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_some
+
+    @business_hosts_some.setter
+    def business_hosts_some(self, business_hosts_some):
+        """Sets the business_hosts_some of this IscsiTargetWhereInput.
+
+
+        :param business_hosts_some: The business_hosts_some of this IscsiTargetWhereInput.  # noqa: E501
+        :type business_hosts_some: BusinessHostWhereInput
+        """
+
+        self._business_hosts_some = business_hosts_some
 
     @property
     def chap_enabled(self):
@@ -7582,6 +7744,69 @@ class IscsiTargetWhereInput(object):
         """
 
         self._iqn_whitelist_starts_with = iqn_whitelist_starts_with
+
+    @property
+    def iscsi_connections_every(self):
+        """Gets the iscsi_connections_every of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The iscsi_connections_every of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: IscsiConnectionWhereInput
+        """
+        return self._iscsi_connections_every
+
+    @iscsi_connections_every.setter
+    def iscsi_connections_every(self, iscsi_connections_every):
+        """Sets the iscsi_connections_every of this IscsiTargetWhereInput.
+
+
+        :param iscsi_connections_every: The iscsi_connections_every of this IscsiTargetWhereInput.  # noqa: E501
+        :type iscsi_connections_every: IscsiConnectionWhereInput
+        """
+
+        self._iscsi_connections_every = iscsi_connections_every
+
+    @property
+    def iscsi_connections_none(self):
+        """Gets the iscsi_connections_none of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The iscsi_connections_none of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: IscsiConnectionWhereInput
+        """
+        return self._iscsi_connections_none
+
+    @iscsi_connections_none.setter
+    def iscsi_connections_none(self, iscsi_connections_none):
+        """Sets the iscsi_connections_none of this IscsiTargetWhereInput.
+
+
+        :param iscsi_connections_none: The iscsi_connections_none of this IscsiTargetWhereInput.  # noqa: E501
+        :type iscsi_connections_none: IscsiConnectionWhereInput
+        """
+
+        self._iscsi_connections_none = iscsi_connections_none
+
+    @property
+    def iscsi_connections_some(self):
+        """Gets the iscsi_connections_some of this IscsiTargetWhereInput.  # noqa: E501
+
+
+        :return: The iscsi_connections_some of this IscsiTargetWhereInput.  # noqa: E501
+        :rtype: IscsiConnectionWhereInput
+        """
+        return self._iscsi_connections_some
+
+    @iscsi_connections_some.setter
+    def iscsi_connections_some(self, iscsi_connections_some):
+        """Sets the iscsi_connections_some of this IscsiTargetWhereInput.
+
+
+        :param iscsi_connections_some: The iscsi_connections_some of this IscsiTargetWhereInput.  # noqa: E501
+        :type iscsi_connections_some: IscsiConnectionWhereInput
+        """
+
+        self._iscsi_connections_some = iscsi_connections_some
 
     @property
     def iscsi_luns_num(self):

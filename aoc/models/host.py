@@ -43,8 +43,13 @@ class Host(object):
         'cpu_temperature_celsius': 'list[int]',
         'cpu_vendor': 'str',
         'data_ip': 'str',
+        'dirty_cache_space': 'int',
+        'dirty_cache_usage': 'float',
+        'disk_pools': 'list[NestedDiskPool]',
+        'disks': 'list[NestedDisk]',
         'downgraded_prioritized_space': 'int',
         'entity_async_status': 'EntityAsyncStatus',
+        'failure_cache_space': 'int',
         'failure_data_space': 'int',
         'gpu_devices': 'list[NestedGpuDevice]',
         'hdd_data_capacity': 'int',
@@ -53,6 +58,7 @@ class Host(object):
         'hypervisor_ip': 'str',
         'id': 'str',
         'iommu': 'IommuStatus',
+        'ipmi': 'NestedIpmi',
         'is_os_in_raid1': 'bool',
         'labels': 'list[NestedLabel]',
         'local_id': 'str',
@@ -75,6 +81,7 @@ class Host(object):
         'planned_prioritized_space': 'int',
         'pmem_dimm_capacity': 'int',
         'pmem_dimm_count': 'int',
+        'pmem_dimms': 'list[NestedPmemDimm]',
         'pmem_disk_count': 'int',
         'prio_space_percentage': 'float',
         'provisioned_cpu_cores': 'int',
@@ -107,7 +114,9 @@ class Host(object):
         'vm_num': 'int',
         'vmotion_ip': 'str',
         'vms': 'list[NestedVm]',
-        'with_faster_ssd_as_cache': 'bool'
+        'vsphere_esxi_account': 'NestedVsphereEsxiAccount',
+        'with_faster_ssd_as_cache': 'bool',
+        'zone': 'NestedZone'
     }
 
     attribute_map = {
@@ -129,8 +138,13 @@ class Host(object):
         'cpu_temperature_celsius': 'cpu_temperature_celsius',
         'cpu_vendor': 'cpu_vendor',
         'data_ip': 'data_ip',
+        'dirty_cache_space': 'dirty_cache_space',
+        'dirty_cache_usage': 'dirty_cache_usage',
+        'disk_pools': 'disk_pools',
+        'disks': 'disks',
         'downgraded_prioritized_space': 'downgraded_prioritized_space',
         'entity_async_status': 'entityAsyncStatus',
+        'failure_cache_space': 'failure_cache_space',
         'failure_data_space': 'failure_data_space',
         'gpu_devices': 'gpu_devices',
         'hdd_data_capacity': 'hdd_data_capacity',
@@ -139,6 +153,7 @@ class Host(object):
         'hypervisor_ip': 'hypervisor_ip',
         'id': 'id',
         'iommu': 'iommu',
+        'ipmi': 'ipmi',
         'is_os_in_raid1': 'is_os_in_raid1',
         'labels': 'labels',
         'local_id': 'local_id',
@@ -161,6 +176,7 @@ class Host(object):
         'planned_prioritized_space': 'planned_prioritized_space',
         'pmem_dimm_capacity': 'pmem_dimm_capacity',
         'pmem_dimm_count': 'pmem_dimm_count',
+        'pmem_dimms': 'pmem_dimms',
         'pmem_disk_count': 'pmem_disk_count',
         'prio_space_percentage': 'prio_space_percentage',
         'provisioned_cpu_cores': 'provisioned_cpu_cores',
@@ -193,7 +209,9 @@ class Host(object):
         'vm_num': 'vm_num',
         'vmotion_ip': 'vmotion_ip',
         'vms': 'vms',
-        'with_faster_ssd_as_cache': 'with_faster_ssd_as_cache'
+        'vsphere_esxi_account': 'vsphereEsxiAccount',
+        'with_faster_ssd_as_cache': 'with_faster_ssd_as_cache',
+        'zone': 'zone'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
@@ -218,8 +236,13 @@ class Host(object):
         self._cpu_temperature_celsius = None
         self._cpu_vendor = None
         self._data_ip = None
+        self._dirty_cache_space = None
+        self._dirty_cache_usage = None
+        self._disk_pools = None
+        self._disks = None
         self._downgraded_prioritized_space = None
         self._entity_async_status = None
+        self._failure_cache_space = None
         self._failure_data_space = None
         self._gpu_devices = None
         self._hdd_data_capacity = None
@@ -228,6 +251,7 @@ class Host(object):
         self._hypervisor_ip = None
         self._id = None
         self._iommu = None
+        self._ipmi = None
         self._is_os_in_raid1 = None
         self._labels = None
         self._local_id = None
@@ -250,6 +274,7 @@ class Host(object):
         self._planned_prioritized_space = None
         self._pmem_dimm_capacity = None
         self._pmem_dimm_count = None
+        self._pmem_dimms = None
         self._pmem_disk_count = None
         self._prio_space_percentage = None
         self._provisioned_cpu_cores = None
@@ -282,7 +307,9 @@ class Host(object):
         self._vm_num = None
         self._vmotion_ip = None
         self._vms = None
+        self._vsphere_esxi_account = None
         self._with_faster_ssd_as_cache = None
+        self._zone = None
         self.discriminator = None
 
         self.access_ip = kwargs.get("access_ip", None)
@@ -312,8 +339,13 @@ class Host(object):
             self.cpu_temperature_celsius = kwargs["cpu_temperature_celsius"]
         self.cpu_vendor = kwargs.get("cpu_vendor", None)
         self.data_ip = kwargs.get("data_ip", None)
+        self.dirty_cache_space = kwargs.get("dirty_cache_space", None)
+        self.dirty_cache_usage = kwargs.get("dirty_cache_usage", None)
+        self.disk_pools = kwargs.get("disk_pools", None)
+        self.disks = kwargs.get("disks", None)
         self.downgraded_prioritized_space = kwargs.get("downgraded_prioritized_space", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
+        self.failure_cache_space = kwargs.get("failure_cache_space", None)
         if "failure_data_space" in kwargs:
             self.failure_data_space = kwargs["failure_data_space"]
         self.gpu_devices = kwargs.get("gpu_devices", None)
@@ -326,6 +358,7 @@ class Host(object):
         if "id" in kwargs:
             self.id = kwargs["id"]
         self.iommu = kwargs.get("iommu", None)
+        self.ipmi = kwargs.get("ipmi", None)
         self.is_os_in_raid1 = kwargs.get("is_os_in_raid1", None)
         self.labels = kwargs.get("labels", None)
         if "local_id" in kwargs:
@@ -358,6 +391,7 @@ class Host(object):
             self.pmem_dimm_capacity = kwargs["pmem_dimm_capacity"]
         if "pmem_dimm_count" in kwargs:
             self.pmem_dimm_count = kwargs["pmem_dimm_count"]
+        self.pmem_dimms = kwargs.get("pmem_dimms", None)
         if "pmem_disk_count" in kwargs:
             self.pmem_disk_count = kwargs["pmem_disk_count"]
         self.prio_space_percentage = kwargs.get("prio_space_percentage", None)
@@ -403,7 +437,9 @@ class Host(object):
         self.vm_num = kwargs.get("vm_num", None)
         self.vmotion_ip = kwargs.get("vmotion_ip", None)
         self.vms = kwargs.get("vms", None)
+        self.vsphere_esxi_account = kwargs.get("vsphere_esxi_account", None)
         self.with_faster_ssd_as_cache = kwargs.get("with_faster_ssd_as_cache", None)
+        self.zone = kwargs.get("zone", None)
 
     @property
     def access_ip(self):
@@ -802,6 +838,90 @@ class Host(object):
         self._data_ip = data_ip
 
     @property
+    def dirty_cache_space(self):
+        """Gets the dirty_cache_space of this Host.  # noqa: E501
+
+
+        :return: The dirty_cache_space of this Host.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space
+
+    @dirty_cache_space.setter
+    def dirty_cache_space(self, dirty_cache_space):
+        """Sets the dirty_cache_space of this Host.
+
+
+        :param dirty_cache_space: The dirty_cache_space of this Host.  # noqa: E501
+        :type dirty_cache_space: int
+        """
+
+        self._dirty_cache_space = dirty_cache_space
+
+    @property
+    def dirty_cache_usage(self):
+        """Gets the dirty_cache_usage of this Host.  # noqa: E501
+
+
+        :return: The dirty_cache_usage of this Host.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage
+
+    @dirty_cache_usage.setter
+    def dirty_cache_usage(self, dirty_cache_usage):
+        """Sets the dirty_cache_usage of this Host.
+
+
+        :param dirty_cache_usage: The dirty_cache_usage of this Host.  # noqa: E501
+        :type dirty_cache_usage: float
+        """
+
+        self._dirty_cache_usage = dirty_cache_usage
+
+    @property
+    def disk_pools(self):
+        """Gets the disk_pools of this Host.  # noqa: E501
+
+
+        :return: The disk_pools of this Host.  # noqa: E501
+        :rtype: list[NestedDiskPool]
+        """
+        return self._disk_pools
+
+    @disk_pools.setter
+    def disk_pools(self, disk_pools):
+        """Sets the disk_pools of this Host.
+
+
+        :param disk_pools: The disk_pools of this Host.  # noqa: E501
+        :type disk_pools: list[NestedDiskPool]
+        """
+
+        self._disk_pools = disk_pools
+
+    @property
+    def disks(self):
+        """Gets the disks of this Host.  # noqa: E501
+
+
+        :return: The disks of this Host.  # noqa: E501
+        :rtype: list[NestedDisk]
+        """
+        return self._disks
+
+    @disks.setter
+    def disks(self, disks):
+        """Sets the disks of this Host.
+
+
+        :param disks: The disks of this Host.  # noqa: E501
+        :type disks: list[NestedDisk]
+        """
+
+        self._disks = disks
+
+    @property
     def downgraded_prioritized_space(self):
         """Gets the downgraded_prioritized_space of this Host.  # noqa: E501
 
@@ -842,6 +962,27 @@ class Host(object):
         """
 
         self._entity_async_status = entity_async_status
+
+    @property
+    def failure_cache_space(self):
+        """Gets the failure_cache_space of this Host.  # noqa: E501
+
+
+        :return: The failure_cache_space of this Host.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space
+
+    @failure_cache_space.setter
+    def failure_cache_space(self, failure_cache_space):
+        """Sets the failure_cache_space of this Host.
+
+
+        :param failure_cache_space: The failure_cache_space of this Host.  # noqa: E501
+        :type failure_cache_space: int
+        """
+
+        self._failure_cache_space = failure_cache_space
 
     @property
     def failure_data_space(self):
@@ -1018,6 +1159,27 @@ class Host(object):
         """
 
         self._iommu = iommu
+
+    @property
+    def ipmi(self):
+        """Gets the ipmi of this Host.  # noqa: E501
+
+
+        :return: The ipmi of this Host.  # noqa: E501
+        :rtype: NestedIpmi
+        """
+        return self._ipmi
+
+    @ipmi.setter
+    def ipmi(self, ipmi):
+        """Sets the ipmi of this Host.
+
+
+        :param ipmi: The ipmi of this Host.  # noqa: E501
+        :type ipmi: NestedIpmi
+        """
+
+        self._ipmi = ipmi
 
     @property
     def is_os_in_raid1(self):
@@ -1500,6 +1662,27 @@ class Host(object):
             raise ValueError("Invalid value for `pmem_dimm_count`, must not be `None`")  # noqa: E501
 
         self._pmem_dimm_count = pmem_dimm_count
+
+    @property
+    def pmem_dimms(self):
+        """Gets the pmem_dimms of this Host.  # noqa: E501
+
+
+        :return: The pmem_dimms of this Host.  # noqa: E501
+        :rtype: list[NestedPmemDimm]
+        """
+        return self._pmem_dimms
+
+    @pmem_dimms.setter
+    def pmem_dimms(self, pmem_dimms):
+        """Sets the pmem_dimms of this Host.
+
+
+        :param pmem_dimms: The pmem_dimms of this Host.  # noqa: E501
+        :type pmem_dimms: list[NestedPmemDimm]
+        """
+
+        self._pmem_dimms = pmem_dimms
 
     @property
     def pmem_disk_count(self):
@@ -2200,6 +2383,27 @@ class Host(object):
         self._vms = vms
 
     @property
+    def vsphere_esxi_account(self):
+        """Gets the vsphere_esxi_account of this Host.  # noqa: E501
+
+
+        :return: The vsphere_esxi_account of this Host.  # noqa: E501
+        :rtype: NestedVsphereEsxiAccount
+        """
+        return self._vsphere_esxi_account
+
+    @vsphere_esxi_account.setter
+    def vsphere_esxi_account(self, vsphere_esxi_account):
+        """Sets the vsphere_esxi_account of this Host.
+
+
+        :param vsphere_esxi_account: The vsphere_esxi_account of this Host.  # noqa: E501
+        :type vsphere_esxi_account: NestedVsphereEsxiAccount
+        """
+
+        self._vsphere_esxi_account = vsphere_esxi_account
+
+    @property
     def with_faster_ssd_as_cache(self):
         """Gets the with_faster_ssd_as_cache of this Host.  # noqa: E501
 
@@ -2219,6 +2423,27 @@ class Host(object):
         """
 
         self._with_faster_ssd_as_cache = with_faster_ssd_as_cache
+
+    @property
+    def zone(self):
+        """Gets the zone of this Host.  # noqa: E501
+
+
+        :return: The zone of this Host.  # noqa: E501
+        :rtype: NestedZone
+        """
+        return self._zone
+
+    @zone.setter
+    def zone(self, zone):
+        """Sets the zone of this Host.
+
+
+        :param zone: The zone of this Host.  # noqa: E501
+        :type zone: NestedZone
+        """
+
+        self._zone = zone
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

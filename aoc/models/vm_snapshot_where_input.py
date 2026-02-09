@@ -176,6 +176,7 @@ class VmSnapshotWhereInput(object):
         'size_lte': 'int',
         'size_not': 'int',
         'size_not_in': 'list[int]',
+        'snapshot_group': 'SnapshotGroupWhereInput',
         'vcpu': 'int',
         'vcpu_gt': 'int',
         'vcpu_gte': 'int',
@@ -341,6 +342,7 @@ class VmSnapshotWhereInput(object):
         'size_lte': 'size_lte',
         'size_not': 'size_not',
         'size_not_in': 'size_not_in',
+        'snapshot_group': 'snapshot_group',
         'vcpu': 'vcpu',
         'vcpu_gt': 'vcpu_gt',
         'vcpu_gte': 'vcpu_gte',
@@ -509,6 +511,7 @@ class VmSnapshotWhereInput(object):
         self._size_lte = None
         self._size_not = None
         self._size_not_in = None
+        self._snapshot_group = None
         self._vcpu = None
         self._vcpu_gt = None
         self._vcpu_gte = None
@@ -673,6 +676,7 @@ class VmSnapshotWhereInput(object):
         self.size_lte = kwargs.get("size_lte", None)
         self.size_not = kwargs.get("size_not", None)
         self.size_not_in = kwargs.get("size_not_in", None)
+        self.snapshot_group = kwargs.get("snapshot_group", None)
         self.vcpu = kwargs.get("vcpu", None)
         self.vcpu_gt = kwargs.get("vcpu_gt", None)
         self.vcpu_gte = kwargs.get("vcpu_gte", None)
@@ -3855,6 +3859,27 @@ class VmSnapshotWhereInput(object):
         """
 
         self._size_not_in = size_not_in
+
+    @property
+    def snapshot_group(self):
+        """Gets the snapshot_group of this VmSnapshotWhereInput.  # noqa: E501
+
+
+        :return: The snapshot_group of this VmSnapshotWhereInput.  # noqa: E501
+        :rtype: SnapshotGroupWhereInput
+        """
+        return self._snapshot_group
+
+    @snapshot_group.setter
+    def snapshot_group(self, snapshot_group):
+        """Sets the snapshot_group of this VmSnapshotWhereInput.
+
+
+        :param snapshot_group: The snapshot_group of this VmSnapshotWhereInput.  # noqa: E501
+        :type snapshot_group: SnapshotGroupWhereInput
+        """
+
+        self._snapshot_group = snapshot_group
 
     @property
     def vcpu(self):

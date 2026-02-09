@@ -60,6 +60,9 @@ class ClusterWhereInput(object):
         'application_highest_version_not_in': 'list[str]',
         'application_highest_version_not_starts_with': 'str',
         'application_highest_version_starts_with': 'str',
+        'applications_every': 'ApplicationWhereInput',
+        'applications_none': 'ApplicationWhereInput',
+        'applications_some': 'ApplicationWhereInput',
         'architecture': 'Architecture',
         'architecture_in': 'list[Architecture]',
         'architecture_not': 'Architecture',
@@ -78,6 +81,9 @@ class ClusterWhereInput(object):
         'connect_state_in': 'list[ConnectState]',
         'connect_state_not': 'ConnectState',
         'connect_state_not_in': 'list[ConnectState]',
+        'consistency_groups_every': 'ConsistencyGroupWhereInput',
+        'consistency_groups_none': 'ConsistencyGroupWhereInput',
+        'consistency_groups_some': 'ConsistencyGroupWhereInput',
         'current_cpu_model': 'str',
         'current_cpu_model_contains': 'str',
         'current_cpu_model_ends_with': 'str',
@@ -111,6 +117,22 @@ class ClusterWhereInput(object):
         'datacenters_every': 'DatacenterWhereInput',
         'datacenters_none': 'DatacenterWhereInput',
         'datacenters_some': 'DatacenterWhereInput',
+        'dirty_cache_space': 'int',
+        'dirty_cache_space_gt': 'int',
+        'dirty_cache_space_gte': 'int',
+        'dirty_cache_space_in': 'list[int]',
+        'dirty_cache_space_lt': 'int',
+        'dirty_cache_space_lte': 'int',
+        'dirty_cache_space_not': 'int',
+        'dirty_cache_space_not_in': 'list[int]',
+        'dirty_cache_usage': 'float',
+        'dirty_cache_usage_gt': 'float',
+        'dirty_cache_usage_gte': 'float',
+        'dirty_cache_usage_in': 'list[float]',
+        'dirty_cache_usage_lt': 'float',
+        'dirty_cache_usage_lte': 'float',
+        'dirty_cache_usage_not': 'float',
+        'dirty_cache_usage_not_in': 'list[float]',
         'disconnected_date': 'str',
         'disconnected_date_gt': 'str',
         'disconnected_date_gte': 'str',
@@ -131,6 +153,7 @@ class ClusterWhereInput(object):
         'downgraded_prioritized_space_lte': 'int',
         'downgraded_prioritized_space_not': 'int',
         'downgraded_prioritized_space_not_in': 'list[int]',
+        'ecp_license': 'EcpLicenseWhereInput',
         'enable_tiering': 'bool',
         'enable_tiering_not': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
@@ -138,6 +161,14 @@ class ClusterWhereInput(object):
         'entity_async_status_not': 'EntityAsyncStatus',
         'entity_async_status_not_in': 'list[EntityAsyncStatus]',
         'everoute_cluster': 'EverouteClusterWhereInput',
+        'failure_cache_space': 'int',
+        'failure_cache_space_gt': 'int',
+        'failure_cache_space_gte': 'int',
+        'failure_cache_space_in': 'list[int]',
+        'failure_cache_space_lt': 'int',
+        'failure_cache_space_lte': 'int',
+        'failure_cache_space_not': 'int',
+        'failure_cache_space_not_in': 'list[int]',
         'failure_data_space': 'int',
         'failure_data_space_gt': 'int',
         'failure_data_space_gte': 'int',
@@ -532,6 +563,7 @@ class ClusterWhereInput(object):
         'running_vm_num_lte': 'int',
         'running_vm_num_not': 'int',
         'running_vm_num_not_in': 'list[int]',
+        'settings': 'ClusterSettingsWhereInput',
         'software_edition': 'SoftwareEdition',
         'software_edition_in': 'list[SoftwareEdition]',
         'software_edition_not': 'SoftwareEdition',
@@ -686,6 +718,7 @@ class ClusterWhereInput(object):
         'valid_data_space_lte': 'int',
         'valid_data_space_not': 'int',
         'valid_data_space_not_in': 'list[int]',
+        'vcenter_account': 'VcenterAccountWhereInput',
         'vdses_every': 'VdsWhereInput',
         'vdses_none': 'VdsWhereInput',
         'vdses_some': 'VdsWhereInput',
@@ -721,7 +754,11 @@ class ClusterWhereInput(object):
         'vm_templates_some': 'VmTemplateWhereInput',
         'vms_every': 'VmWhereInput',
         'vms_none': 'VmWhereInput',
-        'vms_some': 'VmWhereInput'
+        'vms_some': 'VmWhereInput',
+        'witness': 'WitnessWhereInput',
+        'zones_every': 'ZoneWhereInput',
+        'zones_none': 'ZoneWhereInput',
+        'zones_some': 'ZoneWhereInput'
     }
 
     attribute_map = {
@@ -760,6 +797,9 @@ class ClusterWhereInput(object):
         'application_highest_version_not_in': 'application_highest_version_not_in',
         'application_highest_version_not_starts_with': 'application_highest_version_not_starts_with',
         'application_highest_version_starts_with': 'application_highest_version_starts_with',
+        'applications_every': 'applications_every',
+        'applications_none': 'applications_none',
+        'applications_some': 'applications_some',
         'architecture': 'architecture',
         'architecture_in': 'architecture_in',
         'architecture_not': 'architecture_not',
@@ -778,6 +818,9 @@ class ClusterWhereInput(object):
         'connect_state_in': 'connect_state_in',
         'connect_state_not': 'connect_state_not',
         'connect_state_not_in': 'connect_state_not_in',
+        'consistency_groups_every': 'consistency_groups_every',
+        'consistency_groups_none': 'consistency_groups_none',
+        'consistency_groups_some': 'consistency_groups_some',
         'current_cpu_model': 'current_cpu_model',
         'current_cpu_model_contains': 'current_cpu_model_contains',
         'current_cpu_model_ends_with': 'current_cpu_model_ends_with',
@@ -811,6 +854,22 @@ class ClusterWhereInput(object):
         'datacenters_every': 'datacenters_every',
         'datacenters_none': 'datacenters_none',
         'datacenters_some': 'datacenters_some',
+        'dirty_cache_space': 'dirty_cache_space',
+        'dirty_cache_space_gt': 'dirty_cache_space_gt',
+        'dirty_cache_space_gte': 'dirty_cache_space_gte',
+        'dirty_cache_space_in': 'dirty_cache_space_in',
+        'dirty_cache_space_lt': 'dirty_cache_space_lt',
+        'dirty_cache_space_lte': 'dirty_cache_space_lte',
+        'dirty_cache_space_not': 'dirty_cache_space_not',
+        'dirty_cache_space_not_in': 'dirty_cache_space_not_in',
+        'dirty_cache_usage': 'dirty_cache_usage',
+        'dirty_cache_usage_gt': 'dirty_cache_usage_gt',
+        'dirty_cache_usage_gte': 'dirty_cache_usage_gte',
+        'dirty_cache_usage_in': 'dirty_cache_usage_in',
+        'dirty_cache_usage_lt': 'dirty_cache_usage_lt',
+        'dirty_cache_usage_lte': 'dirty_cache_usage_lte',
+        'dirty_cache_usage_not': 'dirty_cache_usage_not',
+        'dirty_cache_usage_not_in': 'dirty_cache_usage_not_in',
         'disconnected_date': 'disconnected_date',
         'disconnected_date_gt': 'disconnected_date_gt',
         'disconnected_date_gte': 'disconnected_date_gte',
@@ -831,6 +890,7 @@ class ClusterWhereInput(object):
         'downgraded_prioritized_space_lte': 'downgraded_prioritized_space_lte',
         'downgraded_prioritized_space_not': 'downgraded_prioritized_space_not',
         'downgraded_prioritized_space_not_in': 'downgraded_prioritized_space_not_in',
+        'ecp_license': 'ecp_license',
         'enable_tiering': 'enable_tiering',
         'enable_tiering_not': 'enable_tiering_not',
         'entity_async_status': 'entityAsyncStatus',
@@ -838,6 +898,14 @@ class ClusterWhereInput(object):
         'entity_async_status_not': 'entityAsyncStatus_not',
         'entity_async_status_not_in': 'entityAsyncStatus_not_in',
         'everoute_cluster': 'everoute_cluster',
+        'failure_cache_space': 'failure_cache_space',
+        'failure_cache_space_gt': 'failure_cache_space_gt',
+        'failure_cache_space_gte': 'failure_cache_space_gte',
+        'failure_cache_space_in': 'failure_cache_space_in',
+        'failure_cache_space_lt': 'failure_cache_space_lt',
+        'failure_cache_space_lte': 'failure_cache_space_lte',
+        'failure_cache_space_not': 'failure_cache_space_not',
+        'failure_cache_space_not_in': 'failure_cache_space_not_in',
         'failure_data_space': 'failure_data_space',
         'failure_data_space_gt': 'failure_data_space_gt',
         'failure_data_space_gte': 'failure_data_space_gte',
@@ -1232,6 +1300,7 @@ class ClusterWhereInput(object):
         'running_vm_num_lte': 'running_vm_num_lte',
         'running_vm_num_not': 'running_vm_num_not',
         'running_vm_num_not_in': 'running_vm_num_not_in',
+        'settings': 'settings',
         'software_edition': 'software_edition',
         'software_edition_in': 'software_edition_in',
         'software_edition_not': 'software_edition_not',
@@ -1386,6 +1455,7 @@ class ClusterWhereInput(object):
         'valid_data_space_lte': 'valid_data_space_lte',
         'valid_data_space_not': 'valid_data_space_not',
         'valid_data_space_not_in': 'valid_data_space_not_in',
+        'vcenter_account': 'vcenterAccount',
         'vdses_every': 'vdses_every',
         'vdses_none': 'vdses_none',
         'vdses_some': 'vdses_some',
@@ -1421,7 +1491,11 @@ class ClusterWhereInput(object):
         'vm_templates_some': 'vm_templates_some',
         'vms_every': 'vms_every',
         'vms_none': 'vms_none',
-        'vms_some': 'vms_some'
+        'vms_some': 'vms_some',
+        'witness': 'witness',
+        'zones_every': 'zones_every',
+        'zones_none': 'zones_none',
+        'zones_some': 'zones_some'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
@@ -1463,6 +1537,9 @@ class ClusterWhereInput(object):
         self._application_highest_version_not_in = None
         self._application_highest_version_not_starts_with = None
         self._application_highest_version_starts_with = None
+        self._applications_every = None
+        self._applications_none = None
+        self._applications_some = None
         self._architecture = None
         self._architecture_in = None
         self._architecture_not = None
@@ -1481,6 +1558,9 @@ class ClusterWhereInput(object):
         self._connect_state_in = None
         self._connect_state_not = None
         self._connect_state_not_in = None
+        self._consistency_groups_every = None
+        self._consistency_groups_none = None
+        self._consistency_groups_some = None
         self._current_cpu_model = None
         self._current_cpu_model_contains = None
         self._current_cpu_model_ends_with = None
@@ -1514,6 +1594,22 @@ class ClusterWhereInput(object):
         self._datacenters_every = None
         self._datacenters_none = None
         self._datacenters_some = None
+        self._dirty_cache_space = None
+        self._dirty_cache_space_gt = None
+        self._dirty_cache_space_gte = None
+        self._dirty_cache_space_in = None
+        self._dirty_cache_space_lt = None
+        self._dirty_cache_space_lte = None
+        self._dirty_cache_space_not = None
+        self._dirty_cache_space_not_in = None
+        self._dirty_cache_usage = None
+        self._dirty_cache_usage_gt = None
+        self._dirty_cache_usage_gte = None
+        self._dirty_cache_usage_in = None
+        self._dirty_cache_usage_lt = None
+        self._dirty_cache_usage_lte = None
+        self._dirty_cache_usage_not = None
+        self._dirty_cache_usage_not_in = None
         self._disconnected_date = None
         self._disconnected_date_gt = None
         self._disconnected_date_gte = None
@@ -1534,6 +1630,7 @@ class ClusterWhereInput(object):
         self._downgraded_prioritized_space_lte = None
         self._downgraded_prioritized_space_not = None
         self._downgraded_prioritized_space_not_in = None
+        self._ecp_license = None
         self._enable_tiering = None
         self._enable_tiering_not = None
         self._entity_async_status = None
@@ -1541,6 +1638,14 @@ class ClusterWhereInput(object):
         self._entity_async_status_not = None
         self._entity_async_status_not_in = None
         self._everoute_cluster = None
+        self._failure_cache_space = None
+        self._failure_cache_space_gt = None
+        self._failure_cache_space_gte = None
+        self._failure_cache_space_in = None
+        self._failure_cache_space_lt = None
+        self._failure_cache_space_lte = None
+        self._failure_cache_space_not = None
+        self._failure_cache_space_not_in = None
         self._failure_data_space = None
         self._failure_data_space_gt = None
         self._failure_data_space_gte = None
@@ -1935,6 +2040,7 @@ class ClusterWhereInput(object):
         self._running_vm_num_lte = None
         self._running_vm_num_not = None
         self._running_vm_num_not_in = None
+        self._settings = None
         self._software_edition = None
         self._software_edition_in = None
         self._software_edition_not = None
@@ -2089,6 +2195,7 @@ class ClusterWhereInput(object):
         self._valid_data_space_lte = None
         self._valid_data_space_not = None
         self._valid_data_space_not_in = None
+        self._vcenter_account = None
         self._vdses_every = None
         self._vdses_none = None
         self._vdses_some = None
@@ -2125,6 +2232,10 @@ class ClusterWhereInput(object):
         self._vms_every = None
         self._vms_none = None
         self._vms_some = None
+        self._witness = None
+        self._zones_every = None
+        self._zones_none = None
+        self._zones_some = None
         self.discriminator = None
 
         self._and = kwargs.get("_and", None)
@@ -2162,6 +2273,9 @@ class ClusterWhereInput(object):
         self.application_highest_version_not_in = kwargs.get("application_highest_version_not_in", None)
         self.application_highest_version_not_starts_with = kwargs.get("application_highest_version_not_starts_with", None)
         self.application_highest_version_starts_with = kwargs.get("application_highest_version_starts_with", None)
+        self.applications_every = kwargs.get("applications_every", None)
+        self.applications_none = kwargs.get("applications_none", None)
+        self.applications_some = kwargs.get("applications_some", None)
         self.architecture = kwargs.get("architecture", None)
         self.architecture_in = kwargs.get("architecture_in", None)
         self.architecture_not = kwargs.get("architecture_not", None)
@@ -2180,6 +2294,9 @@ class ClusterWhereInput(object):
         self.connect_state_in = kwargs.get("connect_state_in", None)
         self.connect_state_not = kwargs.get("connect_state_not", None)
         self.connect_state_not_in = kwargs.get("connect_state_not_in", None)
+        self.consistency_groups_every = kwargs.get("consistency_groups_every", None)
+        self.consistency_groups_none = kwargs.get("consistency_groups_none", None)
+        self.consistency_groups_some = kwargs.get("consistency_groups_some", None)
         self.current_cpu_model = kwargs.get("current_cpu_model", None)
         self.current_cpu_model_contains = kwargs.get("current_cpu_model_contains", None)
         self.current_cpu_model_ends_with = kwargs.get("current_cpu_model_ends_with", None)
@@ -2213,6 +2330,22 @@ class ClusterWhereInput(object):
         self.datacenters_every = kwargs.get("datacenters_every", None)
         self.datacenters_none = kwargs.get("datacenters_none", None)
         self.datacenters_some = kwargs.get("datacenters_some", None)
+        self.dirty_cache_space = kwargs.get("dirty_cache_space", None)
+        self.dirty_cache_space_gt = kwargs.get("dirty_cache_space_gt", None)
+        self.dirty_cache_space_gte = kwargs.get("dirty_cache_space_gte", None)
+        self.dirty_cache_space_in = kwargs.get("dirty_cache_space_in", None)
+        self.dirty_cache_space_lt = kwargs.get("dirty_cache_space_lt", None)
+        self.dirty_cache_space_lte = kwargs.get("dirty_cache_space_lte", None)
+        self.dirty_cache_space_not = kwargs.get("dirty_cache_space_not", None)
+        self.dirty_cache_space_not_in = kwargs.get("dirty_cache_space_not_in", None)
+        self.dirty_cache_usage = kwargs.get("dirty_cache_usage", None)
+        self.dirty_cache_usage_gt = kwargs.get("dirty_cache_usage_gt", None)
+        self.dirty_cache_usage_gte = kwargs.get("dirty_cache_usage_gte", None)
+        self.dirty_cache_usage_in = kwargs.get("dirty_cache_usage_in", None)
+        self.dirty_cache_usage_lt = kwargs.get("dirty_cache_usage_lt", None)
+        self.dirty_cache_usage_lte = kwargs.get("dirty_cache_usage_lte", None)
+        self.dirty_cache_usage_not = kwargs.get("dirty_cache_usage_not", None)
+        self.dirty_cache_usage_not_in = kwargs.get("dirty_cache_usage_not_in", None)
         self.disconnected_date = kwargs.get("disconnected_date", None)
         self.disconnected_date_gt = kwargs.get("disconnected_date_gt", None)
         self.disconnected_date_gte = kwargs.get("disconnected_date_gte", None)
@@ -2233,6 +2366,7 @@ class ClusterWhereInput(object):
         self.downgraded_prioritized_space_lte = kwargs.get("downgraded_prioritized_space_lte", None)
         self.downgraded_prioritized_space_not = kwargs.get("downgraded_prioritized_space_not", None)
         self.downgraded_prioritized_space_not_in = kwargs.get("downgraded_prioritized_space_not_in", None)
+        self.ecp_license = kwargs.get("ecp_license", None)
         self.enable_tiering = kwargs.get("enable_tiering", None)
         self.enable_tiering_not = kwargs.get("enable_tiering_not", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
@@ -2240,6 +2374,14 @@ class ClusterWhereInput(object):
         self.entity_async_status_not = kwargs.get("entity_async_status_not", None)
         self.entity_async_status_not_in = kwargs.get("entity_async_status_not_in", None)
         self.everoute_cluster = kwargs.get("everoute_cluster", None)
+        self.failure_cache_space = kwargs.get("failure_cache_space", None)
+        self.failure_cache_space_gt = kwargs.get("failure_cache_space_gt", None)
+        self.failure_cache_space_gte = kwargs.get("failure_cache_space_gte", None)
+        self.failure_cache_space_in = kwargs.get("failure_cache_space_in", None)
+        self.failure_cache_space_lt = kwargs.get("failure_cache_space_lt", None)
+        self.failure_cache_space_lte = kwargs.get("failure_cache_space_lte", None)
+        self.failure_cache_space_not = kwargs.get("failure_cache_space_not", None)
+        self.failure_cache_space_not_in = kwargs.get("failure_cache_space_not_in", None)
         self.failure_data_space = kwargs.get("failure_data_space", None)
         self.failure_data_space_gt = kwargs.get("failure_data_space_gt", None)
         self.failure_data_space_gte = kwargs.get("failure_data_space_gte", None)
@@ -2634,6 +2776,7 @@ class ClusterWhereInput(object):
         self.running_vm_num_lte = kwargs.get("running_vm_num_lte", None)
         self.running_vm_num_not = kwargs.get("running_vm_num_not", None)
         self.running_vm_num_not_in = kwargs.get("running_vm_num_not_in", None)
+        self.settings = kwargs.get("settings", None)
         self.software_edition = kwargs.get("software_edition", None)
         self.software_edition_in = kwargs.get("software_edition_in", None)
         self.software_edition_not = kwargs.get("software_edition_not", None)
@@ -2788,6 +2931,7 @@ class ClusterWhereInput(object):
         self.valid_data_space_lte = kwargs.get("valid_data_space_lte", None)
         self.valid_data_space_not = kwargs.get("valid_data_space_not", None)
         self.valid_data_space_not_in = kwargs.get("valid_data_space_not_in", None)
+        self.vcenter_account = kwargs.get("vcenter_account", None)
         self.vdses_every = kwargs.get("vdses_every", None)
         self.vdses_none = kwargs.get("vdses_none", None)
         self.vdses_some = kwargs.get("vdses_some", None)
@@ -2824,6 +2968,10 @@ class ClusterWhereInput(object):
         self.vms_every = kwargs.get("vms_every", None)
         self.vms_none = kwargs.get("vms_none", None)
         self.vms_some = kwargs.get("vms_some", None)
+        self.witness = kwargs.get("witness", None)
+        self.zones_every = kwargs.get("zones_every", None)
+        self.zones_none = kwargs.get("zones_none", None)
+        self.zones_some = kwargs.get("zones_some", None)
 
     @property
     def _and(self):
@@ -3561,6 +3709,69 @@ class ClusterWhereInput(object):
         self._application_highest_version_starts_with = application_highest_version_starts_with
 
     @property
+    def applications_every(self):
+        """Gets the applications_every of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The applications_every of this ClusterWhereInput.  # noqa: E501
+        :rtype: ApplicationWhereInput
+        """
+        return self._applications_every
+
+    @applications_every.setter
+    def applications_every(self, applications_every):
+        """Sets the applications_every of this ClusterWhereInput.
+
+
+        :param applications_every: The applications_every of this ClusterWhereInput.  # noqa: E501
+        :type applications_every: ApplicationWhereInput
+        """
+
+        self._applications_every = applications_every
+
+    @property
+    def applications_none(self):
+        """Gets the applications_none of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The applications_none of this ClusterWhereInput.  # noqa: E501
+        :rtype: ApplicationWhereInput
+        """
+        return self._applications_none
+
+    @applications_none.setter
+    def applications_none(self, applications_none):
+        """Sets the applications_none of this ClusterWhereInput.
+
+
+        :param applications_none: The applications_none of this ClusterWhereInput.  # noqa: E501
+        :type applications_none: ApplicationWhereInput
+        """
+
+        self._applications_none = applications_none
+
+    @property
+    def applications_some(self):
+        """Gets the applications_some of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The applications_some of this ClusterWhereInput.  # noqa: E501
+        :rtype: ApplicationWhereInput
+        """
+        return self._applications_some
+
+    @applications_some.setter
+    def applications_some(self, applications_some):
+        """Sets the applications_some of this ClusterWhereInput.
+
+
+        :param applications_some: The applications_some of this ClusterWhereInput.  # noqa: E501
+        :type applications_some: ApplicationWhereInput
+        """
+
+        self._applications_some = applications_some
+
+    @property
     def architecture(self):
         """Gets the architecture of this ClusterWhereInput.  # noqa: E501
 
@@ -3937,6 +4148,69 @@ class ClusterWhereInput(object):
         """
 
         self._connect_state_not_in = connect_state_not_in
+
+    @property
+    def consistency_groups_every(self):
+        """Gets the consistency_groups_every of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The consistency_groups_every of this ClusterWhereInput.  # noqa: E501
+        :rtype: ConsistencyGroupWhereInput
+        """
+        return self._consistency_groups_every
+
+    @consistency_groups_every.setter
+    def consistency_groups_every(self, consistency_groups_every):
+        """Sets the consistency_groups_every of this ClusterWhereInput.
+
+
+        :param consistency_groups_every: The consistency_groups_every of this ClusterWhereInput.  # noqa: E501
+        :type consistency_groups_every: ConsistencyGroupWhereInput
+        """
+
+        self._consistency_groups_every = consistency_groups_every
+
+    @property
+    def consistency_groups_none(self):
+        """Gets the consistency_groups_none of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The consistency_groups_none of this ClusterWhereInput.  # noqa: E501
+        :rtype: ConsistencyGroupWhereInput
+        """
+        return self._consistency_groups_none
+
+    @consistency_groups_none.setter
+    def consistency_groups_none(self, consistency_groups_none):
+        """Sets the consistency_groups_none of this ClusterWhereInput.
+
+
+        :param consistency_groups_none: The consistency_groups_none of this ClusterWhereInput.  # noqa: E501
+        :type consistency_groups_none: ConsistencyGroupWhereInput
+        """
+
+        self._consistency_groups_none = consistency_groups_none
+
+    @property
+    def consistency_groups_some(self):
+        """Gets the consistency_groups_some of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The consistency_groups_some of this ClusterWhereInput.  # noqa: E501
+        :rtype: ConsistencyGroupWhereInput
+        """
+        return self._consistency_groups_some
+
+    @consistency_groups_some.setter
+    def consistency_groups_some(self, consistency_groups_some):
+        """Sets the consistency_groups_some of this ClusterWhereInput.
+
+
+        :param consistency_groups_some: The consistency_groups_some of this ClusterWhereInput.  # noqa: E501
+        :type consistency_groups_some: ConsistencyGroupWhereInput
+        """
+
+        self._consistency_groups_some = consistency_groups_some
 
     @property
     def current_cpu_model(self):
@@ -4632,6 +4906,342 @@ class ClusterWhereInput(object):
         self._datacenters_some = datacenters_some
 
     @property
+    def dirty_cache_space(self):
+        """Gets the dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space
+
+    @dirty_cache_space.setter
+    def dirty_cache_space(self, dirty_cache_space):
+        """Sets the dirty_cache_space of this ClusterWhereInput.
+
+
+        :param dirty_cache_space: The dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space: int
+        """
+
+        self._dirty_cache_space = dirty_cache_space
+
+    @property
+    def dirty_cache_space_gt(self):
+        """Gets the dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_gt
+
+    @dirty_cache_space_gt.setter
+    def dirty_cache_space_gt(self, dirty_cache_space_gt):
+        """Sets the dirty_cache_space_gt of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_gt: The dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_gt: int
+        """
+
+        self._dirty_cache_space_gt = dirty_cache_space_gt
+
+    @property
+    def dirty_cache_space_gte(self):
+        """Gets the dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_gte
+
+    @dirty_cache_space_gte.setter
+    def dirty_cache_space_gte(self, dirty_cache_space_gte):
+        """Sets the dirty_cache_space_gte of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_gte: The dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_gte: int
+        """
+
+        self._dirty_cache_space_gte = dirty_cache_space_gte
+
+    @property
+    def dirty_cache_space_in(self):
+        """Gets the dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._dirty_cache_space_in
+
+    @dirty_cache_space_in.setter
+    def dirty_cache_space_in(self, dirty_cache_space_in):
+        """Sets the dirty_cache_space_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_in: The dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_in: list[int]
+        """
+
+        self._dirty_cache_space_in = dirty_cache_space_in
+
+    @property
+    def dirty_cache_space_lt(self):
+        """Gets the dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_lt
+
+    @dirty_cache_space_lt.setter
+    def dirty_cache_space_lt(self, dirty_cache_space_lt):
+        """Sets the dirty_cache_space_lt of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_lt: The dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_lt: int
+        """
+
+        self._dirty_cache_space_lt = dirty_cache_space_lt
+
+    @property
+    def dirty_cache_space_lte(self):
+        """Gets the dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_lte
+
+    @dirty_cache_space_lte.setter
+    def dirty_cache_space_lte(self, dirty_cache_space_lte):
+        """Sets the dirty_cache_space_lte of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_lte: The dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_lte: int
+        """
+
+        self._dirty_cache_space_lte = dirty_cache_space_lte
+
+    @property
+    def dirty_cache_space_not(self):
+        """Gets the dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_not
+
+    @dirty_cache_space_not.setter
+    def dirty_cache_space_not(self, dirty_cache_space_not):
+        """Sets the dirty_cache_space_not of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_not: The dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_not: int
+        """
+
+        self._dirty_cache_space_not = dirty_cache_space_not
+
+    @property
+    def dirty_cache_space_not_in(self):
+        """Gets the dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._dirty_cache_space_not_in
+
+    @dirty_cache_space_not_in.setter
+    def dirty_cache_space_not_in(self, dirty_cache_space_not_in):
+        """Sets the dirty_cache_space_not_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_not_in: The dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_not_in: list[int]
+        """
+
+        self._dirty_cache_space_not_in = dirty_cache_space_not_in
+
+    @property
+    def dirty_cache_usage(self):
+        """Gets the dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage
+
+    @dirty_cache_usage.setter
+    def dirty_cache_usage(self, dirty_cache_usage):
+        """Sets the dirty_cache_usage of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage: The dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage: float
+        """
+
+        self._dirty_cache_usage = dirty_cache_usage
+
+    @property
+    def dirty_cache_usage_gt(self):
+        """Gets the dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_gt
+
+    @dirty_cache_usage_gt.setter
+    def dirty_cache_usage_gt(self, dirty_cache_usage_gt):
+        """Sets the dirty_cache_usage_gt of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_gt: The dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_gt: float
+        """
+
+        self._dirty_cache_usage_gt = dirty_cache_usage_gt
+
+    @property
+    def dirty_cache_usage_gte(self):
+        """Gets the dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_gte
+
+    @dirty_cache_usage_gte.setter
+    def dirty_cache_usage_gte(self, dirty_cache_usage_gte):
+        """Sets the dirty_cache_usage_gte of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_gte: The dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_gte: float
+        """
+
+        self._dirty_cache_usage_gte = dirty_cache_usage_gte
+
+    @property
+    def dirty_cache_usage_in(self):
+        """Gets the dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._dirty_cache_usage_in
+
+    @dirty_cache_usage_in.setter
+    def dirty_cache_usage_in(self, dirty_cache_usage_in):
+        """Sets the dirty_cache_usage_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_in: The dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_in: list[float]
+        """
+
+        self._dirty_cache_usage_in = dirty_cache_usage_in
+
+    @property
+    def dirty_cache_usage_lt(self):
+        """Gets the dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_lt
+
+    @dirty_cache_usage_lt.setter
+    def dirty_cache_usage_lt(self, dirty_cache_usage_lt):
+        """Sets the dirty_cache_usage_lt of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_lt: The dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_lt: float
+        """
+
+        self._dirty_cache_usage_lt = dirty_cache_usage_lt
+
+    @property
+    def dirty_cache_usage_lte(self):
+        """Gets the dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_lte
+
+    @dirty_cache_usage_lte.setter
+    def dirty_cache_usage_lte(self, dirty_cache_usage_lte):
+        """Sets the dirty_cache_usage_lte of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_lte: The dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_lte: float
+        """
+
+        self._dirty_cache_usage_lte = dirty_cache_usage_lte
+
+    @property
+    def dirty_cache_usage_not(self):
+        """Gets the dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_not
+
+    @dirty_cache_usage_not.setter
+    def dirty_cache_usage_not(self, dirty_cache_usage_not):
+        """Sets the dirty_cache_usage_not of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_not: The dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_not: float
+        """
+
+        self._dirty_cache_usage_not = dirty_cache_usage_not
+
+    @property
+    def dirty_cache_usage_not_in(self):
+        """Gets the dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._dirty_cache_usage_not_in
+
+    @dirty_cache_usage_not_in.setter
+    def dirty_cache_usage_not_in(self, dirty_cache_usage_not_in):
+        """Sets the dirty_cache_usage_not_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_not_in: The dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_not_in: list[float]
+        """
+
+        self._dirty_cache_usage_not_in = dirty_cache_usage_not_in
+
+    @property
     def disconnected_date(self):
         """Gets the disconnected_date of this ClusterWhereInput.  # noqa: E501
 
@@ -5052,6 +5662,27 @@ class ClusterWhereInput(object):
         self._downgraded_prioritized_space_not_in = downgraded_prioritized_space_not_in
 
     @property
+    def ecp_license(self):
+        """Gets the ecp_license of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The ecp_license of this ClusterWhereInput.  # noqa: E501
+        :rtype: EcpLicenseWhereInput
+        """
+        return self._ecp_license
+
+    @ecp_license.setter
+    def ecp_license(self, ecp_license):
+        """Sets the ecp_license of this ClusterWhereInput.
+
+
+        :param ecp_license: The ecp_license of this ClusterWhereInput.  # noqa: E501
+        :type ecp_license: EcpLicenseWhereInput
+        """
+
+        self._ecp_license = ecp_license
+
+    @property
     def enable_tiering(self):
         """Gets the enable_tiering of this ClusterWhereInput.  # noqa: E501
 
@@ -5197,6 +5828,174 @@ class ClusterWhereInput(object):
         """
 
         self._everoute_cluster = everoute_cluster
+
+    @property
+    def failure_cache_space(self):
+        """Gets the failure_cache_space of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space
+
+    @failure_cache_space.setter
+    def failure_cache_space(self, failure_cache_space):
+        """Sets the failure_cache_space of this ClusterWhereInput.
+
+
+        :param failure_cache_space: The failure_cache_space of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space: int
+        """
+
+        self._failure_cache_space = failure_cache_space
+
+    @property
+    def failure_cache_space_gt(self):
+        """Gets the failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_gt
+
+    @failure_cache_space_gt.setter
+    def failure_cache_space_gt(self, failure_cache_space_gt):
+        """Sets the failure_cache_space_gt of this ClusterWhereInput.
+
+
+        :param failure_cache_space_gt: The failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_gt: int
+        """
+
+        self._failure_cache_space_gt = failure_cache_space_gt
+
+    @property
+    def failure_cache_space_gte(self):
+        """Gets the failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_gte
+
+    @failure_cache_space_gte.setter
+    def failure_cache_space_gte(self, failure_cache_space_gte):
+        """Sets the failure_cache_space_gte of this ClusterWhereInput.
+
+
+        :param failure_cache_space_gte: The failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_gte: int
+        """
+
+        self._failure_cache_space_gte = failure_cache_space_gte
+
+    @property
+    def failure_cache_space_in(self):
+        """Gets the failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._failure_cache_space_in
+
+    @failure_cache_space_in.setter
+    def failure_cache_space_in(self, failure_cache_space_in):
+        """Sets the failure_cache_space_in of this ClusterWhereInput.
+
+
+        :param failure_cache_space_in: The failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_in: list[int]
+        """
+
+        self._failure_cache_space_in = failure_cache_space_in
+
+    @property
+    def failure_cache_space_lt(self):
+        """Gets the failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_lt
+
+    @failure_cache_space_lt.setter
+    def failure_cache_space_lt(self, failure_cache_space_lt):
+        """Sets the failure_cache_space_lt of this ClusterWhereInput.
+
+
+        :param failure_cache_space_lt: The failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_lt: int
+        """
+
+        self._failure_cache_space_lt = failure_cache_space_lt
+
+    @property
+    def failure_cache_space_lte(self):
+        """Gets the failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_lte
+
+    @failure_cache_space_lte.setter
+    def failure_cache_space_lte(self, failure_cache_space_lte):
+        """Sets the failure_cache_space_lte of this ClusterWhereInput.
+
+
+        :param failure_cache_space_lte: The failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_lte: int
+        """
+
+        self._failure_cache_space_lte = failure_cache_space_lte
+
+    @property
+    def failure_cache_space_not(self):
+        """Gets the failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_not
+
+    @failure_cache_space_not.setter
+    def failure_cache_space_not(self, failure_cache_space_not):
+        """Sets the failure_cache_space_not of this ClusterWhereInput.
+
+
+        :param failure_cache_space_not: The failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_not: int
+        """
+
+        self._failure_cache_space_not = failure_cache_space_not
+
+    @property
+    def failure_cache_space_not_in(self):
+        """Gets the failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._failure_cache_space_not_in
+
+    @failure_cache_space_not_in.setter
+    def failure_cache_space_not_in(self, failure_cache_space_not_in):
+        """Sets the failure_cache_space_not_in of this ClusterWhereInput.
+
+
+        :param failure_cache_space_not_in: The failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_not_in: list[int]
+        """
+
+        self._failure_cache_space_not_in = failure_cache_space_not_in
 
     @property
     def failure_data_space(self):
@@ -13473,6 +14272,27 @@ class ClusterWhereInput(object):
         self._running_vm_num_not_in = running_vm_num_not_in
 
     @property
+    def settings(self):
+        """Gets the settings of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The settings of this ClusterWhereInput.  # noqa: E501
+        :rtype: ClusterSettingsWhereInput
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """Sets the settings of this ClusterWhereInput.
+
+
+        :param settings: The settings of this ClusterWhereInput.  # noqa: E501
+        :type settings: ClusterSettingsWhereInput
+        """
+
+        self._settings = settings
+
+    @property
     def software_edition(self):
         """Gets the software_edition of this ClusterWhereInput.  # noqa: E501
 
@@ -16707,6 +17527,27 @@ class ClusterWhereInput(object):
         self._valid_data_space_not_in = valid_data_space_not_in
 
     @property
+    def vcenter_account(self):
+        """Gets the vcenter_account of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The vcenter_account of this ClusterWhereInput.  # noqa: E501
+        :rtype: VcenterAccountWhereInput
+        """
+        return self._vcenter_account
+
+    @vcenter_account.setter
+    def vcenter_account(self, vcenter_account):
+        """Sets the vcenter_account of this ClusterWhereInput.
+
+
+        :param vcenter_account: The vcenter_account of this ClusterWhereInput.  # noqa: E501
+        :type vcenter_account: VcenterAccountWhereInput
+        """
+
+        self._vcenter_account = vcenter_account
+
+    @property
     def vdses_every(self):
         """Gets the vdses_every of this ClusterWhereInput.  # noqa: E501
 
@@ -17461,6 +18302,90 @@ class ClusterWhereInput(object):
         """
 
         self._vms_some = vms_some
+
+    @property
+    def witness(self):
+        """Gets the witness of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The witness of this ClusterWhereInput.  # noqa: E501
+        :rtype: WitnessWhereInput
+        """
+        return self._witness
+
+    @witness.setter
+    def witness(self, witness):
+        """Sets the witness of this ClusterWhereInput.
+
+
+        :param witness: The witness of this ClusterWhereInput.  # noqa: E501
+        :type witness: WitnessWhereInput
+        """
+
+        self._witness = witness
+
+    @property
+    def zones_every(self):
+        """Gets the zones_every of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The zones_every of this ClusterWhereInput.  # noqa: E501
+        :rtype: ZoneWhereInput
+        """
+        return self._zones_every
+
+    @zones_every.setter
+    def zones_every(self, zones_every):
+        """Sets the zones_every of this ClusterWhereInput.
+
+
+        :param zones_every: The zones_every of this ClusterWhereInput.  # noqa: E501
+        :type zones_every: ZoneWhereInput
+        """
+
+        self._zones_every = zones_every
+
+    @property
+    def zones_none(self):
+        """Gets the zones_none of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The zones_none of this ClusterWhereInput.  # noqa: E501
+        :rtype: ZoneWhereInput
+        """
+        return self._zones_none
+
+    @zones_none.setter
+    def zones_none(self, zones_none):
+        """Sets the zones_none of this ClusterWhereInput.
+
+
+        :param zones_none: The zones_none of this ClusterWhereInput.  # noqa: E501
+        :type zones_none: ZoneWhereInput
+        """
+
+        self._zones_none = zones_none
+
+    @property
+    def zones_some(self):
+        """Gets the zones_some of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The zones_some of this ClusterWhereInput.  # noqa: E501
+        :rtype: ZoneWhereInput
+        """
+        return self._zones_some
+
+    @zones_some.setter
+    def zones_some(self, zones_some):
+        """Sets the zones_some of this ClusterWhereInput.
+
+
+        :param zones_some: The zones_some of this ClusterWhereInput.  # noqa: E501
+        :type zones_some: ZoneWhereInput
+        """
+
+        self._zones_some = zones_some
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -25,6 +25,8 @@ class IscsiTargetCommonParams(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'business_host_groups': 'BusinessHostGroupWhereInput',
+        'business_hosts': 'BusinessHostWhereInput',
         'configuration_adaptive': 'bool',
         'configuration_method': 'ConfigurationMethod',
         'encrypt_method': 'EncryptMethod',
@@ -67,6 +69,8 @@ class IscsiTargetCommonParams(object):
     }
 
     attribute_map = {
+        'business_host_groups': 'business_host_groups',
+        'business_hosts': 'business_hosts',
         'configuration_adaptive': 'configuration_adaptive',
         'configuration_method': 'configuration_method',
         'encrypt_method': 'encrypt_method',
@@ -112,6 +116,8 @@ class IscsiTargetCommonParams(object):
         """IscsiTargetCommonParams - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._business_host_groups = None
+        self._business_hosts = None
         self._configuration_adaptive = None
         self._configuration_method = None
         self._encrypt_method = None
@@ -153,6 +159,10 @@ class IscsiTargetCommonParams(object):
         self._ip_whitelist = None
         self.discriminator = None
 
+        if "business_host_groups" in kwargs:
+            self.business_host_groups = kwargs["business_host_groups"]
+        if "business_hosts" in kwargs:
+            self.business_hosts = kwargs["business_hosts"]
         if "configuration_adaptive" in kwargs:
             self.configuration_adaptive = kwargs["configuration_adaptive"]
         if "configuration_method" in kwargs:
@@ -231,6 +241,48 @@ class IscsiTargetCommonParams(object):
             self.iqn_whitelist = kwargs["iqn_whitelist"]
         if "ip_whitelist" in kwargs:
             self.ip_whitelist = kwargs["ip_whitelist"]
+
+    @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiTargetCommonParams.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiTargetCommonParams.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiTargetCommonParams.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiTargetCommonParams.  # noqa: E501
+        :type business_host_groups: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiTargetCommonParams.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiTargetCommonParams.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiTargetCommonParams.
+
+
+        :param business_hosts: The business_hosts of this IscsiTargetCommonParams.  # noqa: E501
+        :type business_hosts: BusinessHostWhereInput
+        """
+
+        self._business_hosts = business_hosts
 
     @property
     def configuration_adaptive(self):

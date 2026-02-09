@@ -29,6 +29,7 @@ class VirtualPrivateCloud(object):
         'description': 'str',
         'entity_async_status': 'EntityAsyncStatus',
         'id': 'str',
+        'isolation_policies': 'list[NestedVirtualPrivateCloudIsolationPolicy]',
         'local_id': 'str',
         'mtu': 'int',
         'name': 'str',
@@ -44,6 +45,7 @@ class VirtualPrivateCloud(object):
         'description': 'description',
         'entity_async_status': 'entityAsyncStatus',
         'id': 'id',
+        'isolation_policies': 'isolation_policies',
         'local_id': 'local_id',
         'mtu': 'mtu',
         'name': 'name',
@@ -62,6 +64,7 @@ class VirtualPrivateCloud(object):
         self._description = None
         self._entity_async_status = None
         self._id = None
+        self._isolation_policies = None
         self._local_id = None
         self._mtu = None
         self._name = None
@@ -77,6 +80,7 @@ class VirtualPrivateCloud(object):
         self.entity_async_status = kwargs.get("entity_async_status", None)
         if "id" in kwargs:
             self.id = kwargs["id"]
+        self.isolation_policies = kwargs.get("isolation_policies", None)
         if "local_id" in kwargs:
             self.local_id = kwargs["local_id"]
         self.mtu = kwargs.get("mtu", None)
@@ -174,6 +178,27 @@ class VirtualPrivateCloud(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def isolation_policies(self):
+        """Gets the isolation_policies of this VirtualPrivateCloud.  # noqa: E501
+
+
+        :return: The isolation_policies of this VirtualPrivateCloud.  # noqa: E501
+        :rtype: list[NestedVirtualPrivateCloudIsolationPolicy]
+        """
+        return self._isolation_policies
+
+    @isolation_policies.setter
+    def isolation_policies(self, isolation_policies):
+        """Sets the isolation_policies of this VirtualPrivateCloud.
+
+
+        :param isolation_policies: The isolation_policies of this VirtualPrivateCloud.  # noqa: E501
+        :type isolation_policies: list[NestedVirtualPrivateCloudIsolationPolicy]
+        """
+
+        self._isolation_policies = isolation_policies
 
     @property
     def local_id(self):

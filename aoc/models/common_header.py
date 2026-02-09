@@ -25,45 +25,45 @@ class CommonHeader(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'x_aoc_request_id': 'str'
+        'x_tower_request_id': 'str'
     }
 
     attribute_map = {
-        'x_aoc_request_id': 'x-aoc-request-id'
+        'x_tower_request_id': 'x-tower-request-id'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
         """CommonHeader - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
-        self._x_aoc_request_id = None
+        self._x_tower_request_id = None
         self.discriminator = None
 
-        if "x_aoc_request_id" in kwargs:
-            self.x_aoc_request_id = kwargs["x_aoc_request_id"]
+        if "x_tower_request_id" in kwargs:
+            self.x_tower_request_id = kwargs["x_tower_request_id"]
 
     @property
-    def x_aoc_request_id(self):
-        """Gets the x_aoc_request_id of this CommonHeader.  # noqa: E501
+    def x_tower_request_id(self):
+        """Gets the x_tower_request_id of this CommonHeader.  # noqa: E501
 
 
-        :return: The x_aoc_request_id of this CommonHeader.  # noqa: E501
+        :return: The x_tower_request_id of this CommonHeader.  # noqa: E501
         :rtype: str
         """
-        return self._x_aoc_request_id
+        return self._x_tower_request_id
 
-    @x_aoc_request_id.setter
-    def x_aoc_request_id(self, x_aoc_request_id):
-        """Sets the x_aoc_request_id of this CommonHeader.
+    @x_tower_request_id.setter
+    def x_tower_request_id(self, x_tower_request_id):
+        """Sets the x_tower_request_id of this CommonHeader.
 
 
-        :param x_aoc_request_id: The x_aoc_request_id of this CommonHeader.  # noqa: E501
-        :type x_aoc_request_id: str
+        :param x_tower_request_id: The x_tower_request_id of this CommonHeader.  # noqa: E501
+        :type x_tower_request_id: str
         """
-        if self.local_vars_configuration.client_side_validation and x_aoc_request_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `x_aoc_request_id`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and x_tower_request_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `x_tower_request_id`, must not be `None`")  # noqa: E501
 
-        self._x_aoc_request_id = x_aoc_request_id
+        self._x_tower_request_id = x_tower_request_id
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

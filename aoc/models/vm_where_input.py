@@ -28,6 +28,11 @@ class VmWhereInput(object):
         '_and': 'list[VmWhereInput]',
         '_not': 'list[VmWhereInput]',
         '_or': 'list[VmWhereInput]',
+        'anti_malware_enabled': 'bool',
+        'anti_malware_enabled_not': 'bool',
+        'backup_plans_every': 'BackupPlanWhereInput',
+        'backup_plans_none': 'BackupPlanWhereInput',
+        'backup_plans_some': 'BackupPlanWhereInput',
         'bios_uuid': 'str',
         'bios_uuid_contains': 'str',
         'bios_uuid_ends_with': 'str',
@@ -107,10 +112,15 @@ class VmWhereInput(object):
         'dns_servers_not_in': 'list[str]',
         'dns_servers_not_starts_with': 'str',
         'dns_servers_starts_with': 'str',
+        'dpi_enabled': 'bool',
+        'dpi_enabled_not': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
         'entity_async_status_in': 'list[EntityAsyncStatus]',
         'entity_async_status_not': 'EntityAsyncStatus',
         'entity_async_status_not_in': 'list[EntityAsyncStatus]',
+        'entity_filter_results_every': 'VmEntityFilterResultWhereInput',
+        'entity_filter_results_none': 'VmEntityFilterResultWhereInput',
+        'entity_filter_results_some': 'VmEntityFilterResultWhereInput',
         'firmware': 'VmFirmware',
         'firmware_in': 'list[VmFirmware]',
         'firmware_not': 'VmFirmware',
@@ -192,6 +202,34 @@ class VmWhereInput(object):
         'in_recycle_bin_not': 'bool',
         'internal': 'bool',
         'internal_not': 'bool',
+        'internal_product': 'str',
+        'internal_product_contains': 'str',
+        'internal_product_ends_with': 'str',
+        'internal_product_gt': 'str',
+        'internal_product_gte': 'str',
+        'internal_product_in': 'list[str]',
+        'internal_product_lt': 'str',
+        'internal_product_lte': 'str',
+        'internal_product_name': 'str',
+        'internal_product_name_contains': 'str',
+        'internal_product_name_ends_with': 'str',
+        'internal_product_name_gt': 'str',
+        'internal_product_name_gte': 'str',
+        'internal_product_name_in': 'list[str]',
+        'internal_product_name_lt': 'str',
+        'internal_product_name_lte': 'str',
+        'internal_product_name_not': 'str',
+        'internal_product_name_not_contains': 'str',
+        'internal_product_name_not_ends_with': 'str',
+        'internal_product_name_not_in': 'list[str]',
+        'internal_product_name_not_starts_with': 'str',
+        'internal_product_name_starts_with': 'str',
+        'internal_product_not': 'str',
+        'internal_product_not_contains': 'str',
+        'internal_product_not_ends_with': 'str',
+        'internal_product_not_in': 'list[str]',
+        'internal_product_not_starts_with': 'str',
+        'internal_product_starts_with': 'str',
         'io_policy': 'VmDiskIoPolicy',
         'io_policy_in': 'list[VmDiskIoPolicy]',
         'io_policy_not': 'VmDiskIoPolicy',
@@ -385,6 +423,7 @@ class VmWhereInput(object):
         'size_lte': 'int',
         'size_not': 'int',
         'size_not_in': 'list[int]',
+        'snapshot_plan': 'SnapshotPlanWhereInput',
         'snapshots_every': 'VmSnapshotWhereInput',
         'snapshots_none': 'VmSnapshotWhereInput',
         'snapshots_some': 'VmSnapshotWhereInput',
@@ -478,6 +517,11 @@ class VmWhereInput(object):
         '_and': 'AND',
         '_not': 'NOT',
         '_or': 'OR',
+        'anti_malware_enabled': 'anti_malware_enabled',
+        'anti_malware_enabled_not': 'anti_malware_enabled_not',
+        'backup_plans_every': 'backup_plans_every',
+        'backup_plans_none': 'backup_plans_none',
+        'backup_plans_some': 'backup_plans_some',
         'bios_uuid': 'bios_uuid',
         'bios_uuid_contains': 'bios_uuid_contains',
         'bios_uuid_ends_with': 'bios_uuid_ends_with',
@@ -557,10 +601,15 @@ class VmWhereInput(object):
         'dns_servers_not_in': 'dns_servers_not_in',
         'dns_servers_not_starts_with': 'dns_servers_not_starts_with',
         'dns_servers_starts_with': 'dns_servers_starts_with',
+        'dpi_enabled': 'dpi_enabled',
+        'dpi_enabled_not': 'dpi_enabled_not',
         'entity_async_status': 'entityAsyncStatus',
         'entity_async_status_in': 'entityAsyncStatus_in',
         'entity_async_status_not': 'entityAsyncStatus_not',
         'entity_async_status_not_in': 'entityAsyncStatus_not_in',
+        'entity_filter_results_every': 'entity_filter_results_every',
+        'entity_filter_results_none': 'entity_filter_results_none',
+        'entity_filter_results_some': 'entity_filter_results_some',
         'firmware': 'firmware',
         'firmware_in': 'firmware_in',
         'firmware_not': 'firmware_not',
@@ -642,6 +691,34 @@ class VmWhereInput(object):
         'in_recycle_bin_not': 'in_recycle_bin_not',
         'internal': 'internal',
         'internal_not': 'internal_not',
+        'internal_product': 'internal_product',
+        'internal_product_contains': 'internal_product_contains',
+        'internal_product_ends_with': 'internal_product_ends_with',
+        'internal_product_gt': 'internal_product_gt',
+        'internal_product_gte': 'internal_product_gte',
+        'internal_product_in': 'internal_product_in',
+        'internal_product_lt': 'internal_product_lt',
+        'internal_product_lte': 'internal_product_lte',
+        'internal_product_name': 'internal_product_name',
+        'internal_product_name_contains': 'internal_product_name_contains',
+        'internal_product_name_ends_with': 'internal_product_name_ends_with',
+        'internal_product_name_gt': 'internal_product_name_gt',
+        'internal_product_name_gte': 'internal_product_name_gte',
+        'internal_product_name_in': 'internal_product_name_in',
+        'internal_product_name_lt': 'internal_product_name_lt',
+        'internal_product_name_lte': 'internal_product_name_lte',
+        'internal_product_name_not': 'internal_product_name_not',
+        'internal_product_name_not_contains': 'internal_product_name_not_contains',
+        'internal_product_name_not_ends_with': 'internal_product_name_not_ends_with',
+        'internal_product_name_not_in': 'internal_product_name_not_in',
+        'internal_product_name_not_starts_with': 'internal_product_name_not_starts_with',
+        'internal_product_name_starts_with': 'internal_product_name_starts_with',
+        'internal_product_not': 'internal_product_not',
+        'internal_product_not_contains': 'internal_product_not_contains',
+        'internal_product_not_ends_with': 'internal_product_not_ends_with',
+        'internal_product_not_in': 'internal_product_not_in',
+        'internal_product_not_starts_with': 'internal_product_not_starts_with',
+        'internal_product_starts_with': 'internal_product_starts_with',
         'io_policy': 'io_policy',
         'io_policy_in': 'io_policy_in',
         'io_policy_not': 'io_policy_not',
@@ -835,6 +912,7 @@ class VmWhereInput(object):
         'size_lte': 'size_lte',
         'size_not': 'size_not',
         'size_not_in': 'size_not_in',
+        'snapshot_plan': 'snapshot_plan',
         'snapshots_every': 'snapshots_every',
         'snapshots_none': 'snapshots_none',
         'snapshots_some': 'snapshots_some',
@@ -931,6 +1009,11 @@ class VmWhereInput(object):
         self.__and = None
         self.__not = None
         self.__or = None
+        self._anti_malware_enabled = None
+        self._anti_malware_enabled_not = None
+        self._backup_plans_every = None
+        self._backup_plans_none = None
+        self._backup_plans_some = None
         self._bios_uuid = None
         self._bios_uuid_contains = None
         self._bios_uuid_ends_with = None
@@ -1010,10 +1093,15 @@ class VmWhereInput(object):
         self._dns_servers_not_in = None
         self._dns_servers_not_starts_with = None
         self._dns_servers_starts_with = None
+        self._dpi_enabled = None
+        self._dpi_enabled_not = None
         self._entity_async_status = None
         self._entity_async_status_in = None
         self._entity_async_status_not = None
         self._entity_async_status_not_in = None
+        self._entity_filter_results_every = None
+        self._entity_filter_results_none = None
+        self._entity_filter_results_some = None
         self._firmware = None
         self._firmware_in = None
         self._firmware_not = None
@@ -1095,6 +1183,34 @@ class VmWhereInput(object):
         self._in_recycle_bin_not = None
         self._internal = None
         self._internal_not = None
+        self._internal_product = None
+        self._internal_product_contains = None
+        self._internal_product_ends_with = None
+        self._internal_product_gt = None
+        self._internal_product_gte = None
+        self._internal_product_in = None
+        self._internal_product_lt = None
+        self._internal_product_lte = None
+        self._internal_product_name = None
+        self._internal_product_name_contains = None
+        self._internal_product_name_ends_with = None
+        self._internal_product_name_gt = None
+        self._internal_product_name_gte = None
+        self._internal_product_name_in = None
+        self._internal_product_name_lt = None
+        self._internal_product_name_lte = None
+        self._internal_product_name_not = None
+        self._internal_product_name_not_contains = None
+        self._internal_product_name_not_ends_with = None
+        self._internal_product_name_not_in = None
+        self._internal_product_name_not_starts_with = None
+        self._internal_product_name_starts_with = None
+        self._internal_product_not = None
+        self._internal_product_not_contains = None
+        self._internal_product_not_ends_with = None
+        self._internal_product_not_in = None
+        self._internal_product_not_starts_with = None
+        self._internal_product_starts_with = None
         self._io_policy = None
         self._io_policy_in = None
         self._io_policy_not = None
@@ -1288,6 +1404,7 @@ class VmWhereInput(object):
         self._size_lte = None
         self._size_not = None
         self._size_not_in = None
+        self._snapshot_plan = None
         self._snapshots_every = None
         self._snapshots_none = None
         self._snapshots_some = None
@@ -1380,6 +1497,11 @@ class VmWhereInput(object):
         self._and = kwargs.get("_and", None)
         self._not = kwargs.get("_not", None)
         self._or = kwargs.get("_or", None)
+        self.anti_malware_enabled = kwargs.get("anti_malware_enabled", None)
+        self.anti_malware_enabled_not = kwargs.get("anti_malware_enabled_not", None)
+        self.backup_plans_every = kwargs.get("backup_plans_every", None)
+        self.backup_plans_none = kwargs.get("backup_plans_none", None)
+        self.backup_plans_some = kwargs.get("backup_plans_some", None)
         self.bios_uuid = kwargs.get("bios_uuid", None)
         self.bios_uuid_contains = kwargs.get("bios_uuid_contains", None)
         self.bios_uuid_ends_with = kwargs.get("bios_uuid_ends_with", None)
@@ -1459,10 +1581,15 @@ class VmWhereInput(object):
         self.dns_servers_not_in = kwargs.get("dns_servers_not_in", None)
         self.dns_servers_not_starts_with = kwargs.get("dns_servers_not_starts_with", None)
         self.dns_servers_starts_with = kwargs.get("dns_servers_starts_with", None)
+        self.dpi_enabled = kwargs.get("dpi_enabled", None)
+        self.dpi_enabled_not = kwargs.get("dpi_enabled_not", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
         self.entity_async_status_in = kwargs.get("entity_async_status_in", None)
         self.entity_async_status_not = kwargs.get("entity_async_status_not", None)
         self.entity_async_status_not_in = kwargs.get("entity_async_status_not_in", None)
+        self.entity_filter_results_every = kwargs.get("entity_filter_results_every", None)
+        self.entity_filter_results_none = kwargs.get("entity_filter_results_none", None)
+        self.entity_filter_results_some = kwargs.get("entity_filter_results_some", None)
         self.firmware = kwargs.get("firmware", None)
         self.firmware_in = kwargs.get("firmware_in", None)
         self.firmware_not = kwargs.get("firmware_not", None)
@@ -1544,6 +1671,34 @@ class VmWhereInput(object):
         self.in_recycle_bin_not = kwargs.get("in_recycle_bin_not", None)
         self.internal = kwargs.get("internal", None)
         self.internal_not = kwargs.get("internal_not", None)
+        self.internal_product = kwargs.get("internal_product", None)
+        self.internal_product_contains = kwargs.get("internal_product_contains", None)
+        self.internal_product_ends_with = kwargs.get("internal_product_ends_with", None)
+        self.internal_product_gt = kwargs.get("internal_product_gt", None)
+        self.internal_product_gte = kwargs.get("internal_product_gte", None)
+        self.internal_product_in = kwargs.get("internal_product_in", None)
+        self.internal_product_lt = kwargs.get("internal_product_lt", None)
+        self.internal_product_lte = kwargs.get("internal_product_lte", None)
+        self.internal_product_name = kwargs.get("internal_product_name", None)
+        self.internal_product_name_contains = kwargs.get("internal_product_name_contains", None)
+        self.internal_product_name_ends_with = kwargs.get("internal_product_name_ends_with", None)
+        self.internal_product_name_gt = kwargs.get("internal_product_name_gt", None)
+        self.internal_product_name_gte = kwargs.get("internal_product_name_gte", None)
+        self.internal_product_name_in = kwargs.get("internal_product_name_in", None)
+        self.internal_product_name_lt = kwargs.get("internal_product_name_lt", None)
+        self.internal_product_name_lte = kwargs.get("internal_product_name_lte", None)
+        self.internal_product_name_not = kwargs.get("internal_product_name_not", None)
+        self.internal_product_name_not_contains = kwargs.get("internal_product_name_not_contains", None)
+        self.internal_product_name_not_ends_with = kwargs.get("internal_product_name_not_ends_with", None)
+        self.internal_product_name_not_in = kwargs.get("internal_product_name_not_in", None)
+        self.internal_product_name_not_starts_with = kwargs.get("internal_product_name_not_starts_with", None)
+        self.internal_product_name_starts_with = kwargs.get("internal_product_name_starts_with", None)
+        self.internal_product_not = kwargs.get("internal_product_not", None)
+        self.internal_product_not_contains = kwargs.get("internal_product_not_contains", None)
+        self.internal_product_not_ends_with = kwargs.get("internal_product_not_ends_with", None)
+        self.internal_product_not_in = kwargs.get("internal_product_not_in", None)
+        self.internal_product_not_starts_with = kwargs.get("internal_product_not_starts_with", None)
+        self.internal_product_starts_with = kwargs.get("internal_product_starts_with", None)
         self.io_policy = kwargs.get("io_policy", None)
         self.io_policy_in = kwargs.get("io_policy_in", None)
         self.io_policy_not = kwargs.get("io_policy_not", None)
@@ -1737,6 +1892,7 @@ class VmWhereInput(object):
         self.size_lte = kwargs.get("size_lte", None)
         self.size_not = kwargs.get("size_not", None)
         self.size_not_in = kwargs.get("size_not_in", None)
+        self.snapshot_plan = kwargs.get("snapshot_plan", None)
         self.snapshots_every = kwargs.get("snapshots_every", None)
         self.snapshots_none = kwargs.get("snapshots_none", None)
         self.snapshots_some = kwargs.get("snapshots_some", None)
@@ -1887,6 +2043,111 @@ class VmWhereInput(object):
         """
 
         self.__or = _or
+
+    @property
+    def anti_malware_enabled(self):
+        """Gets the anti_malware_enabled of this VmWhereInput.  # noqa: E501
+
+
+        :return: The anti_malware_enabled of this VmWhereInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._anti_malware_enabled
+
+    @anti_malware_enabled.setter
+    def anti_malware_enabled(self, anti_malware_enabled):
+        """Sets the anti_malware_enabled of this VmWhereInput.
+
+
+        :param anti_malware_enabled: The anti_malware_enabled of this VmWhereInput.  # noqa: E501
+        :type anti_malware_enabled: bool
+        """
+
+        self._anti_malware_enabled = anti_malware_enabled
+
+    @property
+    def anti_malware_enabled_not(self):
+        """Gets the anti_malware_enabled_not of this VmWhereInput.  # noqa: E501
+
+
+        :return: The anti_malware_enabled_not of this VmWhereInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._anti_malware_enabled_not
+
+    @anti_malware_enabled_not.setter
+    def anti_malware_enabled_not(self, anti_malware_enabled_not):
+        """Sets the anti_malware_enabled_not of this VmWhereInput.
+
+
+        :param anti_malware_enabled_not: The anti_malware_enabled_not of this VmWhereInput.  # noqa: E501
+        :type anti_malware_enabled_not: bool
+        """
+
+        self._anti_malware_enabled_not = anti_malware_enabled_not
+
+    @property
+    def backup_plans_every(self):
+        """Gets the backup_plans_every of this VmWhereInput.  # noqa: E501
+
+
+        :return: The backup_plans_every of this VmWhereInput.  # noqa: E501
+        :rtype: BackupPlanWhereInput
+        """
+        return self._backup_plans_every
+
+    @backup_plans_every.setter
+    def backup_plans_every(self, backup_plans_every):
+        """Sets the backup_plans_every of this VmWhereInput.
+
+
+        :param backup_plans_every: The backup_plans_every of this VmWhereInput.  # noqa: E501
+        :type backup_plans_every: BackupPlanWhereInput
+        """
+
+        self._backup_plans_every = backup_plans_every
+
+    @property
+    def backup_plans_none(self):
+        """Gets the backup_plans_none of this VmWhereInput.  # noqa: E501
+
+
+        :return: The backup_plans_none of this VmWhereInput.  # noqa: E501
+        :rtype: BackupPlanWhereInput
+        """
+        return self._backup_plans_none
+
+    @backup_plans_none.setter
+    def backup_plans_none(self, backup_plans_none):
+        """Sets the backup_plans_none of this VmWhereInput.
+
+
+        :param backup_plans_none: The backup_plans_none of this VmWhereInput.  # noqa: E501
+        :type backup_plans_none: BackupPlanWhereInput
+        """
+
+        self._backup_plans_none = backup_plans_none
+
+    @property
+    def backup_plans_some(self):
+        """Gets the backup_plans_some of this VmWhereInput.  # noqa: E501
+
+
+        :return: The backup_plans_some of this VmWhereInput.  # noqa: E501
+        :rtype: BackupPlanWhereInput
+        """
+        return self._backup_plans_some
+
+    @backup_plans_some.setter
+    def backup_plans_some(self, backup_plans_some):
+        """Sets the backup_plans_some of this VmWhereInput.
+
+
+        :param backup_plans_some: The backup_plans_some of this VmWhereInput.  # noqa: E501
+        :type backup_plans_some: BackupPlanWhereInput
+        """
+
+        self._backup_plans_some = backup_plans_some
 
     @property
     def bios_uuid(self):
@@ -3548,6 +3809,48 @@ class VmWhereInput(object):
         self._dns_servers_starts_with = dns_servers_starts_with
 
     @property
+    def dpi_enabled(self):
+        """Gets the dpi_enabled of this VmWhereInput.  # noqa: E501
+
+
+        :return: The dpi_enabled of this VmWhereInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dpi_enabled
+
+    @dpi_enabled.setter
+    def dpi_enabled(self, dpi_enabled):
+        """Sets the dpi_enabled of this VmWhereInput.
+
+
+        :param dpi_enabled: The dpi_enabled of this VmWhereInput.  # noqa: E501
+        :type dpi_enabled: bool
+        """
+
+        self._dpi_enabled = dpi_enabled
+
+    @property
+    def dpi_enabled_not(self):
+        """Gets the dpi_enabled_not of this VmWhereInput.  # noqa: E501
+
+
+        :return: The dpi_enabled_not of this VmWhereInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dpi_enabled_not
+
+    @dpi_enabled_not.setter
+    def dpi_enabled_not(self, dpi_enabled_not):
+        """Sets the dpi_enabled_not of this VmWhereInput.
+
+
+        :param dpi_enabled_not: The dpi_enabled_not of this VmWhereInput.  # noqa: E501
+        :type dpi_enabled_not: bool
+        """
+
+        self._dpi_enabled_not = dpi_enabled_not
+
+    @property
     def entity_async_status(self):
         """Gets the entity_async_status of this VmWhereInput.  # noqa: E501
 
@@ -3630,6 +3933,69 @@ class VmWhereInput(object):
         """
 
         self._entity_async_status_not_in = entity_async_status_not_in
+
+    @property
+    def entity_filter_results_every(self):
+        """Gets the entity_filter_results_every of this VmWhereInput.  # noqa: E501
+
+
+        :return: The entity_filter_results_every of this VmWhereInput.  # noqa: E501
+        :rtype: VmEntityFilterResultWhereInput
+        """
+        return self._entity_filter_results_every
+
+    @entity_filter_results_every.setter
+    def entity_filter_results_every(self, entity_filter_results_every):
+        """Sets the entity_filter_results_every of this VmWhereInput.
+
+
+        :param entity_filter_results_every: The entity_filter_results_every of this VmWhereInput.  # noqa: E501
+        :type entity_filter_results_every: VmEntityFilterResultWhereInput
+        """
+
+        self._entity_filter_results_every = entity_filter_results_every
+
+    @property
+    def entity_filter_results_none(self):
+        """Gets the entity_filter_results_none of this VmWhereInput.  # noqa: E501
+
+
+        :return: The entity_filter_results_none of this VmWhereInput.  # noqa: E501
+        :rtype: VmEntityFilterResultWhereInput
+        """
+        return self._entity_filter_results_none
+
+    @entity_filter_results_none.setter
+    def entity_filter_results_none(self, entity_filter_results_none):
+        """Sets the entity_filter_results_none of this VmWhereInput.
+
+
+        :param entity_filter_results_none: The entity_filter_results_none of this VmWhereInput.  # noqa: E501
+        :type entity_filter_results_none: VmEntityFilterResultWhereInput
+        """
+
+        self._entity_filter_results_none = entity_filter_results_none
+
+    @property
+    def entity_filter_results_some(self):
+        """Gets the entity_filter_results_some of this VmWhereInput.  # noqa: E501
+
+
+        :return: The entity_filter_results_some of this VmWhereInput.  # noqa: E501
+        :rtype: VmEntityFilterResultWhereInput
+        """
+        return self._entity_filter_results_some
+
+    @entity_filter_results_some.setter
+    def entity_filter_results_some(self, entity_filter_results_some):
+        """Sets the entity_filter_results_some of this VmWhereInput.
+
+
+        :param entity_filter_results_some: The entity_filter_results_some of this VmWhereInput.  # noqa: E501
+        :type entity_filter_results_some: VmEntityFilterResultWhereInput
+        """
+
+        self._entity_filter_results_some = entity_filter_results_some
 
     @property
     def firmware(self):
@@ -5331,6 +5697,594 @@ class VmWhereInput(object):
         """
 
         self._internal_not = internal_not
+
+    @property
+    def internal_product(self):
+        """Gets the internal_product of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product
+
+    @internal_product.setter
+    def internal_product(self, internal_product):
+        """Sets the internal_product of this VmWhereInput.
+
+
+        :param internal_product: The internal_product of this VmWhereInput.  # noqa: E501
+        :type internal_product: str
+        """
+
+        self._internal_product = internal_product
+
+    @property
+    def internal_product_contains(self):
+        """Gets the internal_product_contains of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_contains of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_contains
+
+    @internal_product_contains.setter
+    def internal_product_contains(self, internal_product_contains):
+        """Sets the internal_product_contains of this VmWhereInput.
+
+
+        :param internal_product_contains: The internal_product_contains of this VmWhereInput.  # noqa: E501
+        :type internal_product_contains: str
+        """
+
+        self._internal_product_contains = internal_product_contains
+
+    @property
+    def internal_product_ends_with(self):
+        """Gets the internal_product_ends_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_ends_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_ends_with
+
+    @internal_product_ends_with.setter
+    def internal_product_ends_with(self, internal_product_ends_with):
+        """Sets the internal_product_ends_with of this VmWhereInput.
+
+
+        :param internal_product_ends_with: The internal_product_ends_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_ends_with: str
+        """
+
+        self._internal_product_ends_with = internal_product_ends_with
+
+    @property
+    def internal_product_gt(self):
+        """Gets the internal_product_gt of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_gt of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_gt
+
+    @internal_product_gt.setter
+    def internal_product_gt(self, internal_product_gt):
+        """Sets the internal_product_gt of this VmWhereInput.
+
+
+        :param internal_product_gt: The internal_product_gt of this VmWhereInput.  # noqa: E501
+        :type internal_product_gt: str
+        """
+
+        self._internal_product_gt = internal_product_gt
+
+    @property
+    def internal_product_gte(self):
+        """Gets the internal_product_gte of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_gte of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_gte
+
+    @internal_product_gte.setter
+    def internal_product_gte(self, internal_product_gte):
+        """Sets the internal_product_gte of this VmWhereInput.
+
+
+        :param internal_product_gte: The internal_product_gte of this VmWhereInput.  # noqa: E501
+        :type internal_product_gte: str
+        """
+
+        self._internal_product_gte = internal_product_gte
+
+    @property
+    def internal_product_in(self):
+        """Gets the internal_product_in of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_in of this VmWhereInput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._internal_product_in
+
+    @internal_product_in.setter
+    def internal_product_in(self, internal_product_in):
+        """Sets the internal_product_in of this VmWhereInput.
+
+
+        :param internal_product_in: The internal_product_in of this VmWhereInput.  # noqa: E501
+        :type internal_product_in: list[str]
+        """
+
+        self._internal_product_in = internal_product_in
+
+    @property
+    def internal_product_lt(self):
+        """Gets the internal_product_lt of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_lt of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_lt
+
+    @internal_product_lt.setter
+    def internal_product_lt(self, internal_product_lt):
+        """Sets the internal_product_lt of this VmWhereInput.
+
+
+        :param internal_product_lt: The internal_product_lt of this VmWhereInput.  # noqa: E501
+        :type internal_product_lt: str
+        """
+
+        self._internal_product_lt = internal_product_lt
+
+    @property
+    def internal_product_lte(self):
+        """Gets the internal_product_lte of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_lte of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_lte
+
+    @internal_product_lte.setter
+    def internal_product_lte(self, internal_product_lte):
+        """Sets the internal_product_lte of this VmWhereInput.
+
+
+        :param internal_product_lte: The internal_product_lte of this VmWhereInput.  # noqa: E501
+        :type internal_product_lte: str
+        """
+
+        self._internal_product_lte = internal_product_lte
+
+    @property
+    def internal_product_name(self):
+        """Gets the internal_product_name of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name
+
+    @internal_product_name.setter
+    def internal_product_name(self, internal_product_name):
+        """Sets the internal_product_name of this VmWhereInput.
+
+
+        :param internal_product_name: The internal_product_name of this VmWhereInput.  # noqa: E501
+        :type internal_product_name: str
+        """
+
+        self._internal_product_name = internal_product_name
+
+    @property
+    def internal_product_name_contains(self):
+        """Gets the internal_product_name_contains of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_contains of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_contains
+
+    @internal_product_name_contains.setter
+    def internal_product_name_contains(self, internal_product_name_contains):
+        """Sets the internal_product_name_contains of this VmWhereInput.
+
+
+        :param internal_product_name_contains: The internal_product_name_contains of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_contains: str
+        """
+
+        self._internal_product_name_contains = internal_product_name_contains
+
+    @property
+    def internal_product_name_ends_with(self):
+        """Gets the internal_product_name_ends_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_ends_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_ends_with
+
+    @internal_product_name_ends_with.setter
+    def internal_product_name_ends_with(self, internal_product_name_ends_with):
+        """Sets the internal_product_name_ends_with of this VmWhereInput.
+
+
+        :param internal_product_name_ends_with: The internal_product_name_ends_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_ends_with: str
+        """
+
+        self._internal_product_name_ends_with = internal_product_name_ends_with
+
+    @property
+    def internal_product_name_gt(self):
+        """Gets the internal_product_name_gt of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_gt of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_gt
+
+    @internal_product_name_gt.setter
+    def internal_product_name_gt(self, internal_product_name_gt):
+        """Sets the internal_product_name_gt of this VmWhereInput.
+
+
+        :param internal_product_name_gt: The internal_product_name_gt of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_gt: str
+        """
+
+        self._internal_product_name_gt = internal_product_name_gt
+
+    @property
+    def internal_product_name_gte(self):
+        """Gets the internal_product_name_gte of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_gte of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_gte
+
+    @internal_product_name_gte.setter
+    def internal_product_name_gte(self, internal_product_name_gte):
+        """Sets the internal_product_name_gte of this VmWhereInput.
+
+
+        :param internal_product_name_gte: The internal_product_name_gte of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_gte: str
+        """
+
+        self._internal_product_name_gte = internal_product_name_gte
+
+    @property
+    def internal_product_name_in(self):
+        """Gets the internal_product_name_in of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_in of this VmWhereInput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._internal_product_name_in
+
+    @internal_product_name_in.setter
+    def internal_product_name_in(self, internal_product_name_in):
+        """Sets the internal_product_name_in of this VmWhereInput.
+
+
+        :param internal_product_name_in: The internal_product_name_in of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_in: list[str]
+        """
+
+        self._internal_product_name_in = internal_product_name_in
+
+    @property
+    def internal_product_name_lt(self):
+        """Gets the internal_product_name_lt of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_lt of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_lt
+
+    @internal_product_name_lt.setter
+    def internal_product_name_lt(self, internal_product_name_lt):
+        """Sets the internal_product_name_lt of this VmWhereInput.
+
+
+        :param internal_product_name_lt: The internal_product_name_lt of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_lt: str
+        """
+
+        self._internal_product_name_lt = internal_product_name_lt
+
+    @property
+    def internal_product_name_lte(self):
+        """Gets the internal_product_name_lte of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_lte of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_lte
+
+    @internal_product_name_lte.setter
+    def internal_product_name_lte(self, internal_product_name_lte):
+        """Sets the internal_product_name_lte of this VmWhereInput.
+
+
+        :param internal_product_name_lte: The internal_product_name_lte of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_lte: str
+        """
+
+        self._internal_product_name_lte = internal_product_name_lte
+
+    @property
+    def internal_product_name_not(self):
+        """Gets the internal_product_name_not of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_not of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_not
+
+    @internal_product_name_not.setter
+    def internal_product_name_not(self, internal_product_name_not):
+        """Sets the internal_product_name_not of this VmWhereInput.
+
+
+        :param internal_product_name_not: The internal_product_name_not of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_not: str
+        """
+
+        self._internal_product_name_not = internal_product_name_not
+
+    @property
+    def internal_product_name_not_contains(self):
+        """Gets the internal_product_name_not_contains of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_not_contains of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_not_contains
+
+    @internal_product_name_not_contains.setter
+    def internal_product_name_not_contains(self, internal_product_name_not_contains):
+        """Sets the internal_product_name_not_contains of this VmWhereInput.
+
+
+        :param internal_product_name_not_contains: The internal_product_name_not_contains of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_not_contains: str
+        """
+
+        self._internal_product_name_not_contains = internal_product_name_not_contains
+
+    @property
+    def internal_product_name_not_ends_with(self):
+        """Gets the internal_product_name_not_ends_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_not_ends_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_not_ends_with
+
+    @internal_product_name_not_ends_with.setter
+    def internal_product_name_not_ends_with(self, internal_product_name_not_ends_with):
+        """Sets the internal_product_name_not_ends_with of this VmWhereInput.
+
+
+        :param internal_product_name_not_ends_with: The internal_product_name_not_ends_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_not_ends_with: str
+        """
+
+        self._internal_product_name_not_ends_with = internal_product_name_not_ends_with
+
+    @property
+    def internal_product_name_not_in(self):
+        """Gets the internal_product_name_not_in of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_not_in of this VmWhereInput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._internal_product_name_not_in
+
+    @internal_product_name_not_in.setter
+    def internal_product_name_not_in(self, internal_product_name_not_in):
+        """Sets the internal_product_name_not_in of this VmWhereInput.
+
+
+        :param internal_product_name_not_in: The internal_product_name_not_in of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_not_in: list[str]
+        """
+
+        self._internal_product_name_not_in = internal_product_name_not_in
+
+    @property
+    def internal_product_name_not_starts_with(self):
+        """Gets the internal_product_name_not_starts_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_not_starts_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_not_starts_with
+
+    @internal_product_name_not_starts_with.setter
+    def internal_product_name_not_starts_with(self, internal_product_name_not_starts_with):
+        """Sets the internal_product_name_not_starts_with of this VmWhereInput.
+
+
+        :param internal_product_name_not_starts_with: The internal_product_name_not_starts_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_not_starts_with: str
+        """
+
+        self._internal_product_name_not_starts_with = internal_product_name_not_starts_with
+
+    @property
+    def internal_product_name_starts_with(self):
+        """Gets the internal_product_name_starts_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_name_starts_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name_starts_with
+
+    @internal_product_name_starts_with.setter
+    def internal_product_name_starts_with(self, internal_product_name_starts_with):
+        """Sets the internal_product_name_starts_with of this VmWhereInput.
+
+
+        :param internal_product_name_starts_with: The internal_product_name_starts_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_name_starts_with: str
+        """
+
+        self._internal_product_name_starts_with = internal_product_name_starts_with
+
+    @property
+    def internal_product_not(self):
+        """Gets the internal_product_not of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_not of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_not
+
+    @internal_product_not.setter
+    def internal_product_not(self, internal_product_not):
+        """Sets the internal_product_not of this VmWhereInput.
+
+
+        :param internal_product_not: The internal_product_not of this VmWhereInput.  # noqa: E501
+        :type internal_product_not: str
+        """
+
+        self._internal_product_not = internal_product_not
+
+    @property
+    def internal_product_not_contains(self):
+        """Gets the internal_product_not_contains of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_not_contains of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_not_contains
+
+    @internal_product_not_contains.setter
+    def internal_product_not_contains(self, internal_product_not_contains):
+        """Sets the internal_product_not_contains of this VmWhereInput.
+
+
+        :param internal_product_not_contains: The internal_product_not_contains of this VmWhereInput.  # noqa: E501
+        :type internal_product_not_contains: str
+        """
+
+        self._internal_product_not_contains = internal_product_not_contains
+
+    @property
+    def internal_product_not_ends_with(self):
+        """Gets the internal_product_not_ends_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_not_ends_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_not_ends_with
+
+    @internal_product_not_ends_with.setter
+    def internal_product_not_ends_with(self, internal_product_not_ends_with):
+        """Sets the internal_product_not_ends_with of this VmWhereInput.
+
+
+        :param internal_product_not_ends_with: The internal_product_not_ends_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_not_ends_with: str
+        """
+
+        self._internal_product_not_ends_with = internal_product_not_ends_with
+
+    @property
+    def internal_product_not_in(self):
+        """Gets the internal_product_not_in of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_not_in of this VmWhereInput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._internal_product_not_in
+
+    @internal_product_not_in.setter
+    def internal_product_not_in(self, internal_product_not_in):
+        """Sets the internal_product_not_in of this VmWhereInput.
+
+
+        :param internal_product_not_in: The internal_product_not_in of this VmWhereInput.  # noqa: E501
+        :type internal_product_not_in: list[str]
+        """
+
+        self._internal_product_not_in = internal_product_not_in
+
+    @property
+    def internal_product_not_starts_with(self):
+        """Gets the internal_product_not_starts_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_not_starts_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_not_starts_with
+
+    @internal_product_not_starts_with.setter
+    def internal_product_not_starts_with(self, internal_product_not_starts_with):
+        """Sets the internal_product_not_starts_with of this VmWhereInput.
+
+
+        :param internal_product_not_starts_with: The internal_product_not_starts_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_not_starts_with: str
+        """
+
+        self._internal_product_not_starts_with = internal_product_not_starts_with
+
+    @property
+    def internal_product_starts_with(self):
+        """Gets the internal_product_starts_with of this VmWhereInput.  # noqa: E501
+
+
+        :return: The internal_product_starts_with of this VmWhereInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_starts_with
+
+    @internal_product_starts_with.setter
+    def internal_product_starts_with(self, internal_product_starts_with):
+        """Sets the internal_product_starts_with of this VmWhereInput.
+
+
+        :param internal_product_starts_with: The internal_product_starts_with of this VmWhereInput.  # noqa: E501
+        :type internal_product_starts_with: str
+        """
+
+        self._internal_product_starts_with = internal_product_starts_with
 
     @property
     def io_policy(self):
@@ -9384,6 +10338,27 @@ class VmWhereInput(object):
         """
 
         self._size_not_in = size_not_in
+
+    @property
+    def snapshot_plan(self):
+        """Gets the snapshot_plan of this VmWhereInput.  # noqa: E501
+
+
+        :return: The snapshot_plan of this VmWhereInput.  # noqa: E501
+        :rtype: SnapshotPlanWhereInput
+        """
+        return self._snapshot_plan
+
+    @snapshot_plan.setter
+    def snapshot_plan(self, snapshot_plan):
+        """Sets the snapshot_plan of this VmWhereInput.
+
+
+        :param snapshot_plan: The snapshot_plan of this VmWhereInput.  # noqa: E501
+        :type snapshot_plan: SnapshotPlanWhereInput
+        """
+
+        self._snapshot_plan = snapshot_plan
 
     @property
     def snapshots_every(self):

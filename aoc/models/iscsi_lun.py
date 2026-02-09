@@ -36,8 +36,11 @@ class IscsiLun(object):
         'bps_wr': 'int',
         'bps_wr_max': 'int',
         'bps_wr_max_length': 'int',
+        'business_host_groups': 'list[NestedBusinessHostGroup]',
         'business_host_is_same_with_parent': 'bool',
+        'business_hosts': 'list[NestedBusinessHost]',
         'configuration_method': 'ConfigurationMethod',
+        'consistency_group': 'NestedConsistencyGroup',
         'downgraded_prioritized_space': 'int',
         'ec_k': 'int',
         'ec_m': 'int',
@@ -62,9 +65,11 @@ class IscsiLun(object):
         'name': 'str',
         'prioritized': 'bool',
         'replica_num': 'int',
+        'replication_plans': 'list[NestedReplicationPlan]',
         'resiliency_type': 'ResiliencyType',
         'shared_size': 'int',
         'snapshot_num': 'int',
+        'snapshot_plans': 'list[NestedSnapshotPlan]',
         'stripe_num': 'int',
         'stripe_size': 'int',
         'thin_provision': 'bool',
@@ -85,8 +90,11 @@ class IscsiLun(object):
         'bps_wr': 'bps_wr',
         'bps_wr_max': 'bps_wr_max',
         'bps_wr_max_length': 'bps_wr_max_length',
+        'business_host_groups': 'business_host_groups',
         'business_host_is_same_with_parent': 'business_host_is_same_with_parent',
+        'business_hosts': 'business_hosts',
         'configuration_method': 'configuration_method',
+        'consistency_group': 'consistency_group',
         'downgraded_prioritized_space': 'downgraded_prioritized_space',
         'ec_k': 'ec_k',
         'ec_m': 'ec_m',
@@ -111,9 +119,11 @@ class IscsiLun(object):
         'name': 'name',
         'prioritized': 'prioritized',
         'replica_num': 'replica_num',
+        'replication_plans': 'replication_plans',
         'resiliency_type': 'resiliency_type',
         'shared_size': 'shared_size',
         'snapshot_num': 'snapshot_num',
+        'snapshot_plans': 'snapshot_plans',
         'stripe_num': 'stripe_num',
         'stripe_size': 'stripe_size',
         'thin_provision': 'thin_provision',
@@ -137,8 +147,11 @@ class IscsiLun(object):
         self._bps_wr = None
         self._bps_wr_max = None
         self._bps_wr_max_length = None
+        self._business_host_groups = None
         self._business_host_is_same_with_parent = None
+        self._business_hosts = None
         self._configuration_method = None
+        self._consistency_group = None
         self._downgraded_prioritized_space = None
         self._ec_k = None
         self._ec_m = None
@@ -163,9 +176,11 @@ class IscsiLun(object):
         self._name = None
         self._prioritized = None
         self._replica_num = None
+        self._replication_plans = None
         self._resiliency_type = None
         self._shared_size = None
         self._snapshot_num = None
+        self._snapshot_plans = None
         self._stripe_num = None
         self._stripe_size = None
         self._thin_provision = None
@@ -196,8 +211,11 @@ class IscsiLun(object):
             self.bps_wr_max = kwargs["bps_wr_max"]
         if "bps_wr_max_length" in kwargs:
             self.bps_wr_max_length = kwargs["bps_wr_max_length"]
+        self.business_host_groups = kwargs.get("business_host_groups", None)
         self.business_host_is_same_with_parent = kwargs.get("business_host_is_same_with_parent", None)
+        self.business_hosts = kwargs.get("business_hosts", None)
         self.configuration_method = kwargs.get("configuration_method", None)
+        self.consistency_group = kwargs.get("consistency_group", None)
         self.downgraded_prioritized_space = kwargs.get("downgraded_prioritized_space", None)
         self.ec_k = kwargs.get("ec_k", None)
         self.ec_m = kwargs.get("ec_m", None)
@@ -239,11 +257,13 @@ class IscsiLun(object):
         self.prioritized = kwargs.get("prioritized", None)
         if "replica_num" in kwargs:
             self.replica_num = kwargs["replica_num"]
+        self.replication_plans = kwargs.get("replication_plans", None)
         self.resiliency_type = kwargs.get("resiliency_type", None)
         if "shared_size" in kwargs:
             self.shared_size = kwargs["shared_size"]
         if "snapshot_num" in kwargs:
             self.snapshot_num = kwargs["snapshot_num"]
+        self.snapshot_plans = kwargs.get("snapshot_plans", None)
         if "stripe_num" in kwargs:
             self.stripe_num = kwargs["stripe_num"]
         if "stripe_size" in kwargs:
@@ -510,6 +530,27 @@ class IscsiLun(object):
         self._bps_wr_max_length = bps_wr_max_length
 
     @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiLun.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiLun.  # noqa: E501
+        :rtype: list[NestedBusinessHostGroup]
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiLun.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiLun.  # noqa: E501
+        :type business_host_groups: list[NestedBusinessHostGroup]
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
     def business_host_is_same_with_parent(self):
         """Gets the business_host_is_same_with_parent of this IscsiLun.  # noqa: E501
 
@@ -531,6 +572,27 @@ class IscsiLun(object):
         self._business_host_is_same_with_parent = business_host_is_same_with_parent
 
     @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiLun.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiLun.  # noqa: E501
+        :rtype: list[NestedBusinessHost]
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiLun.
+
+
+        :param business_hosts: The business_hosts of this IscsiLun.  # noqa: E501
+        :type business_hosts: list[NestedBusinessHost]
+        """
+
+        self._business_hosts = business_hosts
+
+    @property
     def configuration_method(self):
         """Gets the configuration_method of this IscsiLun.  # noqa: E501
 
@@ -550,6 +612,27 @@ class IscsiLun(object):
         """
 
         self._configuration_method = configuration_method
+
+    @property
+    def consistency_group(self):
+        """Gets the consistency_group of this IscsiLun.  # noqa: E501
+
+
+        :return: The consistency_group of this IscsiLun.  # noqa: E501
+        :rtype: NestedConsistencyGroup
+        """
+        return self._consistency_group
+
+    @consistency_group.setter
+    def consistency_group(self, consistency_group):
+        """Sets the consistency_group of this IscsiLun.
+
+
+        :param consistency_group: The consistency_group of this IscsiLun.  # noqa: E501
+        :type consistency_group: NestedConsistencyGroup
+        """
+
+        self._consistency_group = consistency_group
 
     @property
     def downgraded_prioritized_space(self):
@@ -1090,6 +1173,27 @@ class IscsiLun(object):
         self._replica_num = replica_num
 
     @property
+    def replication_plans(self):
+        """Gets the replication_plans of this IscsiLun.  # noqa: E501
+
+
+        :return: The replication_plans of this IscsiLun.  # noqa: E501
+        :rtype: list[NestedReplicationPlan]
+        """
+        return self._replication_plans
+
+    @replication_plans.setter
+    def replication_plans(self, replication_plans):
+        """Sets the replication_plans of this IscsiLun.
+
+
+        :param replication_plans: The replication_plans of this IscsiLun.  # noqa: E501
+        :type replication_plans: list[NestedReplicationPlan]
+        """
+
+        self._replication_plans = replication_plans
+
+    @property
     def resiliency_type(self):
         """Gets the resiliency_type of this IscsiLun.  # noqa: E501
 
@@ -1155,6 +1259,27 @@ class IscsiLun(object):
             raise ValueError("Invalid value for `snapshot_num`, must not be `None`")  # noqa: E501
 
         self._snapshot_num = snapshot_num
+
+    @property
+    def snapshot_plans(self):
+        """Gets the snapshot_plans of this IscsiLun.  # noqa: E501
+
+
+        :return: The snapshot_plans of this IscsiLun.  # noqa: E501
+        :rtype: list[NestedSnapshotPlan]
+        """
+        return self._snapshot_plans
+
+    @snapshot_plans.setter
+    def snapshot_plans(self, snapshot_plans):
+        """Sets the snapshot_plans of this IscsiLun.
+
+
+        :param snapshot_plans: The snapshot_plans of this IscsiLun.  # noqa: E501
+        :type snapshot_plans: list[NestedSnapshotPlan]
+        """
+
+        self._snapshot_plans = snapshot_plans
 
     @property
     def stripe_num(self):

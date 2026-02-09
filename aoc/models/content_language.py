@@ -20,9 +20,11 @@ class ContentLanguage(object):
     """
     allowed enum values
     """
+    ZH_CN = "zh-CN"
     EN_US = "en-US"
+    _ = "*"
 
-    allowable_values = [EN_US]  # noqa: E501
+    allowable_values = [ZH_CN, EN_US, _]  # noqa: E501
 
     """
     Attributes:

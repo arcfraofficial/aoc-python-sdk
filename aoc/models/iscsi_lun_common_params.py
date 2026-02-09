@@ -25,6 +25,8 @@ class IscsiLunCommonParams(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'business_host_groups': 'BusinessHostGroupWhereInput',
+        'business_hosts': 'BusinessHostWhereInput',
         'business_host_is_same_with_parent': 'bool',
         'configuration_method': 'ConfigurationMethod',
         'encrypt_method': 'EncryptMethod',
@@ -57,6 +59,8 @@ class IscsiLunCommonParams(object):
     }
 
     attribute_map = {
+        'business_host_groups': 'business_host_groups',
+        'business_hosts': 'business_hosts',
         'business_host_is_same_with_parent': 'business_host_is_same_with_parent',
         'configuration_method': 'configuration_method',
         'encrypt_method': 'encrypt_method',
@@ -92,6 +96,8 @@ class IscsiLunCommonParams(object):
         """IscsiLunCommonParams - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._business_host_groups = None
+        self._business_hosts = None
         self._business_host_is_same_with_parent = None
         self._configuration_method = None
         self._encrypt_method = None
@@ -123,6 +129,10 @@ class IscsiLunCommonParams(object):
         self._allowed_initiators = None
         self.discriminator = None
 
+        if "business_host_groups" in kwargs:
+            self.business_host_groups = kwargs["business_host_groups"]
+        if "business_hosts" in kwargs:
+            self.business_hosts = kwargs["business_hosts"]
         if "business_host_is_same_with_parent" in kwargs:
             self.business_host_is_same_with_parent = kwargs["business_host_is_same_with_parent"]
         if "configuration_method" in kwargs:
@@ -181,6 +191,48 @@ class IscsiLunCommonParams(object):
             self.iops = kwargs["iops"]
         if "allowed_initiators" in kwargs:
             self.allowed_initiators = kwargs["allowed_initiators"]
+
+    @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiLunCommonParams.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiLunCommonParams.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiLunCommonParams.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiLunCommonParams.  # noqa: E501
+        :type business_host_groups: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiLunCommonParams.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiLunCommonParams.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiLunCommonParams.
+
+
+        :param business_hosts: The business_hosts of this IscsiLunCommonParams.  # noqa: E501
+        :type business_hosts: BusinessHostWhereInput
+        """
+
+        self._business_hosts = business_hosts
 
     @property
     def business_host_is_same_with_parent(self):

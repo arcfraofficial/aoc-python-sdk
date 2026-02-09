@@ -39,6 +39,7 @@ class GpuVmDetail(object):
         'unique_size': 'int',
         'status': 'VmStatus',
         'snapshots': 'list[NestedVmSnapshot]',
+        'snapshot_plan': 'NestedSnapshotPlan',
         'size': 'int',
         'provisioned_size': 'int',
         'protected': 'bool',
@@ -78,6 +79,7 @@ class GpuVmDetail(object):
         'folder': 'NestedVmFolder',
         'firmware': 'VmFirmware',
         'entity_async_status': 'EntityAsyncStatus',
+        'entity_filter_results': 'list[NestedVmEntityFilterResult]',
         'dns_servers': 'str',
         'description': 'str',
         'deleted_at': 'str',
@@ -104,6 +106,7 @@ class GpuVmDetail(object):
         'unique_size': 'unique_size',
         'status': 'status',
         'snapshots': 'snapshots',
+        'snapshot_plan': 'snapshot_plan',
         'size': 'size',
         'provisioned_size': 'provisioned_size',
         'protected': 'protected',
@@ -143,6 +146,7 @@ class GpuVmDetail(object):
         'folder': 'folder',
         'firmware': 'firmware',
         'entity_async_status': 'entityAsyncStatus',
+        'entity_filter_results': 'entity_filter_results',
         'dns_servers': 'dns_servers',
         'description': 'description',
         'deleted_at': 'deleted_at',
@@ -172,6 +176,7 @@ class GpuVmDetail(object):
         self._unique_size = None
         self._status = None
         self._snapshots = None
+        self._snapshot_plan = None
         self._size = None
         self._provisioned_size = None
         self._protected = None
@@ -211,6 +216,7 @@ class GpuVmDetail(object):
         self._folder = None
         self._firmware = None
         self._entity_async_status = None
+        self._entity_filter_results = None
         self._dns_servers = None
         self._description = None
         self._deleted_at = None
@@ -241,6 +247,7 @@ class GpuVmDetail(object):
         if "status" in kwargs:
             self.status = kwargs["status"]
         self.snapshots = kwargs.get("snapshots", None)
+        self.snapshot_plan = kwargs.get("snapshot_plan", None)
         self.size = kwargs.get("size", None)
         self.provisioned_size = kwargs.get("provisioned_size", None)
         if "protected" in kwargs:
@@ -293,6 +300,7 @@ class GpuVmDetail(object):
         if "firmware" in kwargs:
             self.firmware = kwargs["firmware"]
         self.entity_async_status = kwargs.get("entity_async_status", None)
+        self.entity_filter_results = kwargs.get("entity_filter_results", None)
         self.dns_servers = kwargs.get("dns_servers", None)
         if "description" in kwargs:
             self.description = kwargs["description"]
@@ -608,6 +616,27 @@ class GpuVmDetail(object):
         """
 
         self._snapshots = snapshots
+
+    @property
+    def snapshot_plan(self):
+        """Gets the snapshot_plan of this GpuVmDetail.  # noqa: E501
+
+
+        :return: The snapshot_plan of this GpuVmDetail.  # noqa: E501
+        :rtype: NestedSnapshotPlan
+        """
+        return self._snapshot_plan
+
+    @snapshot_plan.setter
+    def snapshot_plan(self, snapshot_plan):
+        """Sets the snapshot_plan of this GpuVmDetail.
+
+
+        :param snapshot_plan: The snapshot_plan of this GpuVmDetail.  # noqa: E501
+        :type snapshot_plan: NestedSnapshotPlan
+        """
+
+        self._snapshot_plan = snapshot_plan
 
     @property
     def size(self):
@@ -1453,6 +1482,27 @@ class GpuVmDetail(object):
         """
 
         self._entity_async_status = entity_async_status
+
+    @property
+    def entity_filter_results(self):
+        """Gets the entity_filter_results of this GpuVmDetail.  # noqa: E501
+
+
+        :return: The entity_filter_results of this GpuVmDetail.  # noqa: E501
+        :rtype: list[NestedVmEntityFilterResult]
+        """
+        return self._entity_filter_results
+
+    @entity_filter_results.setter
+    def entity_filter_results(self, entity_filter_results):
+        """Sets the entity_filter_results of this GpuVmDetail.
+
+
+        :param entity_filter_results: The entity_filter_results of this GpuVmDetail.  # noqa: E501
+        :type entity_filter_results: list[NestedVmEntityFilterResult]
+        """
+
+        self._entity_filter_results = entity_filter_results
 
     @property
     def dns_servers(self):

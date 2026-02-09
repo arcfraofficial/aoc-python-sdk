@@ -25,9 +25,11 @@ class Alert(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'alert_rule': 'NestedAlertRule',
         'cause': 'str',
         'cluster': 'NestedCluster',
         'create_time': 'str',
+        'disk': 'NestedDisk',
         'ended': 'bool',
         'host': 'NestedHost',
         'id': 'str',
@@ -47,9 +49,11 @@ class Alert(object):
     }
 
     attribute_map = {
+        'alert_rule': 'alert_rule',
         'cause': 'cause',
         'cluster': 'cluster',
         'create_time': 'create_time',
+        'disk': 'disk',
         'ended': 'ended',
         'host': 'host',
         'id': 'id',
@@ -72,9 +76,11 @@ class Alert(object):
         """Alert - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._alert_rule = None
         self._cause = None
         self._cluster = None
         self._create_time = None
+        self._disk = None
         self._ended = None
         self._host = None
         self._id = None
@@ -93,10 +99,12 @@ class Alert(object):
         self._vms = None
         self.discriminator = None
 
+        self.alert_rule = kwargs.get("alert_rule", None)
         if "cause" in kwargs:
             self.cause = kwargs["cause"]
         self.cluster = kwargs.get("cluster", None)
         self.create_time = kwargs.get("create_time", None)
+        self.disk = kwargs.get("disk", None)
         if "ended" in kwargs:
             self.ended = kwargs["ended"]
         self.host = kwargs.get("host", None)
@@ -127,6 +135,27 @@ class Alert(object):
         if "value" in kwargs:
             self.value = kwargs["value"]
         self.vms = kwargs.get("vms", None)
+
+    @property
+    def alert_rule(self):
+        """Gets the alert_rule of this Alert.  # noqa: E501
+
+
+        :return: The alert_rule of this Alert.  # noqa: E501
+        :rtype: NestedAlertRule
+        """
+        return self._alert_rule
+
+    @alert_rule.setter
+    def alert_rule(self, alert_rule):
+        """Sets the alert_rule of this Alert.
+
+
+        :param alert_rule: The alert_rule of this Alert.  # noqa: E501
+        :type alert_rule: NestedAlertRule
+        """
+
+        self._alert_rule = alert_rule
 
     @property
     def cause(self):
@@ -192,6 +221,27 @@ class Alert(object):
         """
 
         self._create_time = create_time
+
+    @property
+    def disk(self):
+        """Gets the disk of this Alert.  # noqa: E501
+
+
+        :return: The disk of this Alert.  # noqa: E501
+        :rtype: NestedDisk
+        """
+        return self._disk
+
+    @disk.setter
+    def disk(self, disk):
+        """Sets the disk of this Alert.
+
+
+        :param disk: The disk of this Alert.  # noqa: E501
+        :type disk: NestedDisk
+        """
+
+        self._disk = disk
 
     @property
     def ended(self):

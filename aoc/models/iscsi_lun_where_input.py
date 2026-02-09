@@ -122,12 +122,19 @@ class IscsiLunWhereInput(object):
         'bps_wr_max_not_in': 'list[int]',
         'bps_wr_not': 'int',
         'bps_wr_not_in': 'list[int]',
+        'business_host_groups_every': 'BusinessHostGroupWhereInput',
+        'business_host_groups_none': 'BusinessHostGroupWhereInput',
+        'business_host_groups_some': 'BusinessHostGroupWhereInput',
         'business_host_is_same_with_parent': 'bool',
         'business_host_is_same_with_parent_not': 'bool',
+        'business_hosts_every': 'BusinessHostWhereInput',
+        'business_hosts_none': 'BusinessHostWhereInput',
+        'business_hosts_some': 'BusinessHostWhereInput',
         'configuration_method': 'ConfigurationMethod',
         'configuration_method_in': 'list[ConfigurationMethod]',
         'configuration_method_not': 'ConfigurationMethod',
         'configuration_method_not_in': 'list[ConfigurationMethod]',
+        'consistency_group': 'ConsistencyGroupWhereInput',
         'downgraded_prioritized_space': 'int',
         'downgraded_prioritized_space_gt': 'int',
         'downgraded_prioritized_space_gte': 'int',
@@ -312,6 +319,9 @@ class IscsiLunWhereInput(object):
         'replica_num_lte': 'int',
         'replica_num_not': 'int',
         'replica_num_not_in': 'list[int]',
+        'replication_plans_every': 'ReplicationPlanWhereInput',
+        'replication_plans_none': 'ReplicationPlanWhereInput',
+        'replication_plans_some': 'ReplicationPlanWhereInput',
         'resiliency_type': 'ResiliencyType',
         'resiliency_type_in': 'list[ResiliencyType]',
         'resiliency_type_not': 'ResiliencyType',
@@ -332,6 +342,9 @@ class IscsiLunWhereInput(object):
         'snapshot_num_lte': 'int',
         'snapshot_num_not': 'int',
         'snapshot_num_not_in': 'list[int]',
+        'snapshot_plans_every': 'SnapshotPlanWhereInput',
+        'snapshot_plans_none': 'SnapshotPlanWhereInput',
+        'snapshot_plans_some': 'SnapshotPlanWhereInput',
         'stripe_num': 'int',
         'stripe_num_gt': 'int',
         'stripe_num_gte': 'int',
@@ -480,12 +493,19 @@ class IscsiLunWhereInput(object):
         'bps_wr_max_not_in': 'bps_wr_max_not_in',
         'bps_wr_not': 'bps_wr_not',
         'bps_wr_not_in': 'bps_wr_not_in',
+        'business_host_groups_every': 'business_host_groups_every',
+        'business_host_groups_none': 'business_host_groups_none',
+        'business_host_groups_some': 'business_host_groups_some',
         'business_host_is_same_with_parent': 'business_host_is_same_with_parent',
         'business_host_is_same_with_parent_not': 'business_host_is_same_with_parent_not',
+        'business_hosts_every': 'business_hosts_every',
+        'business_hosts_none': 'business_hosts_none',
+        'business_hosts_some': 'business_hosts_some',
         'configuration_method': 'configuration_method',
         'configuration_method_in': 'configuration_method_in',
         'configuration_method_not': 'configuration_method_not',
         'configuration_method_not_in': 'configuration_method_not_in',
+        'consistency_group': 'consistency_group',
         'downgraded_prioritized_space': 'downgraded_prioritized_space',
         'downgraded_prioritized_space_gt': 'downgraded_prioritized_space_gt',
         'downgraded_prioritized_space_gte': 'downgraded_prioritized_space_gte',
@@ -670,6 +690,9 @@ class IscsiLunWhereInput(object):
         'replica_num_lte': 'replica_num_lte',
         'replica_num_not': 'replica_num_not',
         'replica_num_not_in': 'replica_num_not_in',
+        'replication_plans_every': 'replication_plans_every',
+        'replication_plans_none': 'replication_plans_none',
+        'replication_plans_some': 'replication_plans_some',
         'resiliency_type': 'resiliency_type',
         'resiliency_type_in': 'resiliency_type_in',
         'resiliency_type_not': 'resiliency_type_not',
@@ -690,6 +713,9 @@ class IscsiLunWhereInput(object):
         'snapshot_num_lte': 'snapshot_num_lte',
         'snapshot_num_not': 'snapshot_num_not',
         'snapshot_num_not_in': 'snapshot_num_not_in',
+        'snapshot_plans_every': 'snapshot_plans_every',
+        'snapshot_plans_none': 'snapshot_plans_none',
+        'snapshot_plans_some': 'snapshot_plans_some',
         'stripe_num': 'stripe_num',
         'stripe_num_gt': 'stripe_num_gt',
         'stripe_num_gte': 'stripe_num_gte',
@@ -841,12 +867,19 @@ class IscsiLunWhereInput(object):
         self._bps_wr_max_not_in = None
         self._bps_wr_not = None
         self._bps_wr_not_in = None
+        self._business_host_groups_every = None
+        self._business_host_groups_none = None
+        self._business_host_groups_some = None
         self._business_host_is_same_with_parent = None
         self._business_host_is_same_with_parent_not = None
+        self._business_hosts_every = None
+        self._business_hosts_none = None
+        self._business_hosts_some = None
         self._configuration_method = None
         self._configuration_method_in = None
         self._configuration_method_not = None
         self._configuration_method_not_in = None
+        self._consistency_group = None
         self._downgraded_prioritized_space = None
         self._downgraded_prioritized_space_gt = None
         self._downgraded_prioritized_space_gte = None
@@ -1031,6 +1064,9 @@ class IscsiLunWhereInput(object):
         self._replica_num_lte = None
         self._replica_num_not = None
         self._replica_num_not_in = None
+        self._replication_plans_every = None
+        self._replication_plans_none = None
+        self._replication_plans_some = None
         self._resiliency_type = None
         self._resiliency_type_in = None
         self._resiliency_type_not = None
@@ -1051,6 +1087,9 @@ class IscsiLunWhereInput(object):
         self._snapshot_num_lte = None
         self._snapshot_num_not = None
         self._snapshot_num_not_in = None
+        self._snapshot_plans_every = None
+        self._snapshot_plans_none = None
+        self._snapshot_plans_some = None
         self._stripe_num = None
         self._stripe_num_gt = None
         self._stripe_num_gte = None
@@ -1198,12 +1237,19 @@ class IscsiLunWhereInput(object):
         self.bps_wr_max_not_in = kwargs.get("bps_wr_max_not_in", None)
         self.bps_wr_not = kwargs.get("bps_wr_not", None)
         self.bps_wr_not_in = kwargs.get("bps_wr_not_in", None)
+        self.business_host_groups_every = kwargs.get("business_host_groups_every", None)
+        self.business_host_groups_none = kwargs.get("business_host_groups_none", None)
+        self.business_host_groups_some = kwargs.get("business_host_groups_some", None)
         self.business_host_is_same_with_parent = kwargs.get("business_host_is_same_with_parent", None)
         self.business_host_is_same_with_parent_not = kwargs.get("business_host_is_same_with_parent_not", None)
+        self.business_hosts_every = kwargs.get("business_hosts_every", None)
+        self.business_hosts_none = kwargs.get("business_hosts_none", None)
+        self.business_hosts_some = kwargs.get("business_hosts_some", None)
         self.configuration_method = kwargs.get("configuration_method", None)
         self.configuration_method_in = kwargs.get("configuration_method_in", None)
         self.configuration_method_not = kwargs.get("configuration_method_not", None)
         self.configuration_method_not_in = kwargs.get("configuration_method_not_in", None)
+        self.consistency_group = kwargs.get("consistency_group", None)
         self.downgraded_prioritized_space = kwargs.get("downgraded_prioritized_space", None)
         self.downgraded_prioritized_space_gt = kwargs.get("downgraded_prioritized_space_gt", None)
         self.downgraded_prioritized_space_gte = kwargs.get("downgraded_prioritized_space_gte", None)
@@ -1388,6 +1434,9 @@ class IscsiLunWhereInput(object):
         self.replica_num_lte = kwargs.get("replica_num_lte", None)
         self.replica_num_not = kwargs.get("replica_num_not", None)
         self.replica_num_not_in = kwargs.get("replica_num_not_in", None)
+        self.replication_plans_every = kwargs.get("replication_plans_every", None)
+        self.replication_plans_none = kwargs.get("replication_plans_none", None)
+        self.replication_plans_some = kwargs.get("replication_plans_some", None)
         self.resiliency_type = kwargs.get("resiliency_type", None)
         self.resiliency_type_in = kwargs.get("resiliency_type_in", None)
         self.resiliency_type_not = kwargs.get("resiliency_type_not", None)
@@ -1408,6 +1457,9 @@ class IscsiLunWhereInput(object):
         self.snapshot_num_lte = kwargs.get("snapshot_num_lte", None)
         self.snapshot_num_not = kwargs.get("snapshot_num_not", None)
         self.snapshot_num_not_in = kwargs.get("snapshot_num_not_in", None)
+        self.snapshot_plans_every = kwargs.get("snapshot_plans_every", None)
+        self.snapshot_plans_none = kwargs.get("snapshot_plans_none", None)
+        self.snapshot_plans_some = kwargs.get("snapshot_plans_some", None)
         self.stripe_num = kwargs.get("stripe_num", None)
         self.stripe_num_gt = kwargs.get("stripe_num_gt", None)
         self.stripe_num_gte = kwargs.get("stripe_num_gte", None)
@@ -3495,6 +3547,69 @@ class IscsiLunWhereInput(object):
         self._bps_wr_not_in = bps_wr_not_in
 
     @property
+    def business_host_groups_every(self):
+        """Gets the business_host_groups_every of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_every of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_every
+
+    @business_host_groups_every.setter
+    def business_host_groups_every(self, business_host_groups_every):
+        """Sets the business_host_groups_every of this IscsiLunWhereInput.
+
+
+        :param business_host_groups_every: The business_host_groups_every of this IscsiLunWhereInput.  # noqa: E501
+        :type business_host_groups_every: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_every = business_host_groups_every
+
+    @property
+    def business_host_groups_none(self):
+        """Gets the business_host_groups_none of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_none of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_none
+
+    @business_host_groups_none.setter
+    def business_host_groups_none(self, business_host_groups_none):
+        """Sets the business_host_groups_none of this IscsiLunWhereInput.
+
+
+        :param business_host_groups_none: The business_host_groups_none of this IscsiLunWhereInput.  # noqa: E501
+        :type business_host_groups_none: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_none = business_host_groups_none
+
+    @property
+    def business_host_groups_some(self):
+        """Gets the business_host_groups_some of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_host_groups_some of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups_some
+
+    @business_host_groups_some.setter
+    def business_host_groups_some(self, business_host_groups_some):
+        """Sets the business_host_groups_some of this IscsiLunWhereInput.
+
+
+        :param business_host_groups_some: The business_host_groups_some of this IscsiLunWhereInput.  # noqa: E501
+        :type business_host_groups_some: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups_some = business_host_groups_some
+
+    @property
     def business_host_is_same_with_parent(self):
         """Gets the business_host_is_same_with_parent of this IscsiLunWhereInput.  # noqa: E501
 
@@ -3535,6 +3650,69 @@ class IscsiLunWhereInput(object):
         """
 
         self._business_host_is_same_with_parent_not = business_host_is_same_with_parent_not
+
+    @property
+    def business_hosts_every(self):
+        """Gets the business_hosts_every of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_every of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_every
+
+    @business_hosts_every.setter
+    def business_hosts_every(self, business_hosts_every):
+        """Sets the business_hosts_every of this IscsiLunWhereInput.
+
+
+        :param business_hosts_every: The business_hosts_every of this IscsiLunWhereInput.  # noqa: E501
+        :type business_hosts_every: BusinessHostWhereInput
+        """
+
+        self._business_hosts_every = business_hosts_every
+
+    @property
+    def business_hosts_none(self):
+        """Gets the business_hosts_none of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_none of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_none
+
+    @business_hosts_none.setter
+    def business_hosts_none(self, business_hosts_none):
+        """Sets the business_hosts_none of this IscsiLunWhereInput.
+
+
+        :param business_hosts_none: The business_hosts_none of this IscsiLunWhereInput.  # noqa: E501
+        :type business_hosts_none: BusinessHostWhereInput
+        """
+
+        self._business_hosts_none = business_hosts_none
+
+    @property
+    def business_hosts_some(self):
+        """Gets the business_hosts_some of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The business_hosts_some of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts_some
+
+    @business_hosts_some.setter
+    def business_hosts_some(self, business_hosts_some):
+        """Sets the business_hosts_some of this IscsiLunWhereInput.
+
+
+        :param business_hosts_some: The business_hosts_some of this IscsiLunWhereInput.  # noqa: E501
+        :type business_hosts_some: BusinessHostWhereInput
+        """
+
+        self._business_hosts_some = business_hosts_some
 
     @property
     def configuration_method(self):
@@ -3619,6 +3797,27 @@ class IscsiLunWhereInput(object):
         """
 
         self._configuration_method_not_in = configuration_method_not_in
+
+    @property
+    def consistency_group(self):
+        """Gets the consistency_group of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The consistency_group of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ConsistencyGroupWhereInput
+        """
+        return self._consistency_group
+
+    @consistency_group.setter
+    def consistency_group(self, consistency_group):
+        """Sets the consistency_group of this IscsiLunWhereInput.
+
+
+        :param consistency_group: The consistency_group of this IscsiLunWhereInput.  # noqa: E501
+        :type consistency_group: ConsistencyGroupWhereInput
+        """
+
+        self._consistency_group = consistency_group
 
     @property
     def downgraded_prioritized_space(self):
@@ -7485,6 +7684,69 @@ class IscsiLunWhereInput(object):
         self._replica_num_not_in = replica_num_not_in
 
     @property
+    def replication_plans_every(self):
+        """Gets the replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_every
+
+    @replication_plans_every.setter
+    def replication_plans_every(self, replication_plans_every):
+        """Sets the replication_plans_every of this IscsiLunWhereInput.
+
+
+        :param replication_plans_every: The replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_every: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_every = replication_plans_every
+
+    @property
+    def replication_plans_none(self):
+        """Gets the replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_none
+
+    @replication_plans_none.setter
+    def replication_plans_none(self, replication_plans_none):
+        """Sets the replication_plans_none of this IscsiLunWhereInput.
+
+
+        :param replication_plans_none: The replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_none: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_none = replication_plans_none
+
+    @property
+    def replication_plans_some(self):
+        """Gets the replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_some
+
+    @replication_plans_some.setter
+    def replication_plans_some(self, replication_plans_some):
+        """Sets the replication_plans_some of this IscsiLunWhereInput.
+
+
+        :param replication_plans_some: The replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_some: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_some = replication_plans_some
+
+    @property
     def resiliency_type(self):
         """Gets the resiliency_type of this IscsiLunWhereInput.  # noqa: E501
 
@@ -7903,6 +8165,69 @@ class IscsiLunWhereInput(object):
         """
 
         self._snapshot_num_not_in = snapshot_num_not_in
+
+    @property
+    def snapshot_plans_every(self):
+        """Gets the snapshot_plans_every of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The snapshot_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: SnapshotPlanWhereInput
+        """
+        return self._snapshot_plans_every
+
+    @snapshot_plans_every.setter
+    def snapshot_plans_every(self, snapshot_plans_every):
+        """Sets the snapshot_plans_every of this IscsiLunWhereInput.
+
+
+        :param snapshot_plans_every: The snapshot_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :type snapshot_plans_every: SnapshotPlanWhereInput
+        """
+
+        self._snapshot_plans_every = snapshot_plans_every
+
+    @property
+    def snapshot_plans_none(self):
+        """Gets the snapshot_plans_none of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The snapshot_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: SnapshotPlanWhereInput
+        """
+        return self._snapshot_plans_none
+
+    @snapshot_plans_none.setter
+    def snapshot_plans_none(self, snapshot_plans_none):
+        """Sets the snapshot_plans_none of this IscsiLunWhereInput.
+
+
+        :param snapshot_plans_none: The snapshot_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :type snapshot_plans_none: SnapshotPlanWhereInput
+        """
+
+        self._snapshot_plans_none = snapshot_plans_none
+
+    @property
+    def snapshot_plans_some(self):
+        """Gets the snapshot_plans_some of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The snapshot_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: SnapshotPlanWhereInput
+        """
+        return self._snapshot_plans_some
+
+    @snapshot_plans_some.setter
+    def snapshot_plans_some(self, snapshot_plans_some):
+        """Sets the snapshot_plans_some of this IscsiLunWhereInput.
+
+
+        :param snapshot_plans_some: The snapshot_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :type snapshot_plans_some: SnapshotPlanWhereInput
+        """
+
+        self._snapshot_plans_some = snapshot_plans_some
 
     @property
     def stripe_num(self):

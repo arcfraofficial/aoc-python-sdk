@@ -38,6 +38,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_request_body: GetGpuDevicesRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -69,6 +71,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_request_body: GetGpuDevicesRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -97,7 +101,8 @@ class GpuDeviceApi(object):
 
         all_params = [
             'get_gpu_devices_request_body',
-            'content_language'
+            'content_language',
+            'external_cloudtower_id'
         ]
         all_params.extend(
             [
@@ -133,6 +138,8 @@ class GpuDeviceApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -191,6 +198,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_request_body: GetGpuDevicesRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -222,6 +231,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_request_body: GetGpuDevicesRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -250,7 +261,8 @@ class GpuDeviceApi(object):
 
         all_params = [
             'get_gpu_devices_request_body',
-            'content_language'
+            'content_language',
+            'external_cloudtower_id'
         ]
         all_params.extend(
             [
@@ -286,6 +298,8 @@ class GpuDeviceApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -343,6 +357,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_connection_request_body: GetGpuDevicesConnectionRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -374,6 +390,8 @@ class GpuDeviceApi(object):
         :type get_gpu_devices_connection_request_body: GetGpuDevicesConnectionRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -402,7 +420,8 @@ class GpuDeviceApi(object):
 
         all_params = [
             'get_gpu_devices_connection_request_body',
-            'content_language'
+            'content_language',
+            'external_cloudtower_id'
         ]
         all_params.extend(
             [
@@ -438,6 +457,8 @@ class GpuDeviceApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -467,6 +488,486 @@ class GpuDeviceApi(object):
 
         return self.api_client.call_api(
             '/get-gpu-devices-connection', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def switch_gpu_device_sriov(self, gpu_device_sriov_switch_params, **kwargs):  # noqa: E501
+        """switch_gpu_device_sriov  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.switch_gpu_device_sriov(gpu_device_sriov_switch_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_sriov_switch_params: (required)
+        :type gpu_device_sriov_switch_params: GpuDeviceSriovSwitchParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: list[WithTaskGpuDevice]
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.switch_gpu_device_sriov_with_http_info(gpu_device_sriov_switch_params, **kwargs)  # noqa: E501
+
+    def switch_gpu_device_sriov_with_http_info(self, gpu_device_sriov_switch_params, **kwargs):  # noqa: E501
+        """switch_gpu_device_sriov  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.switch_gpu_device_sriov_with_http_info(gpu_device_sriov_switch_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_sriov_switch_params: (required)
+        :type gpu_device_sriov_switch_params: GpuDeviceSriovSwitchParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(list[WithTaskGpuDevice], status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'gpu_device_sriov_switch_params',
+            'content_language',
+            'external_cloudtower_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method switch_gpu_device_sriov" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'gpu_device_sriov_switch_params' is set
+        if self.api_client.client_side_validation and ('gpu_device_sriov_switch_params' not in local_var_params or  # noqa: E501
+                                                        local_var_params['gpu_device_sriov_switch_params'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `gpu_device_sriov_switch_params` when calling `switch_gpu_device_sriov`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+        if 'content_language' in local_var_params:
+            header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'gpu_device_sriov_switch_params' in local_var_params:
+            body_params = local_var_params['gpu_device_sriov_switch_params']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Authorization']  # noqa: E501
+
+        response_types_map = {
+            200: "list[WithTaskGpuDevice]",
+            304: None,
+            400: "ErrorBody",
+            404: "ErrorBody",
+            500: "ErrorBody",
+        }
+
+        return self.api_client.call_api(
+            '/switch-gpu-device-sriov', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def update_gpu_device_description(self, gpu_device_description_updation_params, **kwargs):  # noqa: E501
+        """update_gpu_device_description  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_gpu_device_description(gpu_device_description_updation_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_description_updation_params: (required)
+        :type gpu_device_description_updation_params: GpuDeviceDescriptionUpdationParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: list[WithTaskGpuDevice]
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_gpu_device_description_with_http_info(gpu_device_description_updation_params, **kwargs)  # noqa: E501
+
+    def update_gpu_device_description_with_http_info(self, gpu_device_description_updation_params, **kwargs):  # noqa: E501
+        """update_gpu_device_description  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_gpu_device_description_with_http_info(gpu_device_description_updation_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_description_updation_params: (required)
+        :type gpu_device_description_updation_params: GpuDeviceDescriptionUpdationParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(list[WithTaskGpuDevice], status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'gpu_device_description_updation_params',
+            'content_language',
+            'external_cloudtower_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_gpu_device_description" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'gpu_device_description_updation_params' is set
+        if self.api_client.client_side_validation and ('gpu_device_description_updation_params' not in local_var_params or  # noqa: E501
+                                                        local_var_params['gpu_device_description_updation_params'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `gpu_device_description_updation_params` when calling `update_gpu_device_description`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+        if 'content_language' in local_var_params:
+            header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'gpu_device_description_updation_params' in local_var_params:
+            body_params = local_var_params['gpu_device_description_updation_params']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Authorization']  # noqa: E501
+
+        response_types_map = {
+            200: "list[WithTaskGpuDevice]",
+            304: None,
+            400: "ErrorBody",
+            404: "ErrorBody",
+            500: "ErrorBody",
+        }
+
+        return self.api_client.call_api(
+            '/update-gpu-device-description', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def update_gpu_device_usage(self, gpu_device_usage_updation_params, **kwargs):  # noqa: E501
+        """update_gpu_device_usage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_gpu_device_usage(gpu_device_usage_updation_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_usage_updation_params: (required)
+        :type gpu_device_usage_updation_params: GpuDeviceUsageUpdationParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: list[WithTaskGpuDevice]
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_gpu_device_usage_with_http_info(gpu_device_usage_updation_params, **kwargs)  # noqa: E501
+
+    def update_gpu_device_usage_with_http_info(self, gpu_device_usage_updation_params, **kwargs):  # noqa: E501
+        """update_gpu_device_usage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_gpu_device_usage_with_http_info(gpu_device_usage_updation_params, async_req=True)
+        >>> result = thread.get()
+
+        :param gpu_device_usage_updation_params: (required)
+        :type gpu_device_usage_updation_params: GpuDeviceUsageUpdationParams
+        :param content_language:
+        :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(list[WithTaskGpuDevice], status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'gpu_device_usage_updation_params',
+            'content_language',
+            'external_cloudtower_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_gpu_device_usage" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'gpu_device_usage_updation_params' is set
+        if self.api_client.client_side_validation and ('gpu_device_usage_updation_params' not in local_var_params or  # noqa: E501
+                                                        local_var_params['gpu_device_usage_updation_params'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `gpu_device_usage_updation_params` when calling `update_gpu_device_usage`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+        if 'content_language' in local_var_params:
+            header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'gpu_device_usage_updation_params' in local_var_params:
+            body_params = local_var_params['gpu_device_usage_updation_params']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Authorization']  # noqa: E501
+
+        response_types_map = {
+            200: "list[WithTaskGpuDevice]",
+            304: None,
+            400: "ErrorBody",
+            404: "ErrorBody",
+            500: "ErrorBody",
+        }
+
+        return self.api_client.call_api(
+            '/update-gpu-device-usage', 'POST',
             path_params,
             query_params,
             header_params,

@@ -25,6 +25,8 @@ class Vm(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'anti_malware_enabled': 'bool',
+        'backup_plans': 'list[NestedBackupPlan]',
         'bios_uuid': 'str',
         'clock_offset': 'VmClockOffset',
         'cloud_init_supported': 'bool',
@@ -35,7 +37,9 @@ class Vm(object):
         'deleted_at': 'str',
         'description': 'str',
         'dns_servers': 'str',
+        'dpi_enabled': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
+        'entity_filter_results': 'list[NestedVmEntityFilterResult]',
         'firmware': 'VmFirmware',
         'folder': 'NestedVmFolder',
         'gpu_devices': 'list[NestedGpuDevice]',
@@ -50,6 +54,8 @@ class Vm(object):
         'id': 'str',
         'in_recycle_bin': 'bool',
         'internal': 'bool',
+        'internal_product': 'str',
+        'internal_product_name': 'str',
         'io_policy': 'VmDiskIoPolicy',
         'ips': 'str',
         'isolation_policy': 'NestedIsolationPolicy',
@@ -75,6 +81,7 @@ class Vm(object):
         'protected': 'bool',
         'provisioned_size': 'int',
         'size': 'int',
+        'snapshot_plan': 'NestedSnapshotPlan',
         'snapshots': 'list[NestedVmSnapshot]',
         'status': 'VmStatus',
         'unique_logical_size': 'float',
@@ -94,6 +101,8 @@ class Vm(object):
     }
 
     attribute_map = {
+        'anti_malware_enabled': 'anti_malware_enabled',
+        'backup_plans': 'backup_plans',
         'bios_uuid': 'bios_uuid',
         'clock_offset': 'clock_offset',
         'cloud_init_supported': 'cloud_init_supported',
@@ -104,7 +113,9 @@ class Vm(object):
         'deleted_at': 'deleted_at',
         'description': 'description',
         'dns_servers': 'dns_servers',
+        'dpi_enabled': 'dpi_enabled',
         'entity_async_status': 'entityAsyncStatus',
+        'entity_filter_results': 'entity_filter_results',
         'firmware': 'firmware',
         'folder': 'folder',
         'gpu_devices': 'gpu_devices',
@@ -119,6 +130,8 @@ class Vm(object):
         'id': 'id',
         'in_recycle_bin': 'in_recycle_bin',
         'internal': 'internal',
+        'internal_product': 'internal_product',
+        'internal_product_name': 'internal_product_name',
         'io_policy': 'io_policy',
         'ips': 'ips',
         'isolation_policy': 'isolation_policy',
@@ -144,6 +157,7 @@ class Vm(object):
         'protected': 'protected',
         'provisioned_size': 'provisioned_size',
         'size': 'size',
+        'snapshot_plan': 'snapshot_plan',
         'snapshots': 'snapshots',
         'status': 'status',
         'unique_logical_size': 'unique_logical_size',
@@ -166,6 +180,8 @@ class Vm(object):
         """Vm - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._anti_malware_enabled = None
+        self._backup_plans = None
         self._bios_uuid = None
         self._clock_offset = None
         self._cloud_init_supported = None
@@ -176,7 +192,9 @@ class Vm(object):
         self._deleted_at = None
         self._description = None
         self._dns_servers = None
+        self._dpi_enabled = None
         self._entity_async_status = None
+        self._entity_filter_results = None
         self._firmware = None
         self._folder = None
         self._gpu_devices = None
@@ -191,6 +209,8 @@ class Vm(object):
         self._id = None
         self._in_recycle_bin = None
         self._internal = None
+        self._internal_product = None
+        self._internal_product_name = None
         self._io_policy = None
         self._ips = None
         self._isolation_policy = None
@@ -216,6 +236,7 @@ class Vm(object):
         self._protected = None
         self._provisioned_size = None
         self._size = None
+        self._snapshot_plan = None
         self._snapshots = None
         self._status = None
         self._unique_logical_size = None
@@ -234,6 +255,8 @@ class Vm(object):
         self._win_opt = None
         self.discriminator = None
 
+        self.anti_malware_enabled = kwargs.get("anti_malware_enabled", None)
+        self.backup_plans = kwargs.get("backup_plans", None)
         self.bios_uuid = kwargs.get("bios_uuid", None)
         if "clock_offset" in kwargs:
             self.clock_offset = kwargs["clock_offset"]
@@ -248,7 +271,9 @@ class Vm(object):
         if "description" in kwargs:
             self.description = kwargs["description"]
         self.dns_servers = kwargs.get("dns_servers", None)
+        self.dpi_enabled = kwargs.get("dpi_enabled", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
+        self.entity_filter_results = kwargs.get("entity_filter_results", None)
         if "firmware" in kwargs:
             self.firmware = kwargs["firmware"]
         self.folder = kwargs.get("folder", None)
@@ -268,6 +293,8 @@ class Vm(object):
             self.in_recycle_bin = kwargs["in_recycle_bin"]
         if "internal" in kwargs:
             self.internal = kwargs["internal"]
+        self.internal_product = kwargs.get("internal_product", None)
+        self.internal_product_name = kwargs.get("internal_product_name", None)
         self.io_policy = kwargs.get("io_policy", None)
         if "ips" in kwargs:
             self.ips = kwargs["ips"]
@@ -301,6 +328,7 @@ class Vm(object):
             self.protected = kwargs["protected"]
         self.provisioned_size = kwargs.get("provisioned_size", None)
         self.size = kwargs.get("size", None)
+        self.snapshot_plan = kwargs.get("snapshot_plan", None)
         self.snapshots = kwargs.get("snapshots", None)
         if "status" in kwargs:
             self.status = kwargs["status"]
@@ -321,6 +349,48 @@ class Vm(object):
         self.vm_usage = kwargs.get("vm_usage", None)
         if "win_opt" in kwargs:
             self.win_opt = kwargs["win_opt"]
+
+    @property
+    def anti_malware_enabled(self):
+        """Gets the anti_malware_enabled of this Vm.  # noqa: E501
+
+
+        :return: The anti_malware_enabled of this Vm.  # noqa: E501
+        :rtype: bool
+        """
+        return self._anti_malware_enabled
+
+    @anti_malware_enabled.setter
+    def anti_malware_enabled(self, anti_malware_enabled):
+        """Sets the anti_malware_enabled of this Vm.
+
+
+        :param anti_malware_enabled: The anti_malware_enabled of this Vm.  # noqa: E501
+        :type anti_malware_enabled: bool
+        """
+
+        self._anti_malware_enabled = anti_malware_enabled
+
+    @property
+    def backup_plans(self):
+        """Gets the backup_plans of this Vm.  # noqa: E501
+
+
+        :return: The backup_plans of this Vm.  # noqa: E501
+        :rtype: list[NestedBackupPlan]
+        """
+        return self._backup_plans
+
+    @backup_plans.setter
+    def backup_plans(self, backup_plans):
+        """Sets the backup_plans of this Vm.
+
+
+        :param backup_plans: The backup_plans of this Vm.  # noqa: E501
+        :type backup_plans: list[NestedBackupPlan]
+        """
+
+        self._backup_plans = backup_plans
 
     @property
     def bios_uuid(self):
@@ -541,6 +611,27 @@ class Vm(object):
         self._dns_servers = dns_servers
 
     @property
+    def dpi_enabled(self):
+        """Gets the dpi_enabled of this Vm.  # noqa: E501
+
+
+        :return: The dpi_enabled of this Vm.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dpi_enabled
+
+    @dpi_enabled.setter
+    def dpi_enabled(self, dpi_enabled):
+        """Sets the dpi_enabled of this Vm.
+
+
+        :param dpi_enabled: The dpi_enabled of this Vm.  # noqa: E501
+        :type dpi_enabled: bool
+        """
+
+        self._dpi_enabled = dpi_enabled
+
+    @property
     def entity_async_status(self):
         """Gets the entity_async_status of this Vm.  # noqa: E501
 
@@ -560,6 +651,27 @@ class Vm(object):
         """
 
         self._entity_async_status = entity_async_status
+
+    @property
+    def entity_filter_results(self):
+        """Gets the entity_filter_results of this Vm.  # noqa: E501
+
+
+        :return: The entity_filter_results of this Vm.  # noqa: E501
+        :rtype: list[NestedVmEntityFilterResult]
+        """
+        return self._entity_filter_results
+
+    @entity_filter_results.setter
+    def entity_filter_results(self, entity_filter_results):
+        """Sets the entity_filter_results of this Vm.
+
+
+        :param entity_filter_results: The entity_filter_results of this Vm.  # noqa: E501
+        :type entity_filter_results: list[NestedVmEntityFilterResult]
+        """
+
+        self._entity_filter_results = entity_filter_results
 
     @property
     def firmware(self):
@@ -864,6 +976,48 @@ class Vm(object):
             raise ValueError("Invalid value for `internal`, must not be `None`")  # noqa: E501
 
         self._internal = internal
+
+    @property
+    def internal_product(self):
+        """Gets the internal_product of this Vm.  # noqa: E501
+
+
+        :return: The internal_product of this Vm.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product
+
+    @internal_product.setter
+    def internal_product(self, internal_product):
+        """Sets the internal_product of this Vm.
+
+
+        :param internal_product: The internal_product of this Vm.  # noqa: E501
+        :type internal_product: str
+        """
+
+        self._internal_product = internal_product
+
+    @property
+    def internal_product_name(self):
+        """Gets the internal_product_name of this Vm.  # noqa: E501
+
+
+        :return: The internal_product_name of this Vm.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_product_name
+
+    @internal_product_name.setter
+    def internal_product_name(self, internal_product_name):
+        """Sets the internal_product_name of this Vm.
+
+
+        :param internal_product_name: The internal_product_name of this Vm.  # noqa: E501
+        :type internal_product_name: str
+        """
+
+        self._internal_product_name = internal_product_name
 
     @property
     def io_policy(self):
@@ -1405,6 +1559,27 @@ class Vm(object):
         """
 
         self._size = size
+
+    @property
+    def snapshot_plan(self):
+        """Gets the snapshot_plan of this Vm.  # noqa: E501
+
+
+        :return: The snapshot_plan of this Vm.  # noqa: E501
+        :rtype: NestedSnapshotPlan
+        """
+        return self._snapshot_plan
+
+    @snapshot_plan.setter
+    def snapshot_plan(self, snapshot_plan):
+        """Sets the snapshot_plan of this Vm.
+
+
+        :param snapshot_plan: The snapshot_plan of this Vm.  # noqa: E501
+        :type snapshot_plan: NestedSnapshotPlan
+        """
+
+        self._snapshot_plan = snapshot_plan
 
     @property
     def snapshots(self):

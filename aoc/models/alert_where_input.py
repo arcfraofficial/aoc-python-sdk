@@ -28,6 +28,7 @@ class AlertWhereInput(object):
         '_and': 'list[AlertWhereInput]',
         '_not': 'list[AlertWhereInput]',
         '_or': 'list[AlertWhereInput]',
+        'alert_rule': 'AlertRuleWhereInput',
         'cause': 'str',
         'cause_contains': 'str',
         'cause_ends_with': 'str',
@@ -51,6 +52,7 @@ class AlertWhereInput(object):
         'create_time_lte': 'str',
         'create_time_not': 'str',
         'create_time_not_in': 'list[str]',
+        'disk': 'DiskWhereInput',
         'ended': 'bool',
         'ended_not': 'bool',
         'host': 'HostWhereInput',
@@ -213,6 +215,7 @@ class AlertWhereInput(object):
         '_and': 'AND',
         '_not': 'NOT',
         '_or': 'OR',
+        'alert_rule': 'alert_rule',
         'cause': 'cause',
         'cause_contains': 'cause_contains',
         'cause_ends_with': 'cause_ends_with',
@@ -236,6 +239,7 @@ class AlertWhereInput(object):
         'create_time_lte': 'create_time_lte',
         'create_time_not': 'create_time_not',
         'create_time_not_in': 'create_time_not_in',
+        'disk': 'disk',
         'ended': 'ended',
         'ended_not': 'ended_not',
         'host': 'host',
@@ -401,6 +405,7 @@ class AlertWhereInput(object):
         self.__and = None
         self.__not = None
         self.__or = None
+        self._alert_rule = None
         self._cause = None
         self._cause_contains = None
         self._cause_ends_with = None
@@ -424,6 +429,7 @@ class AlertWhereInput(object):
         self._create_time_lte = None
         self._create_time_not = None
         self._create_time_not_in = None
+        self._disk = None
         self._ended = None
         self._ended_not = None
         self._host = None
@@ -585,6 +591,7 @@ class AlertWhereInput(object):
         self._and = kwargs.get("_and", None)
         self._not = kwargs.get("_not", None)
         self._or = kwargs.get("_or", None)
+        self.alert_rule = kwargs.get("alert_rule", None)
         self.cause = kwargs.get("cause", None)
         self.cause_contains = kwargs.get("cause_contains", None)
         self.cause_ends_with = kwargs.get("cause_ends_with", None)
@@ -608,6 +615,7 @@ class AlertWhereInput(object):
         self.create_time_lte = kwargs.get("create_time_lte", None)
         self.create_time_not = kwargs.get("create_time_not", None)
         self.create_time_not_in = kwargs.get("create_time_not_in", None)
+        self.disk = kwargs.get("disk", None)
         self.ended = kwargs.get("ended", None)
         self.ended_not = kwargs.get("ended_not", None)
         self.host = kwargs.get("host", None)
@@ -827,6 +835,27 @@ class AlertWhereInput(object):
         """
 
         self.__or = _or
+
+    @property
+    def alert_rule(self):
+        """Gets the alert_rule of this AlertWhereInput.  # noqa: E501
+
+
+        :return: The alert_rule of this AlertWhereInput.  # noqa: E501
+        :rtype: AlertRuleWhereInput
+        """
+        return self._alert_rule
+
+    @alert_rule.setter
+    def alert_rule(self, alert_rule):
+        """Sets the alert_rule of this AlertWhereInput.
+
+
+        :param alert_rule: The alert_rule of this AlertWhereInput.  # noqa: E501
+        :type alert_rule: AlertRuleWhereInput
+        """
+
+        self._alert_rule = alert_rule
 
     @property
     def cause(self):
@@ -1310,6 +1339,27 @@ class AlertWhereInput(object):
         """
 
         self._create_time_not_in = create_time_not_in
+
+    @property
+    def disk(self):
+        """Gets the disk of this AlertWhereInput.  # noqa: E501
+
+
+        :return: The disk of this AlertWhereInput.  # noqa: E501
+        :rtype: DiskWhereInput
+        """
+        return self._disk
+
+    @disk.setter
+    def disk(self, disk):
+        """Sets the disk of this AlertWhereInput.
+
+
+        :param disk: The disk of this AlertWhereInput.  # noqa: E501
+        :type disk: DiskWhereInput
+        """
+
+        self._disk = disk
 
     @property
     def ended(self):

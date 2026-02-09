@@ -29,21 +29,27 @@ class Cluster(object):
         'allocated_prioritized_space': 'int',
         'allocated_prioritized_space_usage': 'float',
         'application_highest_version': 'str',
+        'applications': 'list[NestedApplication]',
         'architecture': 'Architecture',
         'auto_converge': 'bool',
         'commited_memory_bytes': 'int',
         'connect_state': 'ConnectState',
+        'consistency_groups': 'list[NestedConsistencyGroup]',
         'current_cpu_model': 'str',
         'data_reduction_ratio': 'float',
         'data_reduction_saving': 'float',
         'datacenters': 'list[NestedDatacenter]',
+        'dirty_cache_space': 'int',
+        'dirty_cache_usage': 'float',
         'disconnected_date': 'str',
         'disconnected_reason': 'ClusterConnectorErrorCode',
         'dns': 'list[str]',
         'downgraded_prioritized_space': 'int',
+        'ecp_license': 'NestedEcpLicense',
         'enable_tiering': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
         'everoute_cluster': 'NestedEverouteCluster',
+        'failure_cache_space': 'int',
         'failure_data_space': 'int',
         'has_metrox': 'bool',
         'host_num': 'int',
@@ -99,6 +105,7 @@ class Cluster(object):
         'replica_capacity_only': 'bool',
         'reserved_cpu_cores_for_system_service': 'int',
         'running_vm_num': 'int',
+        'settings': 'NestedClusterSettings',
         'software_edition': 'SoftwareEdition',
         'stopped_vm_num': 'int',
         'stretch': 'bool',
@@ -121,13 +128,16 @@ class Cluster(object):
         'used_memory_bytes': 'float',
         'valid_cache_space': 'int',
         'valid_data_space': 'int',
+        'vcenter_account': 'NestedVcenterAccount',
         'vdses': 'list[NestedVds]',
         'version': 'str',
         'vhost_enabled': 'bool',
         'vm_folders': 'list[NestedVmFolder]',
         'vm_num': 'int',
         'vm_templates': 'list[NestedVmTemplate]',
-        'vms': 'list[NestedVm]'
+        'vms': 'list[NestedVm]',
+        'witness': 'NestedWitness',
+        'zones': 'list[NestedZone]'
     }
 
     attribute_map = {
@@ -135,21 +145,27 @@ class Cluster(object):
         'allocated_prioritized_space': 'allocated_prioritized_space',
         'allocated_prioritized_space_usage': 'allocated_prioritized_space_usage',
         'application_highest_version': 'application_highest_version',
+        'applications': 'applications',
         'architecture': 'architecture',
         'auto_converge': 'auto_converge',
         'commited_memory_bytes': 'commited_memory_bytes',
         'connect_state': 'connect_state',
+        'consistency_groups': 'consistency_groups',
         'current_cpu_model': 'current_cpu_model',
         'data_reduction_ratio': 'data_reduction_ratio',
         'data_reduction_saving': 'data_reduction_saving',
         'datacenters': 'datacenters',
+        'dirty_cache_space': 'dirty_cache_space',
+        'dirty_cache_usage': 'dirty_cache_usage',
         'disconnected_date': 'disconnected_date',
         'disconnected_reason': 'disconnected_reason',
         'dns': 'dns',
         'downgraded_prioritized_space': 'downgraded_prioritized_space',
+        'ecp_license': 'ecp_license',
         'enable_tiering': 'enable_tiering',
         'entity_async_status': 'entityAsyncStatus',
         'everoute_cluster': 'everoute_cluster',
+        'failure_cache_space': 'failure_cache_space',
         'failure_data_space': 'failure_data_space',
         'has_metrox': 'has_metrox',
         'host_num': 'host_num',
@@ -205,6 +221,7 @@ class Cluster(object):
         'replica_capacity_only': 'replica_capacity_only',
         'reserved_cpu_cores_for_system_service': 'reserved_cpu_cores_for_system_service',
         'running_vm_num': 'running_vm_num',
+        'settings': 'settings',
         'software_edition': 'software_edition',
         'stopped_vm_num': 'stopped_vm_num',
         'stretch': 'stretch',
@@ -227,13 +244,16 @@ class Cluster(object):
         'used_memory_bytes': 'used_memory_bytes',
         'valid_cache_space': 'valid_cache_space',
         'valid_data_space': 'valid_data_space',
+        'vcenter_account': 'vcenterAccount',
         'vdses': 'vdses',
         'version': 'version',
         'vhost_enabled': 'vhost_enabled',
         'vm_folders': 'vm_folders',
         'vm_num': 'vm_num',
         'vm_templates': 'vm_templates',
-        'vms': 'vms'
+        'vms': 'vms',
+        'witness': 'witness',
+        'zones': 'zones'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
@@ -244,21 +264,27 @@ class Cluster(object):
         self._allocated_prioritized_space = None
         self._allocated_prioritized_space_usage = None
         self._application_highest_version = None
+        self._applications = None
         self._architecture = None
         self._auto_converge = None
         self._commited_memory_bytes = None
         self._connect_state = None
+        self._consistency_groups = None
         self._current_cpu_model = None
         self._data_reduction_ratio = None
         self._data_reduction_saving = None
         self._datacenters = None
+        self._dirty_cache_space = None
+        self._dirty_cache_usage = None
         self._disconnected_date = None
         self._disconnected_reason = None
         self._dns = None
         self._downgraded_prioritized_space = None
+        self._ecp_license = None
         self._enable_tiering = None
         self._entity_async_status = None
         self._everoute_cluster = None
+        self._failure_cache_space = None
         self._failure_data_space = None
         self._has_metrox = None
         self._host_num = None
@@ -314,6 +340,7 @@ class Cluster(object):
         self._replica_capacity_only = None
         self._reserved_cpu_cores_for_system_service = None
         self._running_vm_num = None
+        self._settings = None
         self._software_edition = None
         self._stopped_vm_num = None
         self._stretch = None
@@ -336,6 +363,7 @@ class Cluster(object):
         self._used_memory_bytes = None
         self._valid_cache_space = None
         self._valid_data_space = None
+        self._vcenter_account = None
         self._vdses = None
         self._version = None
         self._vhost_enabled = None
@@ -343,30 +371,38 @@ class Cluster(object):
         self._vm_num = None
         self._vm_templates = None
         self._vms = None
+        self._witness = None
+        self._zones = None
         self.discriminator = None
 
         self.access_write_compress_enabled = kwargs.get("access_write_compress_enabled", None)
         self.allocated_prioritized_space = kwargs.get("allocated_prioritized_space", None)
         self.allocated_prioritized_space_usage = kwargs.get("allocated_prioritized_space_usage", None)
         self.application_highest_version = kwargs.get("application_highest_version", None)
+        self.applications = kwargs.get("applications", None)
         if "architecture" in kwargs:
             self.architecture = kwargs["architecture"]
         self.auto_converge = kwargs.get("auto_converge", None)
         self.commited_memory_bytes = kwargs.get("commited_memory_bytes", None)
         if "connect_state" in kwargs:
             self.connect_state = kwargs["connect_state"]
+        self.consistency_groups = kwargs.get("consistency_groups", None)
         self.current_cpu_model = kwargs.get("current_cpu_model", None)
         self.data_reduction_ratio = kwargs.get("data_reduction_ratio", None)
         self.data_reduction_saving = kwargs.get("data_reduction_saving", None)
         self.datacenters = kwargs.get("datacenters", None)
+        self.dirty_cache_space = kwargs.get("dirty_cache_space", None)
+        self.dirty_cache_usage = kwargs.get("dirty_cache_usage", None)
         self.disconnected_date = kwargs.get("disconnected_date", None)
         self.disconnected_reason = kwargs.get("disconnected_reason", None)
         if "dns" in kwargs:
             self.dns = kwargs["dns"]
         self.downgraded_prioritized_space = kwargs.get("downgraded_prioritized_space", None)
+        self.ecp_license = kwargs.get("ecp_license", None)
         self.enable_tiering = kwargs.get("enable_tiering", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
         self.everoute_cluster = kwargs.get("everoute_cluster", None)
+        self.failure_cache_space = kwargs.get("failure_cache_space", None)
         self.failure_data_space = kwargs.get("failure_data_space", None)
         self.has_metrox = kwargs.get("has_metrox", None)
         self.host_num = kwargs.get("host_num", None)
@@ -427,6 +463,7 @@ class Cluster(object):
         self.replica_capacity_only = kwargs.get("replica_capacity_only", None)
         self.reserved_cpu_cores_for_system_service = kwargs.get("reserved_cpu_cores_for_system_service", None)
         self.running_vm_num = kwargs.get("running_vm_num", None)
+        self.settings = kwargs.get("settings", None)
         self.software_edition = kwargs.get("software_edition", None)
         self.stopped_vm_num = kwargs.get("stopped_vm_num", None)
         self.stretch = kwargs.get("stretch", None)
@@ -451,6 +488,7 @@ class Cluster(object):
         self.used_memory_bytes = kwargs.get("used_memory_bytes", None)
         self.valid_cache_space = kwargs.get("valid_cache_space", None)
         self.valid_data_space = kwargs.get("valid_data_space", None)
+        self.vcenter_account = kwargs.get("vcenter_account", None)
         self.vdses = kwargs.get("vdses", None)
         if "version" in kwargs:
             self.version = kwargs["version"]
@@ -459,6 +497,8 @@ class Cluster(object):
         self.vm_num = kwargs.get("vm_num", None)
         self.vm_templates = kwargs.get("vm_templates", None)
         self.vms = kwargs.get("vms", None)
+        self.witness = kwargs.get("witness", None)
+        self.zones = kwargs.get("zones", None)
 
     @property
     def access_write_compress_enabled(self):
@@ -543,6 +583,27 @@ class Cluster(object):
         """
 
         self._application_highest_version = application_highest_version
+
+    @property
+    def applications(self):
+        """Gets the applications of this Cluster.  # noqa: E501
+
+
+        :return: The applications of this Cluster.  # noqa: E501
+        :rtype: list[NestedApplication]
+        """
+        return self._applications
+
+    @applications.setter
+    def applications(self, applications):
+        """Sets the applications of this Cluster.
+
+
+        :param applications: The applications of this Cluster.  # noqa: E501
+        :type applications: list[NestedApplication]
+        """
+
+        self._applications = applications
 
     @property
     def architecture(self):
@@ -633,6 +694,27 @@ class Cluster(object):
         self._connect_state = connect_state
 
     @property
+    def consistency_groups(self):
+        """Gets the consistency_groups of this Cluster.  # noqa: E501
+
+
+        :return: The consistency_groups of this Cluster.  # noqa: E501
+        :rtype: list[NestedConsistencyGroup]
+        """
+        return self._consistency_groups
+
+    @consistency_groups.setter
+    def consistency_groups(self, consistency_groups):
+        """Sets the consistency_groups of this Cluster.
+
+
+        :param consistency_groups: The consistency_groups of this Cluster.  # noqa: E501
+        :type consistency_groups: list[NestedConsistencyGroup]
+        """
+
+        self._consistency_groups = consistency_groups
+
+    @property
     def current_cpu_model(self):
         """Gets the current_cpu_model of this Cluster.  # noqa: E501
 
@@ -715,6 +797,48 @@ class Cluster(object):
         """
 
         self._datacenters = datacenters
+
+    @property
+    def dirty_cache_space(self):
+        """Gets the dirty_cache_space of this Cluster.  # noqa: E501
+
+
+        :return: The dirty_cache_space of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space
+
+    @dirty_cache_space.setter
+    def dirty_cache_space(self, dirty_cache_space):
+        """Sets the dirty_cache_space of this Cluster.
+
+
+        :param dirty_cache_space: The dirty_cache_space of this Cluster.  # noqa: E501
+        :type dirty_cache_space: int
+        """
+
+        self._dirty_cache_space = dirty_cache_space
+
+    @property
+    def dirty_cache_usage(self):
+        """Gets the dirty_cache_usage of this Cluster.  # noqa: E501
+
+
+        :return: The dirty_cache_usage of this Cluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage
+
+    @dirty_cache_usage.setter
+    def dirty_cache_usage(self, dirty_cache_usage):
+        """Sets the dirty_cache_usage of this Cluster.
+
+
+        :param dirty_cache_usage: The dirty_cache_usage of this Cluster.  # noqa: E501
+        :type dirty_cache_usage: float
+        """
+
+        self._dirty_cache_usage = dirty_cache_usage
 
     @property
     def disconnected_date(self):
@@ -803,6 +927,27 @@ class Cluster(object):
         self._downgraded_prioritized_space = downgraded_prioritized_space
 
     @property
+    def ecp_license(self):
+        """Gets the ecp_license of this Cluster.  # noqa: E501
+
+
+        :return: The ecp_license of this Cluster.  # noqa: E501
+        :rtype: NestedEcpLicense
+        """
+        return self._ecp_license
+
+    @ecp_license.setter
+    def ecp_license(self, ecp_license):
+        """Sets the ecp_license of this Cluster.
+
+
+        :param ecp_license: The ecp_license of this Cluster.  # noqa: E501
+        :type ecp_license: NestedEcpLicense
+        """
+
+        self._ecp_license = ecp_license
+
+    @property
     def enable_tiering(self):
         """Gets the enable_tiering of this Cluster.  # noqa: E501
 
@@ -864,6 +1009,27 @@ class Cluster(object):
         """
 
         self._everoute_cluster = everoute_cluster
+
+    @property
+    def failure_cache_space(self):
+        """Gets the failure_cache_space of this Cluster.  # noqa: E501
+
+
+        :return: The failure_cache_space of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space
+
+    @failure_cache_space.setter
+    def failure_cache_space(self, failure_cache_space):
+        """Sets the failure_cache_space of this Cluster.
+
+
+        :param failure_cache_space: The failure_cache_space of this Cluster.  # noqa: E501
+        :type failure_cache_space: int
+        """
+
+        self._failure_cache_space = failure_cache_space
 
     @property
     def failure_data_space(self):
@@ -2031,6 +2197,27 @@ class Cluster(object):
         self._running_vm_num = running_vm_num
 
     @property
+    def settings(self):
+        """Gets the settings of this Cluster.  # noqa: E501
+
+
+        :return: The settings of this Cluster.  # noqa: E501
+        :rtype: NestedClusterSettings
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """Sets the settings of this Cluster.
+
+
+        :param settings: The settings of this Cluster.  # noqa: E501
+        :type settings: NestedClusterSettings
+        """
+
+        self._settings = settings
+
+    @property
     def software_edition(self):
         """Gets the software_edition of this Cluster.  # noqa: E501
 
@@ -2497,6 +2684,27 @@ class Cluster(object):
         self._valid_data_space = valid_data_space
 
     @property
+    def vcenter_account(self):
+        """Gets the vcenter_account of this Cluster.  # noqa: E501
+
+
+        :return: The vcenter_account of this Cluster.  # noqa: E501
+        :rtype: NestedVcenterAccount
+        """
+        return self._vcenter_account
+
+    @vcenter_account.setter
+    def vcenter_account(self, vcenter_account):
+        """Sets the vcenter_account of this Cluster.
+
+
+        :param vcenter_account: The vcenter_account of this Cluster.  # noqa: E501
+        :type vcenter_account: NestedVcenterAccount
+        """
+
+        self._vcenter_account = vcenter_account
+
+    @property
     def vdses(self):
         """Gets the vdses of this Cluster.  # noqa: E501
 
@@ -2644,6 +2852,48 @@ class Cluster(object):
         """
 
         self._vms = vms
+
+    @property
+    def witness(self):
+        """Gets the witness of this Cluster.  # noqa: E501
+
+
+        :return: The witness of this Cluster.  # noqa: E501
+        :rtype: NestedWitness
+        """
+        return self._witness
+
+    @witness.setter
+    def witness(self, witness):
+        """Sets the witness of this Cluster.
+
+
+        :param witness: The witness of this Cluster.  # noqa: E501
+        :type witness: NestedWitness
+        """
+
+        self._witness = witness
+
+    @property
+    def zones(self):
+        """Gets the zones of this Cluster.  # noqa: E501
+
+
+        :return: The zones of this Cluster.  # noqa: E501
+        :rtype: list[NestedZone]
+        """
+        return self._zones
+
+    @zones.setter
+    def zones(self, zones):
+        """Sets the zones of this Cluster.
+
+
+        :param zones: The zones of this Cluster.  # noqa: E501
+        :type zones: list[NestedZone]
+        """
+
+        self._zones = zones
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

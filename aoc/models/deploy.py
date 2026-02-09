@@ -26,11 +26,13 @@ class Deploy(object):
     """
     openapi_types = {
         'id': 'str',
+        'license': 'NestedLicense',
         'version': 'str'
     }
 
     attribute_map = {
         'id': 'id',
+        'license': 'license',
         'version': 'version'
     }
 
@@ -39,11 +41,13 @@ class Deploy(object):
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
         self._id = None
+        self._license = None
         self._version = None
         self.discriminator = None
 
         if "id" in kwargs:
             self.id = kwargs["id"]
+        self.license = kwargs.get("license", None)
         if "version" in kwargs:
             self.version = kwargs["version"]
 
@@ -69,6 +73,27 @@ class Deploy(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def license(self):
+        """Gets the license of this Deploy.  # noqa: E501
+
+
+        :return: The license of this Deploy.  # noqa: E501
+        :rtype: NestedLicense
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this Deploy.
+
+
+        :param license: The license of this Deploy.  # noqa: E501
+        :type license: NestedLicense
+        """
+
+        self._license = license
 
     @property
     def version(self):

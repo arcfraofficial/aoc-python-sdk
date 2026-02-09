@@ -35,6 +35,8 @@ class IscsiLunCreationParams(object):
         'replica_num': 'int',
         'iscsi_target_id': 'str',
         'name': 'str',
+        'business_host_groups': 'BusinessHostGroupWhereInput',
+        'business_hosts': 'BusinessHostWhereInput',
         'business_host_is_same_with_parent': 'bool',
         'configuration_method': 'ConfigurationMethod',
         'encrypt_method': 'EncryptMethod',
@@ -77,6 +79,8 @@ class IscsiLunCreationParams(object):
         'replica_num': 'replica_num',
         'iscsi_target_id': 'iscsi_target_id',
         'name': 'name',
+        'business_host_groups': 'business_host_groups',
+        'business_hosts': 'business_hosts',
         'business_host_is_same_with_parent': 'business_host_is_same_with_parent',
         'configuration_method': 'configuration_method',
         'encrypt_method': 'encrypt_method',
@@ -122,6 +126,8 @@ class IscsiLunCreationParams(object):
         self._replica_num = None
         self._iscsi_target_id = None
         self._name = None
+        self._business_host_groups = None
+        self._business_hosts = None
         self._business_host_is_same_with_parent = None
         self._configuration_method = None
         self._encrypt_method = None
@@ -173,6 +179,10 @@ class IscsiLunCreationParams(object):
             self.iscsi_target_id = kwargs["iscsi_target_id"]
         if "name" in kwargs:
             self.name = kwargs["name"]
+        if "business_host_groups" in kwargs:
+            self.business_host_groups = kwargs["business_host_groups"]
+        if "business_hosts" in kwargs:
+            self.business_hosts = kwargs["business_hosts"]
         if "business_host_is_same_with_parent" in kwargs:
             self.business_host_is_same_with_parent = kwargs["business_host_is_same_with_parent"]
         if "configuration_method" in kwargs:
@@ -449,6 +459,48 @@ class IscsiLunCreationParams(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiLunCreationParams.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiLunCreationParams.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiLunCreationParams.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiLunCreationParams.  # noqa: E501
+        :type business_host_groups: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiLunCreationParams.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiLunCreationParams.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiLunCreationParams.
+
+
+        :param business_hosts: The business_hosts of this IscsiLunCreationParams.  # noqa: E501
+        :type business_hosts: BusinessHostWhereInput
+        """
+
+        self._business_hosts = business_hosts
 
     @property
     def business_host_is_same_with_parent(self):

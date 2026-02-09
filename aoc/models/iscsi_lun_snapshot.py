@@ -25,6 +25,7 @@ class IscsiLunSnapshot(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'consistency_group_snapshot': 'NestedConsistencyGroupSnapshot',
         'ec_k': 'int',
         'ec_m': 'int',
         'entity_async_status': 'EntityAsyncStatus',
@@ -36,10 +37,12 @@ class IscsiLunSnapshot(object):
         'local_id': 'str',
         'name': 'str',
         'resiliency_type': 'ResiliencyType',
+        'snapshot_group': 'NestedSnapshotGroup',
         'unique_size': 'int'
     }
 
     attribute_map = {
+        'consistency_group_snapshot': 'consistency_group_snapshot',
         'ec_k': 'ec_k',
         'ec_m': 'ec_m',
         'entity_async_status': 'entityAsyncStatus',
@@ -51,6 +54,7 @@ class IscsiLunSnapshot(object):
         'local_id': 'local_id',
         'name': 'name',
         'resiliency_type': 'resiliency_type',
+        'snapshot_group': 'snapshot_group',
         'unique_size': 'unique_size'
     }
 
@@ -58,6 +62,7 @@ class IscsiLunSnapshot(object):
         """IscsiLunSnapshot - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._consistency_group_snapshot = None
         self._ec_k = None
         self._ec_m = None
         self._entity_async_status = None
@@ -69,9 +74,11 @@ class IscsiLunSnapshot(object):
         self._local_id = None
         self._name = None
         self._resiliency_type = None
+        self._snapshot_group = None
         self._unique_size = None
         self.discriminator = None
 
+        self.consistency_group_snapshot = kwargs.get("consistency_group_snapshot", None)
         self.ec_k = kwargs.get("ec_k", None)
         self.ec_m = kwargs.get("ec_m", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
@@ -88,8 +95,30 @@ class IscsiLunSnapshot(object):
         if "name" in kwargs:
             self.name = kwargs["name"]
         self.resiliency_type = kwargs.get("resiliency_type", None)
+        self.snapshot_group = kwargs.get("snapshot_group", None)
         if "unique_size" in kwargs:
             self.unique_size = kwargs["unique_size"]
+
+    @property
+    def consistency_group_snapshot(self):
+        """Gets the consistency_group_snapshot of this IscsiLunSnapshot.  # noqa: E501
+
+
+        :return: The consistency_group_snapshot of this IscsiLunSnapshot.  # noqa: E501
+        :rtype: NestedConsistencyGroupSnapshot
+        """
+        return self._consistency_group_snapshot
+
+    @consistency_group_snapshot.setter
+    def consistency_group_snapshot(self, consistency_group_snapshot):
+        """Sets the consistency_group_snapshot of this IscsiLunSnapshot.
+
+
+        :param consistency_group_snapshot: The consistency_group_snapshot of this IscsiLunSnapshot.  # noqa: E501
+        :type consistency_group_snapshot: NestedConsistencyGroupSnapshot
+        """
+
+        self._consistency_group_snapshot = consistency_group_snapshot
 
     @property
     def ec_k(self):
@@ -331,6 +360,27 @@ class IscsiLunSnapshot(object):
         """
 
         self._resiliency_type = resiliency_type
+
+    @property
+    def snapshot_group(self):
+        """Gets the snapshot_group of this IscsiLunSnapshot.  # noqa: E501
+
+
+        :return: The snapshot_group of this IscsiLunSnapshot.  # noqa: E501
+        :rtype: NestedSnapshotGroup
+        """
+        return self._snapshot_group
+
+    @snapshot_group.setter
+    def snapshot_group(self, snapshot_group):
+        """Sets the snapshot_group of this IscsiLunSnapshot.
+
+
+        :param snapshot_group: The snapshot_group of this IscsiLunSnapshot.  # noqa: E501
+        :type snapshot_group: NestedSnapshotGroup
+        """
+
+        self._snapshot_group = snapshot_group
 
     @property
     def unique_size(self):

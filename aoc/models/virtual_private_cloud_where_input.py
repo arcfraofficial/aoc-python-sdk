@@ -68,6 +68,9 @@ class VirtualPrivateCloudWhereInput(object):
         'id_not_in': 'list[str]',
         'id_not_starts_with': 'str',
         'id_starts_with': 'str',
+        'isolation_policies_every': 'VirtualPrivateCloudIsolationPolicyWhereInput',
+        'isolation_policies_none': 'VirtualPrivateCloudIsolationPolicyWhereInput',
+        'isolation_policies_some': 'VirtualPrivateCloudIsolationPolicyWhereInput',
         'local_id': 'str',
         'local_id_contains': 'str',
         'local_id_ends_with': 'str',
@@ -163,6 +166,9 @@ class VirtualPrivateCloudWhereInput(object):
         'id_not_in': 'id_not_in',
         'id_not_starts_with': 'id_not_starts_with',
         'id_starts_with': 'id_starts_with',
+        'isolation_policies_every': 'isolation_policies_every',
+        'isolation_policies_none': 'isolation_policies_none',
+        'isolation_policies_some': 'isolation_policies_some',
         'local_id': 'local_id',
         'local_id_contains': 'local_id_contains',
         'local_id_ends_with': 'local_id_ends_with',
@@ -261,6 +267,9 @@ class VirtualPrivateCloudWhereInput(object):
         self._id_not_in = None
         self._id_not_starts_with = None
         self._id_starts_with = None
+        self._isolation_policies_every = None
+        self._isolation_policies_none = None
+        self._isolation_policies_some = None
         self._local_id = None
         self._local_id_contains = None
         self._local_id_ends_with = None
@@ -355,6 +364,9 @@ class VirtualPrivateCloudWhereInput(object):
         self.id_not_in = kwargs.get("id_not_in", None)
         self.id_not_starts_with = kwargs.get("id_not_starts_with", None)
         self.id_starts_with = kwargs.get("id_starts_with", None)
+        self.isolation_policies_every = kwargs.get("isolation_policies_every", None)
+        self.isolation_policies_none = kwargs.get("isolation_policies_none", None)
+        self.isolation_policies_some = kwargs.get("isolation_policies_some", None)
         self.local_id = kwargs.get("local_id", None)
         self.local_id_contains = kwargs.get("local_id_contains", None)
         self.local_id_ends_with = kwargs.get("local_id_ends_with", None)
@@ -1307,6 +1319,69 @@ class VirtualPrivateCloudWhereInput(object):
         """
 
         self._id_starts_with = id_starts_with
+
+    @property
+    def isolation_policies_every(self):
+        """Gets the isolation_policies_every of this VirtualPrivateCloudWhereInput.  # noqa: E501
+
+
+        :return: The isolation_policies_every of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :rtype: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+        return self._isolation_policies_every
+
+    @isolation_policies_every.setter
+    def isolation_policies_every(self, isolation_policies_every):
+        """Sets the isolation_policies_every of this VirtualPrivateCloudWhereInput.
+
+
+        :param isolation_policies_every: The isolation_policies_every of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :type isolation_policies_every: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+
+        self._isolation_policies_every = isolation_policies_every
+
+    @property
+    def isolation_policies_none(self):
+        """Gets the isolation_policies_none of this VirtualPrivateCloudWhereInput.  # noqa: E501
+
+
+        :return: The isolation_policies_none of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :rtype: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+        return self._isolation_policies_none
+
+    @isolation_policies_none.setter
+    def isolation_policies_none(self, isolation_policies_none):
+        """Sets the isolation_policies_none of this VirtualPrivateCloudWhereInput.
+
+
+        :param isolation_policies_none: The isolation_policies_none of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :type isolation_policies_none: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+
+        self._isolation_policies_none = isolation_policies_none
+
+    @property
+    def isolation_policies_some(self):
+        """Gets the isolation_policies_some of this VirtualPrivateCloudWhereInput.  # noqa: E501
+
+
+        :return: The isolation_policies_some of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :rtype: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+        return self._isolation_policies_some
+
+    @isolation_policies_some.setter
+    def isolation_policies_some(self, isolation_policies_some):
+        """Sets the isolation_policies_some of this VirtualPrivateCloudWhereInput.
+
+
+        :param isolation_policies_some: The isolation_policies_some of this VirtualPrivateCloudWhereInput.  # noqa: E501
+        :type isolation_policies_some: VirtualPrivateCloudIsolationPolicyWhereInput
+        """
+
+        self._isolation_policies_some = isolation_policies_some
 
     @property
     def local_id(self):

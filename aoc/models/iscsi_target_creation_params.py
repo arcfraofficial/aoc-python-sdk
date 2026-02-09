@@ -32,6 +32,8 @@ class IscsiTargetCreationParams(object):
         'thin_provision': 'bool',
         'cluster_id': 'str',
         'name': 'str',
+        'business_host_groups': 'BusinessHostGroupWhereInput',
+        'business_hosts': 'BusinessHostWhereInput',
         'configuration_adaptive': 'bool',
         'configuration_method': 'ConfigurationMethod',
         'encrypt_method': 'EncryptMethod',
@@ -81,6 +83,8 @@ class IscsiTargetCreationParams(object):
         'thin_provision': 'thin_provision',
         'cluster_id': 'cluster_id',
         'name': 'name',
+        'business_host_groups': 'business_host_groups',
+        'business_hosts': 'business_hosts',
         'configuration_adaptive': 'configuration_adaptive',
         'configuration_method': 'configuration_method',
         'encrypt_method': 'encrypt_method',
@@ -133,6 +137,8 @@ class IscsiTargetCreationParams(object):
         self._thin_provision = None
         self._cluster_id = None
         self._name = None
+        self._business_host_groups = None
+        self._business_hosts = None
         self._configuration_adaptive = None
         self._configuration_method = None
         self._encrypt_method = None
@@ -188,6 +194,10 @@ class IscsiTargetCreationParams(object):
             self.cluster_id = kwargs["cluster_id"]
         if "name" in kwargs:
             self.name = kwargs["name"]
+        if "business_host_groups" in kwargs:
+            self.business_host_groups = kwargs["business_host_groups"]
+        if "business_hosts" in kwargs:
+            self.business_hosts = kwargs["business_hosts"]
         if "configuration_adaptive" in kwargs:
             self.configuration_adaptive = kwargs["configuration_adaptive"]
         if "configuration_method" in kwargs:
@@ -425,6 +435,48 @@ class IscsiTargetCreationParams(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def business_host_groups(self):
+        """Gets the business_host_groups of this IscsiTargetCreationParams.  # noqa: E501
+
+
+        :return: The business_host_groups of this IscsiTargetCreationParams.  # noqa: E501
+        :rtype: BusinessHostGroupWhereInput
+        """
+        return self._business_host_groups
+
+    @business_host_groups.setter
+    def business_host_groups(self, business_host_groups):
+        """Sets the business_host_groups of this IscsiTargetCreationParams.
+
+
+        :param business_host_groups: The business_host_groups of this IscsiTargetCreationParams.  # noqa: E501
+        :type business_host_groups: BusinessHostGroupWhereInput
+        """
+
+        self._business_host_groups = business_host_groups
+
+    @property
+    def business_hosts(self):
+        """Gets the business_hosts of this IscsiTargetCreationParams.  # noqa: E501
+
+
+        :return: The business_hosts of this IscsiTargetCreationParams.  # noqa: E501
+        :rtype: BusinessHostWhereInput
+        """
+        return self._business_hosts
+
+    @business_hosts.setter
+    def business_hosts(self, business_hosts):
+        """Sets the business_hosts of this IscsiTargetCreationParams.
+
+
+        :param business_hosts: The business_hosts of this IscsiTargetCreationParams.  # noqa: E501
+        :type business_hosts: BusinessHostWhereInput
+        """
+
+        self._business_hosts = business_hosts
 
     @property
     def configuration_adaptive(self):

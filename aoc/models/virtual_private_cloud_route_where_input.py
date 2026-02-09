@@ -108,7 +108,8 @@ class VirtualPrivateCloudRouteWhereInput(object):
         'next_hop_type_not': 'VirtualPrivateCloudRouteNextHopType',
         'next_hop_type_not_in': 'list[VirtualPrivateCloudRouteNextHopType]',
         'route_table': 'VirtualPrivateCloudRouteTableWhereInput',
-        'router_gateway': 'VirtualPrivateCloudRouterGatewayWhereInput'
+        'router_gateway': 'VirtualPrivateCloudRouterGatewayWhereInput',
+        'vpc_peering': 'VirtualPrivateCloudPeeringWhereInput'
     }
 
     attribute_map = {
@@ -195,7 +196,8 @@ class VirtualPrivateCloudRouteWhereInput(object):
         'next_hop_type_not': 'next_hop_type_not',
         'next_hop_type_not_in': 'next_hop_type_not_in',
         'route_table': 'route_table',
-        'router_gateway': 'router_gateway'
+        'router_gateway': 'router_gateway',
+        'vpc_peering': 'vpc_peering'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
@@ -286,6 +288,7 @@ class VirtualPrivateCloudRouteWhereInput(object):
         self._next_hop_type_not_in = None
         self._route_table = None
         self._router_gateway = None
+        self._vpc_peering = None
         self.discriminator = None
 
         self._and = kwargs.get("_and", None)
@@ -372,6 +375,7 @@ class VirtualPrivateCloudRouteWhereInput(object):
         self.next_hop_type_not_in = kwargs.get("next_hop_type_not_in", None)
         self.route_table = kwargs.get("route_table", None)
         self.router_gateway = kwargs.get("router_gateway", None)
+        self.vpc_peering = kwargs.get("vpc_peering", None)
 
     @property
     def _and(self):
@@ -2136,6 +2140,27 @@ class VirtualPrivateCloudRouteWhereInput(object):
         """
 
         self._router_gateway = router_gateway
+
+    @property
+    def vpc_peering(self):
+        """Gets the vpc_peering of this VirtualPrivateCloudRouteWhereInput.  # noqa: E501
+
+
+        :return: The vpc_peering of this VirtualPrivateCloudRouteWhereInput.  # noqa: E501
+        :rtype: VirtualPrivateCloudPeeringWhereInput
+        """
+        return self._vpc_peering
+
+    @vpc_peering.setter
+    def vpc_peering(self, vpc_peering):
+        """Sets the vpc_peering of this VirtualPrivateCloudRouteWhereInput.
+
+
+        :param vpc_peering: The vpc_peering of this VirtualPrivateCloudRouteWhereInput.  # noqa: E501
+        :type vpc_peering: VirtualPrivateCloudPeeringWhereInput
+        """
+
+        self._vpc_peering = vpc_peering
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
