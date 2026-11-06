@@ -30,6 +30,14 @@ class ClusterWhereInput(object):
         '_or': 'list[ClusterWhereInput]',
         'access_write_compress_enabled': 'bool',
         'access_write_compress_enabled_not': 'bool',
+        'allocated_memory_bytes': 'int',
+        'allocated_memory_bytes_gt': 'int',
+        'allocated_memory_bytes_gte': 'int',
+        'allocated_memory_bytes_in': 'list[int]',
+        'allocated_memory_bytes_lt': 'int',
+        'allocated_memory_bytes_lte': 'int',
+        'allocated_memory_bytes_not': 'int',
+        'allocated_memory_bytes_not_in': 'list[int]',
         'allocated_prioritized_space': 'int',
         'allocated_prioritized_space_gt': 'int',
         'allocated_prioritized_space_gte': 'int',
@@ -66,6 +74,22 @@ class ClusterWhereInput(object):
         'architecture_not_in': 'list[Architecture]',
         'auto_converge': 'bool',
         'auto_converge_not': 'bool',
+        'cap_snapshot_unique_size': 'int',
+        'cap_snapshot_unique_size_gt': 'int',
+        'cap_snapshot_unique_size_gte': 'int',
+        'cap_snapshot_unique_size_in': 'list[int]',
+        'cap_snapshot_unique_size_lt': 'int',
+        'cap_snapshot_unique_size_lte': 'int',
+        'cap_snapshot_unique_size_not': 'int',
+        'cap_snapshot_unique_size_not_in': 'list[int]',
+        'cap_volume_unique_size': 'int',
+        'cap_volume_unique_size_gt': 'int',
+        'cap_volume_unique_size_gte': 'int',
+        'cap_volume_unique_size_in': 'list[int]',
+        'cap_volume_unique_size_lt': 'int',
+        'cap_volume_unique_size_lte': 'int',
+        'cap_volume_unique_size_not': 'int',
+        'cap_volume_unique_size_not_in': 'list[int]',
         'commited_memory_bytes': 'int',
         'commited_memory_bytes_gt': 'int',
         'commited_memory_bytes_gte': 'int',
@@ -111,6 +135,22 @@ class ClusterWhereInput(object):
         'datacenters_every': 'DatacenterWhereInput',
         'datacenters_none': 'DatacenterWhereInput',
         'datacenters_some': 'DatacenterWhereInput',
+        'dirty_cache_space': 'int',
+        'dirty_cache_space_gt': 'int',
+        'dirty_cache_space_gte': 'int',
+        'dirty_cache_space_in': 'list[int]',
+        'dirty_cache_space_lt': 'int',
+        'dirty_cache_space_lte': 'int',
+        'dirty_cache_space_not': 'int',
+        'dirty_cache_space_not_in': 'list[int]',
+        'dirty_cache_usage': 'float',
+        'dirty_cache_usage_gt': 'float',
+        'dirty_cache_usage_gte': 'float',
+        'dirty_cache_usage_in': 'list[float]',
+        'dirty_cache_usage_lt': 'float',
+        'dirty_cache_usage_lte': 'float',
+        'dirty_cache_usage_not': 'float',
+        'dirty_cache_usage_not_in': 'list[float]',
         'disconnected_date': 'str',
         'disconnected_date_gt': 'str',
         'disconnected_date_gte': 'str',
@@ -138,6 +178,14 @@ class ClusterWhereInput(object):
         'entity_async_status_not': 'EntityAsyncStatus',
         'entity_async_status_not_in': 'list[EntityAsyncStatus]',
         'everoute_cluster': 'EverouteClusterWhereInput',
+        'failure_cache_space': 'int',
+        'failure_cache_space_gt': 'int',
+        'failure_cache_space_gte': 'int',
+        'failure_cache_space_in': 'list[int]',
+        'failure_cache_space_lt': 'int',
+        'failure_cache_space_lte': 'int',
+        'failure_cache_space_not': 'int',
+        'failure_cache_space_not_in': 'list[int]',
         'failure_data_space': 'int',
         'failure_data_space_gt': 'int',
         'failure_data_space_gte': 'int',
@@ -320,6 +368,14 @@ class ClusterWhereInput(object):
         'max_physical_data_capacity_per_node_lte': 'int',
         'max_physical_data_capacity_per_node_not': 'int',
         'max_physical_data_capacity_per_node_not_in': 'list[int]',
+        'memory_allocation_rate': 'float',
+        'memory_allocation_rate_gt': 'float',
+        'memory_allocation_rate_gte': 'float',
+        'memory_allocation_rate_in': 'list[float]',
+        'memory_allocation_rate_lt': 'float',
+        'memory_allocation_rate_lte': 'float',
+        'memory_allocation_rate_not': 'float',
+        'memory_allocation_rate_not_in': 'list[float]',
         'mgt_gateway': 'str',
         'mgt_gateway_contains': 'str',
         'mgt_gateway_ends_with': 'str',
@@ -398,6 +454,22 @@ class ClusterWhereInput(object):
         'overall_efficiency_lte': 'float',
         'overall_efficiency_not': 'float',
         'overall_efficiency_not_in': 'list[float]',
+        'overcommit_memory_ratio': 'float',
+        'overcommit_memory_ratio_gt': 'float',
+        'overcommit_memory_ratio_gte': 'float',
+        'overcommit_memory_ratio_in': 'list[float]',
+        'overcommit_memory_ratio_lt': 'float',
+        'overcommit_memory_ratio_lte': 'float',
+        'overcommit_memory_ratio_not': 'float',
+        'overcommit_memory_ratio_not_in': 'list[float]',
+        'overprovision_ratio': 'float',
+        'overprovision_ratio_gt': 'float',
+        'overprovision_ratio_gte': 'float',
+        'overprovision_ratio_in': 'list[float]',
+        'overprovision_ratio_lt': 'float',
+        'overprovision_ratio_lte': 'float',
+        'overprovision_ratio_not': 'float',
+        'overprovision_ratio_not_in': 'list[float]',
         'perf_allocated_data_space': 'int',
         'perf_allocated_data_space_gt': 'int',
         'perf_allocated_data_space_gte': 'int',
@@ -730,6 +802,14 @@ class ClusterWhereInput(object):
         '_or': 'OR',
         'access_write_compress_enabled': 'access_write_compress_enabled',
         'access_write_compress_enabled_not': 'access_write_compress_enabled_not',
+        'allocated_memory_bytes': 'allocated_memory_bytes',
+        'allocated_memory_bytes_gt': 'allocated_memory_bytes_gt',
+        'allocated_memory_bytes_gte': 'allocated_memory_bytes_gte',
+        'allocated_memory_bytes_in': 'allocated_memory_bytes_in',
+        'allocated_memory_bytes_lt': 'allocated_memory_bytes_lt',
+        'allocated_memory_bytes_lte': 'allocated_memory_bytes_lte',
+        'allocated_memory_bytes_not': 'allocated_memory_bytes_not',
+        'allocated_memory_bytes_not_in': 'allocated_memory_bytes_not_in',
         'allocated_prioritized_space': 'allocated_prioritized_space',
         'allocated_prioritized_space_gt': 'allocated_prioritized_space_gt',
         'allocated_prioritized_space_gte': 'allocated_prioritized_space_gte',
@@ -766,6 +846,22 @@ class ClusterWhereInput(object):
         'architecture_not_in': 'architecture_not_in',
         'auto_converge': 'auto_converge',
         'auto_converge_not': 'auto_converge_not',
+        'cap_snapshot_unique_size': 'cap_snapshot_unique_size',
+        'cap_snapshot_unique_size_gt': 'cap_snapshot_unique_size_gt',
+        'cap_snapshot_unique_size_gte': 'cap_snapshot_unique_size_gte',
+        'cap_snapshot_unique_size_in': 'cap_snapshot_unique_size_in',
+        'cap_snapshot_unique_size_lt': 'cap_snapshot_unique_size_lt',
+        'cap_snapshot_unique_size_lte': 'cap_snapshot_unique_size_lte',
+        'cap_snapshot_unique_size_not': 'cap_snapshot_unique_size_not',
+        'cap_snapshot_unique_size_not_in': 'cap_snapshot_unique_size_not_in',
+        'cap_volume_unique_size': 'cap_volume_unique_size',
+        'cap_volume_unique_size_gt': 'cap_volume_unique_size_gt',
+        'cap_volume_unique_size_gte': 'cap_volume_unique_size_gte',
+        'cap_volume_unique_size_in': 'cap_volume_unique_size_in',
+        'cap_volume_unique_size_lt': 'cap_volume_unique_size_lt',
+        'cap_volume_unique_size_lte': 'cap_volume_unique_size_lte',
+        'cap_volume_unique_size_not': 'cap_volume_unique_size_not',
+        'cap_volume_unique_size_not_in': 'cap_volume_unique_size_not_in',
         'commited_memory_bytes': 'commited_memory_bytes',
         'commited_memory_bytes_gt': 'commited_memory_bytes_gt',
         'commited_memory_bytes_gte': 'commited_memory_bytes_gte',
@@ -811,6 +907,22 @@ class ClusterWhereInput(object):
         'datacenters_every': 'datacenters_every',
         'datacenters_none': 'datacenters_none',
         'datacenters_some': 'datacenters_some',
+        'dirty_cache_space': 'dirty_cache_space',
+        'dirty_cache_space_gt': 'dirty_cache_space_gt',
+        'dirty_cache_space_gte': 'dirty_cache_space_gte',
+        'dirty_cache_space_in': 'dirty_cache_space_in',
+        'dirty_cache_space_lt': 'dirty_cache_space_lt',
+        'dirty_cache_space_lte': 'dirty_cache_space_lte',
+        'dirty_cache_space_not': 'dirty_cache_space_not',
+        'dirty_cache_space_not_in': 'dirty_cache_space_not_in',
+        'dirty_cache_usage': 'dirty_cache_usage',
+        'dirty_cache_usage_gt': 'dirty_cache_usage_gt',
+        'dirty_cache_usage_gte': 'dirty_cache_usage_gte',
+        'dirty_cache_usage_in': 'dirty_cache_usage_in',
+        'dirty_cache_usage_lt': 'dirty_cache_usage_lt',
+        'dirty_cache_usage_lte': 'dirty_cache_usage_lte',
+        'dirty_cache_usage_not': 'dirty_cache_usage_not',
+        'dirty_cache_usage_not_in': 'dirty_cache_usage_not_in',
         'disconnected_date': 'disconnected_date',
         'disconnected_date_gt': 'disconnected_date_gt',
         'disconnected_date_gte': 'disconnected_date_gte',
@@ -838,6 +950,14 @@ class ClusterWhereInput(object):
         'entity_async_status_not': 'entityAsyncStatus_not',
         'entity_async_status_not_in': 'entityAsyncStatus_not_in',
         'everoute_cluster': 'everoute_cluster',
+        'failure_cache_space': 'failure_cache_space',
+        'failure_cache_space_gt': 'failure_cache_space_gt',
+        'failure_cache_space_gte': 'failure_cache_space_gte',
+        'failure_cache_space_in': 'failure_cache_space_in',
+        'failure_cache_space_lt': 'failure_cache_space_lt',
+        'failure_cache_space_lte': 'failure_cache_space_lte',
+        'failure_cache_space_not': 'failure_cache_space_not',
+        'failure_cache_space_not_in': 'failure_cache_space_not_in',
         'failure_data_space': 'failure_data_space',
         'failure_data_space_gt': 'failure_data_space_gt',
         'failure_data_space_gte': 'failure_data_space_gte',
@@ -1020,6 +1140,14 @@ class ClusterWhereInput(object):
         'max_physical_data_capacity_per_node_lte': 'max_physical_data_capacity_per_node_lte',
         'max_physical_data_capacity_per_node_not': 'max_physical_data_capacity_per_node_not',
         'max_physical_data_capacity_per_node_not_in': 'max_physical_data_capacity_per_node_not_in',
+        'memory_allocation_rate': 'memory_allocation_rate',
+        'memory_allocation_rate_gt': 'memory_allocation_rate_gt',
+        'memory_allocation_rate_gte': 'memory_allocation_rate_gte',
+        'memory_allocation_rate_in': 'memory_allocation_rate_in',
+        'memory_allocation_rate_lt': 'memory_allocation_rate_lt',
+        'memory_allocation_rate_lte': 'memory_allocation_rate_lte',
+        'memory_allocation_rate_not': 'memory_allocation_rate_not',
+        'memory_allocation_rate_not_in': 'memory_allocation_rate_not_in',
         'mgt_gateway': 'mgt_gateway',
         'mgt_gateway_contains': 'mgt_gateway_contains',
         'mgt_gateway_ends_with': 'mgt_gateway_ends_with',
@@ -1098,6 +1226,22 @@ class ClusterWhereInput(object):
         'overall_efficiency_lte': 'overall_efficiency_lte',
         'overall_efficiency_not': 'overall_efficiency_not',
         'overall_efficiency_not_in': 'overall_efficiency_not_in',
+        'overcommit_memory_ratio': 'overcommit_memory_ratio',
+        'overcommit_memory_ratio_gt': 'overcommit_memory_ratio_gt',
+        'overcommit_memory_ratio_gte': 'overcommit_memory_ratio_gte',
+        'overcommit_memory_ratio_in': 'overcommit_memory_ratio_in',
+        'overcommit_memory_ratio_lt': 'overcommit_memory_ratio_lt',
+        'overcommit_memory_ratio_lte': 'overcommit_memory_ratio_lte',
+        'overcommit_memory_ratio_not': 'overcommit_memory_ratio_not',
+        'overcommit_memory_ratio_not_in': 'overcommit_memory_ratio_not_in',
+        'overprovision_ratio': 'overprovision_ratio',
+        'overprovision_ratio_gt': 'overprovision_ratio_gt',
+        'overprovision_ratio_gte': 'overprovision_ratio_gte',
+        'overprovision_ratio_in': 'overprovision_ratio_in',
+        'overprovision_ratio_lt': 'overprovision_ratio_lt',
+        'overprovision_ratio_lte': 'overprovision_ratio_lte',
+        'overprovision_ratio_not': 'overprovision_ratio_not',
+        'overprovision_ratio_not_in': 'overprovision_ratio_not_in',
         'perf_allocated_data_space': 'perf_allocated_data_space',
         'perf_allocated_data_space_gt': 'perf_allocated_data_space_gt',
         'perf_allocated_data_space_gte': 'perf_allocated_data_space_gte',
@@ -1433,6 +1577,14 @@ class ClusterWhereInput(object):
         self.__or = None
         self._access_write_compress_enabled = None
         self._access_write_compress_enabled_not = None
+        self._allocated_memory_bytes = None
+        self._allocated_memory_bytes_gt = None
+        self._allocated_memory_bytes_gte = None
+        self._allocated_memory_bytes_in = None
+        self._allocated_memory_bytes_lt = None
+        self._allocated_memory_bytes_lte = None
+        self._allocated_memory_bytes_not = None
+        self._allocated_memory_bytes_not_in = None
         self._allocated_prioritized_space = None
         self._allocated_prioritized_space_gt = None
         self._allocated_prioritized_space_gte = None
@@ -1469,6 +1621,22 @@ class ClusterWhereInput(object):
         self._architecture_not_in = None
         self._auto_converge = None
         self._auto_converge_not = None
+        self._cap_snapshot_unique_size = None
+        self._cap_snapshot_unique_size_gt = None
+        self._cap_snapshot_unique_size_gte = None
+        self._cap_snapshot_unique_size_in = None
+        self._cap_snapshot_unique_size_lt = None
+        self._cap_snapshot_unique_size_lte = None
+        self._cap_snapshot_unique_size_not = None
+        self._cap_snapshot_unique_size_not_in = None
+        self._cap_volume_unique_size = None
+        self._cap_volume_unique_size_gt = None
+        self._cap_volume_unique_size_gte = None
+        self._cap_volume_unique_size_in = None
+        self._cap_volume_unique_size_lt = None
+        self._cap_volume_unique_size_lte = None
+        self._cap_volume_unique_size_not = None
+        self._cap_volume_unique_size_not_in = None
         self._commited_memory_bytes = None
         self._commited_memory_bytes_gt = None
         self._commited_memory_bytes_gte = None
@@ -1514,6 +1682,22 @@ class ClusterWhereInput(object):
         self._datacenters_every = None
         self._datacenters_none = None
         self._datacenters_some = None
+        self._dirty_cache_space = None
+        self._dirty_cache_space_gt = None
+        self._dirty_cache_space_gte = None
+        self._dirty_cache_space_in = None
+        self._dirty_cache_space_lt = None
+        self._dirty_cache_space_lte = None
+        self._dirty_cache_space_not = None
+        self._dirty_cache_space_not_in = None
+        self._dirty_cache_usage = None
+        self._dirty_cache_usage_gt = None
+        self._dirty_cache_usage_gte = None
+        self._dirty_cache_usage_in = None
+        self._dirty_cache_usage_lt = None
+        self._dirty_cache_usage_lte = None
+        self._dirty_cache_usage_not = None
+        self._dirty_cache_usage_not_in = None
         self._disconnected_date = None
         self._disconnected_date_gt = None
         self._disconnected_date_gte = None
@@ -1541,6 +1725,14 @@ class ClusterWhereInput(object):
         self._entity_async_status_not = None
         self._entity_async_status_not_in = None
         self._everoute_cluster = None
+        self._failure_cache_space = None
+        self._failure_cache_space_gt = None
+        self._failure_cache_space_gte = None
+        self._failure_cache_space_in = None
+        self._failure_cache_space_lt = None
+        self._failure_cache_space_lte = None
+        self._failure_cache_space_not = None
+        self._failure_cache_space_not_in = None
         self._failure_data_space = None
         self._failure_data_space_gt = None
         self._failure_data_space_gte = None
@@ -1723,6 +1915,14 @@ class ClusterWhereInput(object):
         self._max_physical_data_capacity_per_node_lte = None
         self._max_physical_data_capacity_per_node_not = None
         self._max_physical_data_capacity_per_node_not_in = None
+        self._memory_allocation_rate = None
+        self._memory_allocation_rate_gt = None
+        self._memory_allocation_rate_gte = None
+        self._memory_allocation_rate_in = None
+        self._memory_allocation_rate_lt = None
+        self._memory_allocation_rate_lte = None
+        self._memory_allocation_rate_not = None
+        self._memory_allocation_rate_not_in = None
         self._mgt_gateway = None
         self._mgt_gateway_contains = None
         self._mgt_gateway_ends_with = None
@@ -1801,6 +2001,22 @@ class ClusterWhereInput(object):
         self._overall_efficiency_lte = None
         self._overall_efficiency_not = None
         self._overall_efficiency_not_in = None
+        self._overcommit_memory_ratio = None
+        self._overcommit_memory_ratio_gt = None
+        self._overcommit_memory_ratio_gte = None
+        self._overcommit_memory_ratio_in = None
+        self._overcommit_memory_ratio_lt = None
+        self._overcommit_memory_ratio_lte = None
+        self._overcommit_memory_ratio_not = None
+        self._overcommit_memory_ratio_not_in = None
+        self._overprovision_ratio = None
+        self._overprovision_ratio_gt = None
+        self._overprovision_ratio_gte = None
+        self._overprovision_ratio_in = None
+        self._overprovision_ratio_lt = None
+        self._overprovision_ratio_lte = None
+        self._overprovision_ratio_not = None
+        self._overprovision_ratio_not_in = None
         self._perf_allocated_data_space = None
         self._perf_allocated_data_space_gt = None
         self._perf_allocated_data_space_gte = None
@@ -2132,6 +2348,14 @@ class ClusterWhereInput(object):
         self._or = kwargs.get("_or", None)
         self.access_write_compress_enabled = kwargs.get("access_write_compress_enabled", None)
         self.access_write_compress_enabled_not = kwargs.get("access_write_compress_enabled_not", None)
+        self.allocated_memory_bytes = kwargs.get("allocated_memory_bytes", None)
+        self.allocated_memory_bytes_gt = kwargs.get("allocated_memory_bytes_gt", None)
+        self.allocated_memory_bytes_gte = kwargs.get("allocated_memory_bytes_gte", None)
+        self.allocated_memory_bytes_in = kwargs.get("allocated_memory_bytes_in", None)
+        self.allocated_memory_bytes_lt = kwargs.get("allocated_memory_bytes_lt", None)
+        self.allocated_memory_bytes_lte = kwargs.get("allocated_memory_bytes_lte", None)
+        self.allocated_memory_bytes_not = kwargs.get("allocated_memory_bytes_not", None)
+        self.allocated_memory_bytes_not_in = kwargs.get("allocated_memory_bytes_not_in", None)
         self.allocated_prioritized_space = kwargs.get("allocated_prioritized_space", None)
         self.allocated_prioritized_space_gt = kwargs.get("allocated_prioritized_space_gt", None)
         self.allocated_prioritized_space_gte = kwargs.get("allocated_prioritized_space_gte", None)
@@ -2168,6 +2392,22 @@ class ClusterWhereInput(object):
         self.architecture_not_in = kwargs.get("architecture_not_in", None)
         self.auto_converge = kwargs.get("auto_converge", None)
         self.auto_converge_not = kwargs.get("auto_converge_not", None)
+        self.cap_snapshot_unique_size = kwargs.get("cap_snapshot_unique_size", None)
+        self.cap_snapshot_unique_size_gt = kwargs.get("cap_snapshot_unique_size_gt", None)
+        self.cap_snapshot_unique_size_gte = kwargs.get("cap_snapshot_unique_size_gte", None)
+        self.cap_snapshot_unique_size_in = kwargs.get("cap_snapshot_unique_size_in", None)
+        self.cap_snapshot_unique_size_lt = kwargs.get("cap_snapshot_unique_size_lt", None)
+        self.cap_snapshot_unique_size_lte = kwargs.get("cap_snapshot_unique_size_lte", None)
+        self.cap_snapshot_unique_size_not = kwargs.get("cap_snapshot_unique_size_not", None)
+        self.cap_snapshot_unique_size_not_in = kwargs.get("cap_snapshot_unique_size_not_in", None)
+        self.cap_volume_unique_size = kwargs.get("cap_volume_unique_size", None)
+        self.cap_volume_unique_size_gt = kwargs.get("cap_volume_unique_size_gt", None)
+        self.cap_volume_unique_size_gte = kwargs.get("cap_volume_unique_size_gte", None)
+        self.cap_volume_unique_size_in = kwargs.get("cap_volume_unique_size_in", None)
+        self.cap_volume_unique_size_lt = kwargs.get("cap_volume_unique_size_lt", None)
+        self.cap_volume_unique_size_lte = kwargs.get("cap_volume_unique_size_lte", None)
+        self.cap_volume_unique_size_not = kwargs.get("cap_volume_unique_size_not", None)
+        self.cap_volume_unique_size_not_in = kwargs.get("cap_volume_unique_size_not_in", None)
         self.commited_memory_bytes = kwargs.get("commited_memory_bytes", None)
         self.commited_memory_bytes_gt = kwargs.get("commited_memory_bytes_gt", None)
         self.commited_memory_bytes_gte = kwargs.get("commited_memory_bytes_gte", None)
@@ -2213,6 +2453,22 @@ class ClusterWhereInput(object):
         self.datacenters_every = kwargs.get("datacenters_every", None)
         self.datacenters_none = kwargs.get("datacenters_none", None)
         self.datacenters_some = kwargs.get("datacenters_some", None)
+        self.dirty_cache_space = kwargs.get("dirty_cache_space", None)
+        self.dirty_cache_space_gt = kwargs.get("dirty_cache_space_gt", None)
+        self.dirty_cache_space_gte = kwargs.get("dirty_cache_space_gte", None)
+        self.dirty_cache_space_in = kwargs.get("dirty_cache_space_in", None)
+        self.dirty_cache_space_lt = kwargs.get("dirty_cache_space_lt", None)
+        self.dirty_cache_space_lte = kwargs.get("dirty_cache_space_lte", None)
+        self.dirty_cache_space_not = kwargs.get("dirty_cache_space_not", None)
+        self.dirty_cache_space_not_in = kwargs.get("dirty_cache_space_not_in", None)
+        self.dirty_cache_usage = kwargs.get("dirty_cache_usage", None)
+        self.dirty_cache_usage_gt = kwargs.get("dirty_cache_usage_gt", None)
+        self.dirty_cache_usage_gte = kwargs.get("dirty_cache_usage_gte", None)
+        self.dirty_cache_usage_in = kwargs.get("dirty_cache_usage_in", None)
+        self.dirty_cache_usage_lt = kwargs.get("dirty_cache_usage_lt", None)
+        self.dirty_cache_usage_lte = kwargs.get("dirty_cache_usage_lte", None)
+        self.dirty_cache_usage_not = kwargs.get("dirty_cache_usage_not", None)
+        self.dirty_cache_usage_not_in = kwargs.get("dirty_cache_usage_not_in", None)
         self.disconnected_date = kwargs.get("disconnected_date", None)
         self.disconnected_date_gt = kwargs.get("disconnected_date_gt", None)
         self.disconnected_date_gte = kwargs.get("disconnected_date_gte", None)
@@ -2240,6 +2496,14 @@ class ClusterWhereInput(object):
         self.entity_async_status_not = kwargs.get("entity_async_status_not", None)
         self.entity_async_status_not_in = kwargs.get("entity_async_status_not_in", None)
         self.everoute_cluster = kwargs.get("everoute_cluster", None)
+        self.failure_cache_space = kwargs.get("failure_cache_space", None)
+        self.failure_cache_space_gt = kwargs.get("failure_cache_space_gt", None)
+        self.failure_cache_space_gte = kwargs.get("failure_cache_space_gte", None)
+        self.failure_cache_space_in = kwargs.get("failure_cache_space_in", None)
+        self.failure_cache_space_lt = kwargs.get("failure_cache_space_lt", None)
+        self.failure_cache_space_lte = kwargs.get("failure_cache_space_lte", None)
+        self.failure_cache_space_not = kwargs.get("failure_cache_space_not", None)
+        self.failure_cache_space_not_in = kwargs.get("failure_cache_space_not_in", None)
         self.failure_data_space = kwargs.get("failure_data_space", None)
         self.failure_data_space_gt = kwargs.get("failure_data_space_gt", None)
         self.failure_data_space_gte = kwargs.get("failure_data_space_gte", None)
@@ -2422,6 +2686,14 @@ class ClusterWhereInput(object):
         self.max_physical_data_capacity_per_node_lte = kwargs.get("max_physical_data_capacity_per_node_lte", None)
         self.max_physical_data_capacity_per_node_not = kwargs.get("max_physical_data_capacity_per_node_not", None)
         self.max_physical_data_capacity_per_node_not_in = kwargs.get("max_physical_data_capacity_per_node_not_in", None)
+        self.memory_allocation_rate = kwargs.get("memory_allocation_rate", None)
+        self.memory_allocation_rate_gt = kwargs.get("memory_allocation_rate_gt", None)
+        self.memory_allocation_rate_gte = kwargs.get("memory_allocation_rate_gte", None)
+        self.memory_allocation_rate_in = kwargs.get("memory_allocation_rate_in", None)
+        self.memory_allocation_rate_lt = kwargs.get("memory_allocation_rate_lt", None)
+        self.memory_allocation_rate_lte = kwargs.get("memory_allocation_rate_lte", None)
+        self.memory_allocation_rate_not = kwargs.get("memory_allocation_rate_not", None)
+        self.memory_allocation_rate_not_in = kwargs.get("memory_allocation_rate_not_in", None)
         self.mgt_gateway = kwargs.get("mgt_gateway", None)
         self.mgt_gateway_contains = kwargs.get("mgt_gateway_contains", None)
         self.mgt_gateway_ends_with = kwargs.get("mgt_gateway_ends_with", None)
@@ -2500,6 +2772,22 @@ class ClusterWhereInput(object):
         self.overall_efficiency_lte = kwargs.get("overall_efficiency_lte", None)
         self.overall_efficiency_not = kwargs.get("overall_efficiency_not", None)
         self.overall_efficiency_not_in = kwargs.get("overall_efficiency_not_in", None)
+        self.overcommit_memory_ratio = kwargs.get("overcommit_memory_ratio", None)
+        self.overcommit_memory_ratio_gt = kwargs.get("overcommit_memory_ratio_gt", None)
+        self.overcommit_memory_ratio_gte = kwargs.get("overcommit_memory_ratio_gte", None)
+        self.overcommit_memory_ratio_in = kwargs.get("overcommit_memory_ratio_in", None)
+        self.overcommit_memory_ratio_lt = kwargs.get("overcommit_memory_ratio_lt", None)
+        self.overcommit_memory_ratio_lte = kwargs.get("overcommit_memory_ratio_lte", None)
+        self.overcommit_memory_ratio_not = kwargs.get("overcommit_memory_ratio_not", None)
+        self.overcommit_memory_ratio_not_in = kwargs.get("overcommit_memory_ratio_not_in", None)
+        self.overprovision_ratio = kwargs.get("overprovision_ratio", None)
+        self.overprovision_ratio_gt = kwargs.get("overprovision_ratio_gt", None)
+        self.overprovision_ratio_gte = kwargs.get("overprovision_ratio_gte", None)
+        self.overprovision_ratio_in = kwargs.get("overprovision_ratio_in", None)
+        self.overprovision_ratio_lt = kwargs.get("overprovision_ratio_lt", None)
+        self.overprovision_ratio_lte = kwargs.get("overprovision_ratio_lte", None)
+        self.overprovision_ratio_not = kwargs.get("overprovision_ratio_not", None)
+        self.overprovision_ratio_not_in = kwargs.get("overprovision_ratio_not_in", None)
         self.perf_allocated_data_space = kwargs.get("perf_allocated_data_space", None)
         self.perf_allocated_data_space_gt = kwargs.get("perf_allocated_data_space_gt", None)
         self.perf_allocated_data_space_gte = kwargs.get("perf_allocated_data_space_gte", None)
@@ -2929,6 +3217,174 @@ class ClusterWhereInput(object):
         """
 
         self._access_write_compress_enabled_not = access_write_compress_enabled_not
+
+    @property
+    def allocated_memory_bytes(self):
+        """Gets the allocated_memory_bytes of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes
+
+    @allocated_memory_bytes.setter
+    def allocated_memory_bytes(self, allocated_memory_bytes):
+        """Sets the allocated_memory_bytes of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes: The allocated_memory_bytes of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes: int
+        """
+
+        self._allocated_memory_bytes = allocated_memory_bytes
+
+    @property
+    def allocated_memory_bytes_gt(self):
+        """Gets the allocated_memory_bytes_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes_gt
+
+    @allocated_memory_bytes_gt.setter
+    def allocated_memory_bytes_gt(self, allocated_memory_bytes_gt):
+        """Sets the allocated_memory_bytes_gt of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_gt: The allocated_memory_bytes_gt of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_gt: int
+        """
+
+        self._allocated_memory_bytes_gt = allocated_memory_bytes_gt
+
+    @property
+    def allocated_memory_bytes_gte(self):
+        """Gets the allocated_memory_bytes_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes_gte
+
+    @allocated_memory_bytes_gte.setter
+    def allocated_memory_bytes_gte(self, allocated_memory_bytes_gte):
+        """Sets the allocated_memory_bytes_gte of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_gte: The allocated_memory_bytes_gte of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_gte: int
+        """
+
+        self._allocated_memory_bytes_gte = allocated_memory_bytes_gte
+
+    @property
+    def allocated_memory_bytes_in(self):
+        """Gets the allocated_memory_bytes_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._allocated_memory_bytes_in
+
+    @allocated_memory_bytes_in.setter
+    def allocated_memory_bytes_in(self, allocated_memory_bytes_in):
+        """Sets the allocated_memory_bytes_in of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_in: The allocated_memory_bytes_in of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_in: list[int]
+        """
+
+        self._allocated_memory_bytes_in = allocated_memory_bytes_in
+
+    @property
+    def allocated_memory_bytes_lt(self):
+        """Gets the allocated_memory_bytes_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes_lt
+
+    @allocated_memory_bytes_lt.setter
+    def allocated_memory_bytes_lt(self, allocated_memory_bytes_lt):
+        """Sets the allocated_memory_bytes_lt of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_lt: The allocated_memory_bytes_lt of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_lt: int
+        """
+
+        self._allocated_memory_bytes_lt = allocated_memory_bytes_lt
+
+    @property
+    def allocated_memory_bytes_lte(self):
+        """Gets the allocated_memory_bytes_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes_lte
+
+    @allocated_memory_bytes_lte.setter
+    def allocated_memory_bytes_lte(self, allocated_memory_bytes_lte):
+        """Sets the allocated_memory_bytes_lte of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_lte: The allocated_memory_bytes_lte of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_lte: int
+        """
+
+        self._allocated_memory_bytes_lte = allocated_memory_bytes_lte
+
+    @property
+    def allocated_memory_bytes_not(self):
+        """Gets the allocated_memory_bytes_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes_not
+
+    @allocated_memory_bytes_not.setter
+    def allocated_memory_bytes_not(self, allocated_memory_bytes_not):
+        """Sets the allocated_memory_bytes_not of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_not: The allocated_memory_bytes_not of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_not: int
+        """
+
+        self._allocated_memory_bytes_not = allocated_memory_bytes_not
+
+    @property
+    def allocated_memory_bytes_not_in(self):
+        """Gets the allocated_memory_bytes_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._allocated_memory_bytes_not_in
+
+    @allocated_memory_bytes_not_in.setter
+    def allocated_memory_bytes_not_in(self, allocated_memory_bytes_not_in):
+        """Sets the allocated_memory_bytes_not_in of this ClusterWhereInput.
+
+
+        :param allocated_memory_bytes_not_in: The allocated_memory_bytes_not_in of this ClusterWhereInput.  # noqa: E501
+        :type allocated_memory_bytes_not_in: list[int]
+        """
+
+        self._allocated_memory_bytes_not_in = allocated_memory_bytes_not_in
 
     @property
     def allocated_prioritized_space(self):
@@ -3685,6 +4141,342 @@ class ClusterWhereInput(object):
         """
 
         self._auto_converge_not = auto_converge_not
+
+    @property
+    def cap_snapshot_unique_size(self):
+        """Gets the cap_snapshot_unique_size of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size
+
+    @cap_snapshot_unique_size.setter
+    def cap_snapshot_unique_size(self, cap_snapshot_unique_size):
+        """Sets the cap_snapshot_unique_size of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size: The cap_snapshot_unique_size of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size: int
+        """
+
+        self._cap_snapshot_unique_size = cap_snapshot_unique_size
+
+    @property
+    def cap_snapshot_unique_size_gt(self):
+        """Gets the cap_snapshot_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size_gt
+
+    @cap_snapshot_unique_size_gt.setter
+    def cap_snapshot_unique_size_gt(self, cap_snapshot_unique_size_gt):
+        """Sets the cap_snapshot_unique_size_gt of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_gt: The cap_snapshot_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_gt: int
+        """
+
+        self._cap_snapshot_unique_size_gt = cap_snapshot_unique_size_gt
+
+    @property
+    def cap_snapshot_unique_size_gte(self):
+        """Gets the cap_snapshot_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size_gte
+
+    @cap_snapshot_unique_size_gte.setter
+    def cap_snapshot_unique_size_gte(self, cap_snapshot_unique_size_gte):
+        """Sets the cap_snapshot_unique_size_gte of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_gte: The cap_snapshot_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_gte: int
+        """
+
+        self._cap_snapshot_unique_size_gte = cap_snapshot_unique_size_gte
+
+    @property
+    def cap_snapshot_unique_size_in(self):
+        """Gets the cap_snapshot_unique_size_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._cap_snapshot_unique_size_in
+
+    @cap_snapshot_unique_size_in.setter
+    def cap_snapshot_unique_size_in(self, cap_snapshot_unique_size_in):
+        """Sets the cap_snapshot_unique_size_in of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_in: The cap_snapshot_unique_size_in of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_in: list[int]
+        """
+
+        self._cap_snapshot_unique_size_in = cap_snapshot_unique_size_in
+
+    @property
+    def cap_snapshot_unique_size_lt(self):
+        """Gets the cap_snapshot_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size_lt
+
+    @cap_snapshot_unique_size_lt.setter
+    def cap_snapshot_unique_size_lt(self, cap_snapshot_unique_size_lt):
+        """Sets the cap_snapshot_unique_size_lt of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_lt: The cap_snapshot_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_lt: int
+        """
+
+        self._cap_snapshot_unique_size_lt = cap_snapshot_unique_size_lt
+
+    @property
+    def cap_snapshot_unique_size_lte(self):
+        """Gets the cap_snapshot_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size_lte
+
+    @cap_snapshot_unique_size_lte.setter
+    def cap_snapshot_unique_size_lte(self, cap_snapshot_unique_size_lte):
+        """Sets the cap_snapshot_unique_size_lte of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_lte: The cap_snapshot_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_lte: int
+        """
+
+        self._cap_snapshot_unique_size_lte = cap_snapshot_unique_size_lte
+
+    @property
+    def cap_snapshot_unique_size_not(self):
+        """Gets the cap_snapshot_unique_size_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size_not
+
+    @cap_snapshot_unique_size_not.setter
+    def cap_snapshot_unique_size_not(self, cap_snapshot_unique_size_not):
+        """Sets the cap_snapshot_unique_size_not of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_not: The cap_snapshot_unique_size_not of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_not: int
+        """
+
+        self._cap_snapshot_unique_size_not = cap_snapshot_unique_size_not
+
+    @property
+    def cap_snapshot_unique_size_not_in(self):
+        """Gets the cap_snapshot_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._cap_snapshot_unique_size_not_in
+
+    @cap_snapshot_unique_size_not_in.setter
+    def cap_snapshot_unique_size_not_in(self, cap_snapshot_unique_size_not_in):
+        """Sets the cap_snapshot_unique_size_not_in of this ClusterWhereInput.
+
+
+        :param cap_snapshot_unique_size_not_in: The cap_snapshot_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+        :type cap_snapshot_unique_size_not_in: list[int]
+        """
+
+        self._cap_snapshot_unique_size_not_in = cap_snapshot_unique_size_not_in
+
+    @property
+    def cap_volume_unique_size(self):
+        """Gets the cap_volume_unique_size of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size
+
+    @cap_volume_unique_size.setter
+    def cap_volume_unique_size(self, cap_volume_unique_size):
+        """Sets the cap_volume_unique_size of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size: The cap_volume_unique_size of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size: int
+        """
+
+        self._cap_volume_unique_size = cap_volume_unique_size
+
+    @property
+    def cap_volume_unique_size_gt(self):
+        """Gets the cap_volume_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size_gt
+
+    @cap_volume_unique_size_gt.setter
+    def cap_volume_unique_size_gt(self, cap_volume_unique_size_gt):
+        """Sets the cap_volume_unique_size_gt of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_gt: The cap_volume_unique_size_gt of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_gt: int
+        """
+
+        self._cap_volume_unique_size_gt = cap_volume_unique_size_gt
+
+    @property
+    def cap_volume_unique_size_gte(self):
+        """Gets the cap_volume_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size_gte
+
+    @cap_volume_unique_size_gte.setter
+    def cap_volume_unique_size_gte(self, cap_volume_unique_size_gte):
+        """Sets the cap_volume_unique_size_gte of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_gte: The cap_volume_unique_size_gte of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_gte: int
+        """
+
+        self._cap_volume_unique_size_gte = cap_volume_unique_size_gte
+
+    @property
+    def cap_volume_unique_size_in(self):
+        """Gets the cap_volume_unique_size_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._cap_volume_unique_size_in
+
+    @cap_volume_unique_size_in.setter
+    def cap_volume_unique_size_in(self, cap_volume_unique_size_in):
+        """Sets the cap_volume_unique_size_in of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_in: The cap_volume_unique_size_in of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_in: list[int]
+        """
+
+        self._cap_volume_unique_size_in = cap_volume_unique_size_in
+
+    @property
+    def cap_volume_unique_size_lt(self):
+        """Gets the cap_volume_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size_lt
+
+    @cap_volume_unique_size_lt.setter
+    def cap_volume_unique_size_lt(self, cap_volume_unique_size_lt):
+        """Sets the cap_volume_unique_size_lt of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_lt: The cap_volume_unique_size_lt of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_lt: int
+        """
+
+        self._cap_volume_unique_size_lt = cap_volume_unique_size_lt
+
+    @property
+    def cap_volume_unique_size_lte(self):
+        """Gets the cap_volume_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size_lte
+
+    @cap_volume_unique_size_lte.setter
+    def cap_volume_unique_size_lte(self, cap_volume_unique_size_lte):
+        """Sets the cap_volume_unique_size_lte of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_lte: The cap_volume_unique_size_lte of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_lte: int
+        """
+
+        self._cap_volume_unique_size_lte = cap_volume_unique_size_lte
+
+    @property
+    def cap_volume_unique_size_not(self):
+        """Gets the cap_volume_unique_size_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size_not
+
+    @cap_volume_unique_size_not.setter
+    def cap_volume_unique_size_not(self, cap_volume_unique_size_not):
+        """Sets the cap_volume_unique_size_not of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_not: The cap_volume_unique_size_not of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_not: int
+        """
+
+        self._cap_volume_unique_size_not = cap_volume_unique_size_not
+
+    @property
+    def cap_volume_unique_size_not_in(self):
+        """Gets the cap_volume_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._cap_volume_unique_size_not_in
+
+    @cap_volume_unique_size_not_in.setter
+    def cap_volume_unique_size_not_in(self, cap_volume_unique_size_not_in):
+        """Sets the cap_volume_unique_size_not_in of this ClusterWhereInput.
+
+
+        :param cap_volume_unique_size_not_in: The cap_volume_unique_size_not_in of this ClusterWhereInput.  # noqa: E501
+        :type cap_volume_unique_size_not_in: list[int]
+        """
+
+        self._cap_volume_unique_size_not_in = cap_volume_unique_size_not_in
 
     @property
     def commited_memory_bytes(self):
@@ -4632,6 +5424,342 @@ class ClusterWhereInput(object):
         self._datacenters_some = datacenters_some
 
     @property
+    def dirty_cache_space(self):
+        """Gets the dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space
+
+    @dirty_cache_space.setter
+    def dirty_cache_space(self, dirty_cache_space):
+        """Sets the dirty_cache_space of this ClusterWhereInput.
+
+
+        :param dirty_cache_space: The dirty_cache_space of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space: int
+        """
+
+        self._dirty_cache_space = dirty_cache_space
+
+    @property
+    def dirty_cache_space_gt(self):
+        """Gets the dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_gt
+
+    @dirty_cache_space_gt.setter
+    def dirty_cache_space_gt(self, dirty_cache_space_gt):
+        """Sets the dirty_cache_space_gt of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_gt: The dirty_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_gt: int
+        """
+
+        self._dirty_cache_space_gt = dirty_cache_space_gt
+
+    @property
+    def dirty_cache_space_gte(self):
+        """Gets the dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_gte
+
+    @dirty_cache_space_gte.setter
+    def dirty_cache_space_gte(self, dirty_cache_space_gte):
+        """Sets the dirty_cache_space_gte of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_gte: The dirty_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_gte: int
+        """
+
+        self._dirty_cache_space_gte = dirty_cache_space_gte
+
+    @property
+    def dirty_cache_space_in(self):
+        """Gets the dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._dirty_cache_space_in
+
+    @dirty_cache_space_in.setter
+    def dirty_cache_space_in(self, dirty_cache_space_in):
+        """Sets the dirty_cache_space_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_in: The dirty_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_in: list[int]
+        """
+
+        self._dirty_cache_space_in = dirty_cache_space_in
+
+    @property
+    def dirty_cache_space_lt(self):
+        """Gets the dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_lt
+
+    @dirty_cache_space_lt.setter
+    def dirty_cache_space_lt(self, dirty_cache_space_lt):
+        """Sets the dirty_cache_space_lt of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_lt: The dirty_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_lt: int
+        """
+
+        self._dirty_cache_space_lt = dirty_cache_space_lt
+
+    @property
+    def dirty_cache_space_lte(self):
+        """Gets the dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_lte
+
+    @dirty_cache_space_lte.setter
+    def dirty_cache_space_lte(self, dirty_cache_space_lte):
+        """Sets the dirty_cache_space_lte of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_lte: The dirty_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_lte: int
+        """
+
+        self._dirty_cache_space_lte = dirty_cache_space_lte
+
+    @property
+    def dirty_cache_space_not(self):
+        """Gets the dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space_not
+
+    @dirty_cache_space_not.setter
+    def dirty_cache_space_not(self, dirty_cache_space_not):
+        """Sets the dirty_cache_space_not of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_not: The dirty_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_not: int
+        """
+
+        self._dirty_cache_space_not = dirty_cache_space_not
+
+    @property
+    def dirty_cache_space_not_in(self):
+        """Gets the dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._dirty_cache_space_not_in
+
+    @dirty_cache_space_not_in.setter
+    def dirty_cache_space_not_in(self, dirty_cache_space_not_in):
+        """Sets the dirty_cache_space_not_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_space_not_in: The dirty_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_space_not_in: list[int]
+        """
+
+        self._dirty_cache_space_not_in = dirty_cache_space_not_in
+
+    @property
+    def dirty_cache_usage(self):
+        """Gets the dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage
+
+    @dirty_cache_usage.setter
+    def dirty_cache_usage(self, dirty_cache_usage):
+        """Sets the dirty_cache_usage of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage: The dirty_cache_usage of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage: float
+        """
+
+        self._dirty_cache_usage = dirty_cache_usage
+
+    @property
+    def dirty_cache_usage_gt(self):
+        """Gets the dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_gt
+
+    @dirty_cache_usage_gt.setter
+    def dirty_cache_usage_gt(self, dirty_cache_usage_gt):
+        """Sets the dirty_cache_usage_gt of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_gt: The dirty_cache_usage_gt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_gt: float
+        """
+
+        self._dirty_cache_usage_gt = dirty_cache_usage_gt
+
+    @property
+    def dirty_cache_usage_gte(self):
+        """Gets the dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_gte
+
+    @dirty_cache_usage_gte.setter
+    def dirty_cache_usage_gte(self, dirty_cache_usage_gte):
+        """Sets the dirty_cache_usage_gte of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_gte: The dirty_cache_usage_gte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_gte: float
+        """
+
+        self._dirty_cache_usage_gte = dirty_cache_usage_gte
+
+    @property
+    def dirty_cache_usage_in(self):
+        """Gets the dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._dirty_cache_usage_in
+
+    @dirty_cache_usage_in.setter
+    def dirty_cache_usage_in(self, dirty_cache_usage_in):
+        """Sets the dirty_cache_usage_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_in: The dirty_cache_usage_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_in: list[float]
+        """
+
+        self._dirty_cache_usage_in = dirty_cache_usage_in
+
+    @property
+    def dirty_cache_usage_lt(self):
+        """Gets the dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_lt
+
+    @dirty_cache_usage_lt.setter
+    def dirty_cache_usage_lt(self, dirty_cache_usage_lt):
+        """Sets the dirty_cache_usage_lt of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_lt: The dirty_cache_usage_lt of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_lt: float
+        """
+
+        self._dirty_cache_usage_lt = dirty_cache_usage_lt
+
+    @property
+    def dirty_cache_usage_lte(self):
+        """Gets the dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_lte
+
+    @dirty_cache_usage_lte.setter
+    def dirty_cache_usage_lte(self, dirty_cache_usage_lte):
+        """Sets the dirty_cache_usage_lte of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_lte: The dirty_cache_usage_lte of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_lte: float
+        """
+
+        self._dirty_cache_usage_lte = dirty_cache_usage_lte
+
+    @property
+    def dirty_cache_usage_not(self):
+        """Gets the dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage_not
+
+    @dirty_cache_usage_not.setter
+    def dirty_cache_usage_not(self, dirty_cache_usage_not):
+        """Sets the dirty_cache_usage_not of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_not: The dirty_cache_usage_not of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_not: float
+        """
+
+        self._dirty_cache_usage_not = dirty_cache_usage_not
+
+    @property
+    def dirty_cache_usage_not_in(self):
+        """Gets the dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._dirty_cache_usage_not_in
+
+    @dirty_cache_usage_not_in.setter
+    def dirty_cache_usage_not_in(self, dirty_cache_usage_not_in):
+        """Sets the dirty_cache_usage_not_in of this ClusterWhereInput.
+
+
+        :param dirty_cache_usage_not_in: The dirty_cache_usage_not_in of this ClusterWhereInput.  # noqa: E501
+        :type dirty_cache_usage_not_in: list[float]
+        """
+
+        self._dirty_cache_usage_not_in = dirty_cache_usage_not_in
+
+    @property
     def disconnected_date(self):
         """Gets the disconnected_date of this ClusterWhereInput.  # noqa: E501
 
@@ -5197,6 +6325,174 @@ class ClusterWhereInput(object):
         """
 
         self._everoute_cluster = everoute_cluster
+
+    @property
+    def failure_cache_space(self):
+        """Gets the failure_cache_space of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space
+
+    @failure_cache_space.setter
+    def failure_cache_space(self, failure_cache_space):
+        """Sets the failure_cache_space of this ClusterWhereInput.
+
+
+        :param failure_cache_space: The failure_cache_space of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space: int
+        """
+
+        self._failure_cache_space = failure_cache_space
+
+    @property
+    def failure_cache_space_gt(self):
+        """Gets the failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_gt
+
+    @failure_cache_space_gt.setter
+    def failure_cache_space_gt(self, failure_cache_space_gt):
+        """Sets the failure_cache_space_gt of this ClusterWhereInput.
+
+
+        :param failure_cache_space_gt: The failure_cache_space_gt of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_gt: int
+        """
+
+        self._failure_cache_space_gt = failure_cache_space_gt
+
+    @property
+    def failure_cache_space_gte(self):
+        """Gets the failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_gte
+
+    @failure_cache_space_gte.setter
+    def failure_cache_space_gte(self, failure_cache_space_gte):
+        """Sets the failure_cache_space_gte of this ClusterWhereInput.
+
+
+        :param failure_cache_space_gte: The failure_cache_space_gte of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_gte: int
+        """
+
+        self._failure_cache_space_gte = failure_cache_space_gte
+
+    @property
+    def failure_cache_space_in(self):
+        """Gets the failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._failure_cache_space_in
+
+    @failure_cache_space_in.setter
+    def failure_cache_space_in(self, failure_cache_space_in):
+        """Sets the failure_cache_space_in of this ClusterWhereInput.
+
+
+        :param failure_cache_space_in: The failure_cache_space_in of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_in: list[int]
+        """
+
+        self._failure_cache_space_in = failure_cache_space_in
+
+    @property
+    def failure_cache_space_lt(self):
+        """Gets the failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_lt
+
+    @failure_cache_space_lt.setter
+    def failure_cache_space_lt(self, failure_cache_space_lt):
+        """Sets the failure_cache_space_lt of this ClusterWhereInput.
+
+
+        :param failure_cache_space_lt: The failure_cache_space_lt of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_lt: int
+        """
+
+        self._failure_cache_space_lt = failure_cache_space_lt
+
+    @property
+    def failure_cache_space_lte(self):
+        """Gets the failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_lte
+
+    @failure_cache_space_lte.setter
+    def failure_cache_space_lte(self, failure_cache_space_lte):
+        """Sets the failure_cache_space_lte of this ClusterWhereInput.
+
+
+        :param failure_cache_space_lte: The failure_cache_space_lte of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_lte: int
+        """
+
+        self._failure_cache_space_lte = failure_cache_space_lte
+
+    @property
+    def failure_cache_space_not(self):
+        """Gets the failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space_not
+
+    @failure_cache_space_not.setter
+    def failure_cache_space_not(self, failure_cache_space_not):
+        """Sets the failure_cache_space_not of this ClusterWhereInput.
+
+
+        :param failure_cache_space_not: The failure_cache_space_not of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_not: int
+        """
+
+        self._failure_cache_space_not = failure_cache_space_not
+
+    @property
+    def failure_cache_space_not_in(self):
+        """Gets the failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._failure_cache_space_not_in
+
+    @failure_cache_space_not_in.setter
+    def failure_cache_space_not_in(self, failure_cache_space_not_in):
+        """Sets the failure_cache_space_not_in of this ClusterWhereInput.
+
+
+        :param failure_cache_space_not_in: The failure_cache_space_not_in of this ClusterWhereInput.  # noqa: E501
+        :type failure_cache_space_not_in: list[int]
+        """
+
+        self._failure_cache_space_not_in = failure_cache_space_not_in
 
     @property
     def failure_data_space(self):
@@ -9021,6 +10317,174 @@ class ClusterWhereInput(object):
         self._max_physical_data_capacity_per_node_not_in = max_physical_data_capacity_per_node_not_in
 
     @property
+    def memory_allocation_rate(self):
+        """Gets the memory_allocation_rate of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate
+
+    @memory_allocation_rate.setter
+    def memory_allocation_rate(self, memory_allocation_rate):
+        """Sets the memory_allocation_rate of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate: The memory_allocation_rate of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate: float
+        """
+
+        self._memory_allocation_rate = memory_allocation_rate
+
+    @property
+    def memory_allocation_rate_gt(self):
+        """Gets the memory_allocation_rate_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate_gt
+
+    @memory_allocation_rate_gt.setter
+    def memory_allocation_rate_gt(self, memory_allocation_rate_gt):
+        """Sets the memory_allocation_rate_gt of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_gt: The memory_allocation_rate_gt of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_gt: float
+        """
+
+        self._memory_allocation_rate_gt = memory_allocation_rate_gt
+
+    @property
+    def memory_allocation_rate_gte(self):
+        """Gets the memory_allocation_rate_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate_gte
+
+    @memory_allocation_rate_gte.setter
+    def memory_allocation_rate_gte(self, memory_allocation_rate_gte):
+        """Sets the memory_allocation_rate_gte of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_gte: The memory_allocation_rate_gte of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_gte: float
+        """
+
+        self._memory_allocation_rate_gte = memory_allocation_rate_gte
+
+    @property
+    def memory_allocation_rate_in(self):
+        """Gets the memory_allocation_rate_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._memory_allocation_rate_in
+
+    @memory_allocation_rate_in.setter
+    def memory_allocation_rate_in(self, memory_allocation_rate_in):
+        """Sets the memory_allocation_rate_in of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_in: The memory_allocation_rate_in of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_in: list[float]
+        """
+
+        self._memory_allocation_rate_in = memory_allocation_rate_in
+
+    @property
+    def memory_allocation_rate_lt(self):
+        """Gets the memory_allocation_rate_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate_lt
+
+    @memory_allocation_rate_lt.setter
+    def memory_allocation_rate_lt(self, memory_allocation_rate_lt):
+        """Sets the memory_allocation_rate_lt of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_lt: The memory_allocation_rate_lt of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_lt: float
+        """
+
+        self._memory_allocation_rate_lt = memory_allocation_rate_lt
+
+    @property
+    def memory_allocation_rate_lte(self):
+        """Gets the memory_allocation_rate_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate_lte
+
+    @memory_allocation_rate_lte.setter
+    def memory_allocation_rate_lte(self, memory_allocation_rate_lte):
+        """Sets the memory_allocation_rate_lte of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_lte: The memory_allocation_rate_lte of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_lte: float
+        """
+
+        self._memory_allocation_rate_lte = memory_allocation_rate_lte
+
+    @property
+    def memory_allocation_rate_not(self):
+        """Gets the memory_allocation_rate_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate_not
+
+    @memory_allocation_rate_not.setter
+    def memory_allocation_rate_not(self, memory_allocation_rate_not):
+        """Sets the memory_allocation_rate_not of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_not: The memory_allocation_rate_not of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_not: float
+        """
+
+        self._memory_allocation_rate_not = memory_allocation_rate_not
+
+    @property
+    def memory_allocation_rate_not_in(self):
+        """Gets the memory_allocation_rate_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The memory_allocation_rate_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._memory_allocation_rate_not_in
+
+    @memory_allocation_rate_not_in.setter
+    def memory_allocation_rate_not_in(self, memory_allocation_rate_not_in):
+        """Sets the memory_allocation_rate_not_in of this ClusterWhereInput.
+
+
+        :param memory_allocation_rate_not_in: The memory_allocation_rate_not_in of this ClusterWhereInput.  # noqa: E501
+        :type memory_allocation_rate_not_in: list[float]
+        """
+
+        self._memory_allocation_rate_not_in = memory_allocation_rate_not_in
+
+    @property
     def mgt_gateway(self):
         """Gets the mgt_gateway of this ClusterWhereInput.  # noqa: E501
 
@@ -10657,6 +12121,342 @@ class ClusterWhereInput(object):
         """
 
         self._overall_efficiency_not_in = overall_efficiency_not_in
+
+    @property
+    def overcommit_memory_ratio(self):
+        """Gets the overcommit_memory_ratio of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio
+
+    @overcommit_memory_ratio.setter
+    def overcommit_memory_ratio(self, overcommit_memory_ratio):
+        """Sets the overcommit_memory_ratio of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio: The overcommit_memory_ratio of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio: float
+        """
+
+        self._overcommit_memory_ratio = overcommit_memory_ratio
+
+    @property
+    def overcommit_memory_ratio_gt(self):
+        """Gets the overcommit_memory_ratio_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio_gt
+
+    @overcommit_memory_ratio_gt.setter
+    def overcommit_memory_ratio_gt(self, overcommit_memory_ratio_gt):
+        """Sets the overcommit_memory_ratio_gt of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_gt: The overcommit_memory_ratio_gt of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_gt: float
+        """
+
+        self._overcommit_memory_ratio_gt = overcommit_memory_ratio_gt
+
+    @property
+    def overcommit_memory_ratio_gte(self):
+        """Gets the overcommit_memory_ratio_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio_gte
+
+    @overcommit_memory_ratio_gte.setter
+    def overcommit_memory_ratio_gte(self, overcommit_memory_ratio_gte):
+        """Sets the overcommit_memory_ratio_gte of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_gte: The overcommit_memory_ratio_gte of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_gte: float
+        """
+
+        self._overcommit_memory_ratio_gte = overcommit_memory_ratio_gte
+
+    @property
+    def overcommit_memory_ratio_in(self):
+        """Gets the overcommit_memory_ratio_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._overcommit_memory_ratio_in
+
+    @overcommit_memory_ratio_in.setter
+    def overcommit_memory_ratio_in(self, overcommit_memory_ratio_in):
+        """Sets the overcommit_memory_ratio_in of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_in: The overcommit_memory_ratio_in of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_in: list[float]
+        """
+
+        self._overcommit_memory_ratio_in = overcommit_memory_ratio_in
+
+    @property
+    def overcommit_memory_ratio_lt(self):
+        """Gets the overcommit_memory_ratio_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio_lt
+
+    @overcommit_memory_ratio_lt.setter
+    def overcommit_memory_ratio_lt(self, overcommit_memory_ratio_lt):
+        """Sets the overcommit_memory_ratio_lt of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_lt: The overcommit_memory_ratio_lt of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_lt: float
+        """
+
+        self._overcommit_memory_ratio_lt = overcommit_memory_ratio_lt
+
+    @property
+    def overcommit_memory_ratio_lte(self):
+        """Gets the overcommit_memory_ratio_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio_lte
+
+    @overcommit_memory_ratio_lte.setter
+    def overcommit_memory_ratio_lte(self, overcommit_memory_ratio_lte):
+        """Sets the overcommit_memory_ratio_lte of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_lte: The overcommit_memory_ratio_lte of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_lte: float
+        """
+
+        self._overcommit_memory_ratio_lte = overcommit_memory_ratio_lte
+
+    @property
+    def overcommit_memory_ratio_not(self):
+        """Gets the overcommit_memory_ratio_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio_not
+
+    @overcommit_memory_ratio_not.setter
+    def overcommit_memory_ratio_not(self, overcommit_memory_ratio_not):
+        """Sets the overcommit_memory_ratio_not of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_not: The overcommit_memory_ratio_not of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_not: float
+        """
+
+        self._overcommit_memory_ratio_not = overcommit_memory_ratio_not
+
+    @property
+    def overcommit_memory_ratio_not_in(self):
+        """Gets the overcommit_memory_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._overcommit_memory_ratio_not_in
+
+    @overcommit_memory_ratio_not_in.setter
+    def overcommit_memory_ratio_not_in(self, overcommit_memory_ratio_not_in):
+        """Sets the overcommit_memory_ratio_not_in of this ClusterWhereInput.
+
+
+        :param overcommit_memory_ratio_not_in: The overcommit_memory_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+        :type overcommit_memory_ratio_not_in: list[float]
+        """
+
+        self._overcommit_memory_ratio_not_in = overcommit_memory_ratio_not_in
+
+    @property
+    def overprovision_ratio(self):
+        """Gets the overprovision_ratio of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio
+
+    @overprovision_ratio.setter
+    def overprovision_ratio(self, overprovision_ratio):
+        """Sets the overprovision_ratio of this ClusterWhereInput.
+
+
+        :param overprovision_ratio: The overprovision_ratio of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio: float
+        """
+
+        self._overprovision_ratio = overprovision_ratio
+
+    @property
+    def overprovision_ratio_gt(self):
+        """Gets the overprovision_ratio_gt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_gt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio_gt
+
+    @overprovision_ratio_gt.setter
+    def overprovision_ratio_gt(self, overprovision_ratio_gt):
+        """Sets the overprovision_ratio_gt of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_gt: The overprovision_ratio_gt of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_gt: float
+        """
+
+        self._overprovision_ratio_gt = overprovision_ratio_gt
+
+    @property
+    def overprovision_ratio_gte(self):
+        """Gets the overprovision_ratio_gte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_gte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio_gte
+
+    @overprovision_ratio_gte.setter
+    def overprovision_ratio_gte(self, overprovision_ratio_gte):
+        """Sets the overprovision_ratio_gte of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_gte: The overprovision_ratio_gte of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_gte: float
+        """
+
+        self._overprovision_ratio_gte = overprovision_ratio_gte
+
+    @property
+    def overprovision_ratio_in(self):
+        """Gets the overprovision_ratio_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._overprovision_ratio_in
+
+    @overprovision_ratio_in.setter
+    def overprovision_ratio_in(self, overprovision_ratio_in):
+        """Sets the overprovision_ratio_in of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_in: The overprovision_ratio_in of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_in: list[float]
+        """
+
+        self._overprovision_ratio_in = overprovision_ratio_in
+
+    @property
+    def overprovision_ratio_lt(self):
+        """Gets the overprovision_ratio_lt of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_lt of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio_lt
+
+    @overprovision_ratio_lt.setter
+    def overprovision_ratio_lt(self, overprovision_ratio_lt):
+        """Sets the overprovision_ratio_lt of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_lt: The overprovision_ratio_lt of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_lt: float
+        """
+
+        self._overprovision_ratio_lt = overprovision_ratio_lt
+
+    @property
+    def overprovision_ratio_lte(self):
+        """Gets the overprovision_ratio_lte of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_lte of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio_lte
+
+    @overprovision_ratio_lte.setter
+    def overprovision_ratio_lte(self, overprovision_ratio_lte):
+        """Sets the overprovision_ratio_lte of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_lte: The overprovision_ratio_lte of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_lte: float
+        """
+
+        self._overprovision_ratio_lte = overprovision_ratio_lte
+
+    @property
+    def overprovision_ratio_not(self):
+        """Gets the overprovision_ratio_not of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_not of this ClusterWhereInput.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio_not
+
+    @overprovision_ratio_not.setter
+    def overprovision_ratio_not(self, overprovision_ratio_not):
+        """Sets the overprovision_ratio_not of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_not: The overprovision_ratio_not of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_not: float
+        """
+
+        self._overprovision_ratio_not = overprovision_ratio_not
+
+    @property
+    def overprovision_ratio_not_in(self):
+        """Gets the overprovision_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+
+
+        :return: The overprovision_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._overprovision_ratio_not_in
+
+    @overprovision_ratio_not_in.setter
+    def overprovision_ratio_not_in(self, overprovision_ratio_not_in):
+        """Sets the overprovision_ratio_not_in of this ClusterWhereInput.
+
+
+        :param overprovision_ratio_not_in: The overprovision_ratio_not_in of this ClusterWhereInput.  # noqa: E501
+        :type overprovision_ratio_not_in: list[float]
+        """
+
+        self._overprovision_ratio_not_in = overprovision_ratio_not_in
 
     @property
     def perf_allocated_data_space(self):

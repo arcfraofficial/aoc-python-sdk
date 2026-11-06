@@ -4,6 +4,13 @@ from __future__ import absolute_import
 
 # import apis into api package
 from aoc.api.alert_api import AlertApi
+from aoc.api.backup_plan_api import BackupPlanApi
+from aoc.api.backup_plan_execution_api import BackupPlanExecutionApi
+from aoc.api.backup_restore_execution_api import BackupRestoreExecutionApi
+from aoc.api.backup_restore_point_api import BackupRestorePointApi
+from aoc.api.backup_service_api import BackupServiceApi
+from aoc.api.backup_store_repository_api import BackupStoreRepositoryApi
+from aoc.api.backup_target_execution_api import BackupTargetExecutionApi
 from aoc.api.cluster_api import ClusterApi
 from aoc.api.content_library_image_api import ContentLibraryImageApi
 from aoc.api.content_library_vm_template_api import ContentLibraryVmTemplateApi
@@ -26,9 +33,13 @@ from aoc.api.nic_api import NicApi
 from aoc.api.observability_api import ObservabilityApi
 from aoc.api.organization_api import OrganizationApi
 from aoc.api.ovf_api import OvfApi
+from aoc.api.replica_vm_api import ReplicaVmApi
+from aoc.api.replication_plan_api import ReplicationPlanApi
+from aoc.api.replication_service_api import ReplicationServiceApi
 from aoc.api.security_group_api import SecurityGroupApi
 from aoc.api.security_policy_api import SecurityPolicyApi
 from aoc.api.svt_image_api import SvtImageApi
+from aoc.api.sync_replication_plan_api import SyncReplicationPlanApi
 from aoc.api.system_audit_log_api import SystemAuditLogApi
 from aoc.api.task_api import TaskApi
 from aoc.api.upload_task_api import UploadTaskApi

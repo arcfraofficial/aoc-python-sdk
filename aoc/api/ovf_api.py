@@ -38,6 +38,8 @@ class OvfApi(object):
         :type get_export_file_download_links_params: GetExportFileDownloadLinksParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -69,6 +71,8 @@ class OvfApi(object):
         :type get_export_file_download_links_params: GetExportFileDownloadLinksParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -97,7 +101,8 @@ class OvfApi(object):
 
         all_params = [
             'get_export_file_download_links_params',
-            'content_language'
+            'content_language',
+            'external_cloudtower_id'
         ]
         all_params.extend(
             [
@@ -133,6 +138,8 @@ class OvfApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -192,6 +199,8 @@ class OvfApi(object):
         :type cluster_id: str
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -225,6 +234,8 @@ class OvfApi(object):
         :type cluster_id: str
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -254,7 +265,8 @@ class OvfApi(object):
         all_params = [
             'file',
             'cluster_id',
-            'content_language'
+            'content_language',
+            'external_cloudtower_id'
         ]
         all_params.extend(
             [
@@ -294,6 +306,8 @@ class OvfApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -353,6 +367,8 @@ class OvfApi(object):
         :type file: file
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param cluster_id:
         :type cluster_id: str
         :param name:
@@ -363,6 +379,10 @@ class OvfApi(object):
         :type size_unit: str
         :param upload_task_id:
         :type upload_task_id: str
+        :param storage_cluster_id:
+        :type storage_cluster_id: str
+        :param datastore_id:
+        :type datastore_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -394,6 +414,8 @@ class OvfApi(object):
         :type file: file
         :param content_language:
         :type content_language: ContentLanguage
+        :param external_cloudtower_id:
+        :type external_cloudtower_id: str
         :param cluster_id:
         :type cluster_id: str
         :param name:
@@ -404,6 +426,10 @@ class OvfApi(object):
         :type size_unit: str
         :param upload_task_id:
         :type upload_task_id: str
+        :param storage_cluster_id:
+        :type storage_cluster_id: str
+        :param datastore_id:
+        :type datastore_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -433,11 +459,14 @@ class OvfApi(object):
         all_params = [
             'file',
             'content_language',
+            'external_cloudtower_id',
             'cluster_id',
             'name',
             'size',
             'size_unit',
-            'upload_task_id'
+            'upload_task_id',
+            'storage_cluster_id',
+            'datastore_id'
         ]
         all_params.extend(
             [
@@ -473,6 +502,8 @@ class OvfApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'external_cloudtower_id' in local_var_params:
+            header_params['external-cloudtower-id'] = local_var_params['external_cloudtower_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -488,6 +519,10 @@ class OvfApi(object):
             form_params.append(('size_unit', local_var_params['size_unit']))  # noqa: E501
         if 'upload_task_id' in local_var_params:
             form_params.append(('upload_task_id', local_var_params['upload_task_id']))  # noqa: E501
+        if 'storage_cluster_id' in local_var_params:
+            form_params.append(('storage_cluster_id', local_var_params['storage_cluster_id']))  # noqa: E501
+        if 'datastore_id' in local_var_params:
+            form_params.append(('datastore_id', local_var_params['datastore_id']))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
