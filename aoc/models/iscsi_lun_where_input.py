@@ -312,6 +312,9 @@ class IscsiLunWhereInput(object):
         'replica_num_lte': 'int',
         'replica_num_not': 'int',
         'replica_num_not_in': 'list[int]',
+        'replication_plans_every': 'ReplicationPlanWhereInput',
+        'replication_plans_none': 'ReplicationPlanWhereInput',
+        'replication_plans_some': 'ReplicationPlanWhereInput',
         'resiliency_type': 'ResiliencyType',
         'resiliency_type_in': 'list[ResiliencyType]',
         'resiliency_type_not': 'ResiliencyType',
@@ -670,6 +673,9 @@ class IscsiLunWhereInput(object):
         'replica_num_lte': 'replica_num_lte',
         'replica_num_not': 'replica_num_not',
         'replica_num_not_in': 'replica_num_not_in',
+        'replication_plans_every': 'replication_plans_every',
+        'replication_plans_none': 'replication_plans_none',
+        'replication_plans_some': 'replication_plans_some',
         'resiliency_type': 'resiliency_type',
         'resiliency_type_in': 'resiliency_type_in',
         'resiliency_type_not': 'resiliency_type_not',
@@ -1031,6 +1037,9 @@ class IscsiLunWhereInput(object):
         self._replica_num_lte = None
         self._replica_num_not = None
         self._replica_num_not_in = None
+        self._replication_plans_every = None
+        self._replication_plans_none = None
+        self._replication_plans_some = None
         self._resiliency_type = None
         self._resiliency_type_in = None
         self._resiliency_type_not = None
@@ -1388,6 +1397,9 @@ class IscsiLunWhereInput(object):
         self.replica_num_lte = kwargs.get("replica_num_lte", None)
         self.replica_num_not = kwargs.get("replica_num_not", None)
         self.replica_num_not_in = kwargs.get("replica_num_not_in", None)
+        self.replication_plans_every = kwargs.get("replication_plans_every", None)
+        self.replication_plans_none = kwargs.get("replication_plans_none", None)
+        self.replication_plans_some = kwargs.get("replication_plans_some", None)
         self.resiliency_type = kwargs.get("resiliency_type", None)
         self.resiliency_type_in = kwargs.get("resiliency_type_in", None)
         self.resiliency_type_not = kwargs.get("resiliency_type_not", None)
@@ -7483,6 +7495,69 @@ class IscsiLunWhereInput(object):
         """
 
         self._replica_num_not_in = replica_num_not_in
+
+    @property
+    def replication_plans_every(self):
+        """Gets the replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_every
+
+    @replication_plans_every.setter
+    def replication_plans_every(self, replication_plans_every):
+        """Sets the replication_plans_every of this IscsiLunWhereInput.
+
+
+        :param replication_plans_every: The replication_plans_every of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_every: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_every = replication_plans_every
+
+    @property
+    def replication_plans_none(self):
+        """Gets the replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_none
+
+    @replication_plans_none.setter
+    def replication_plans_none(self, replication_plans_none):
+        """Sets the replication_plans_none of this IscsiLunWhereInput.
+
+
+        :param replication_plans_none: The replication_plans_none of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_none: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_none = replication_plans_none
+
+    @property
+    def replication_plans_some(self):
+        """Gets the replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+
+
+        :return: The replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :rtype: ReplicationPlanWhereInput
+        """
+        return self._replication_plans_some
+
+    @replication_plans_some.setter
+    def replication_plans_some(self, replication_plans_some):
+        """Sets the replication_plans_some of this IscsiLunWhereInput.
+
+
+        :param replication_plans_some: The replication_plans_some of this IscsiLunWhereInput.  # noqa: E501
+        :type replication_plans_some: ReplicationPlanWhereInput
+        """
+
+        self._replication_plans_some = replication_plans_some
 
     @property
     def resiliency_type(self):

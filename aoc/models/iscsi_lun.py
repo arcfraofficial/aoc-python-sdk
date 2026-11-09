@@ -62,6 +62,7 @@ class IscsiLun(object):
         'name': 'str',
         'prioritized': 'bool',
         'replica_num': 'int',
+        'replication_plans': 'list[NestedReplicationPlan]',
         'resiliency_type': 'ResiliencyType',
         'shared_size': 'int',
         'snapshot_num': 'int',
@@ -111,6 +112,7 @@ class IscsiLun(object):
         'name': 'name',
         'prioritized': 'prioritized',
         'replica_num': 'replica_num',
+        'replication_plans': 'replication_plans',
         'resiliency_type': 'resiliency_type',
         'shared_size': 'shared_size',
         'snapshot_num': 'snapshot_num',
@@ -163,6 +165,7 @@ class IscsiLun(object):
         self._name = None
         self._prioritized = None
         self._replica_num = None
+        self._replication_plans = None
         self._resiliency_type = None
         self._shared_size = None
         self._snapshot_num = None
@@ -239,6 +242,7 @@ class IscsiLun(object):
         self.prioritized = kwargs.get("prioritized", None)
         if "replica_num" in kwargs:
             self.replica_num = kwargs["replica_num"]
+        self.replication_plans = kwargs.get("replication_plans", None)
         self.resiliency_type = kwargs.get("resiliency_type", None)
         if "shared_size" in kwargs:
             self.shared_size = kwargs["shared_size"]
@@ -1088,6 +1092,27 @@ class IscsiLun(object):
             raise ValueError("Invalid value for `replica_num`, must not be `None`")  # noqa: E501
 
         self._replica_num = replica_num
+
+    @property
+    def replication_plans(self):
+        """Gets the replication_plans of this IscsiLun.  # noqa: E501
+
+
+        :return: The replication_plans of this IscsiLun.  # noqa: E501
+        :rtype: list[NestedReplicationPlan]
+        """
+        return self._replication_plans
+
+    @replication_plans.setter
+    def replication_plans(self, replication_plans):
+        """Sets the replication_plans of this IscsiLun.
+
+
+        :param replication_plans: The replication_plans of this IscsiLun.  # noqa: E501
+        :type replication_plans: list[NestedReplicationPlan]
+        """
+
+        self._replication_plans = replication_plans
 
     @property
     def resiliency_type(self):

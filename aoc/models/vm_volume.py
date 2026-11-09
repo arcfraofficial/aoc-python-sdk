@@ -31,6 +31,7 @@ class VmVolume(object):
         'elf_storage_policy_ec_k': 'int',
         'elf_storage_policy_ec_m': 'int',
         'elf_storage_policy_replica_num': 'int',
+        'elf_storage_policy_stripe_num': 'int',
         'elf_storage_policy_thin_provision': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
         'guest_size_usage': 'float',
@@ -43,6 +44,7 @@ class VmVolume(object):
         'mounting': 'bool',
         'name': 'str',
         'path': 'str',
+        'provision_policy': 'str',
         'resident_in_cache': 'bool',
         'sharing': 'bool',
         'size': 'int',
@@ -61,6 +63,7 @@ class VmVolume(object):
         'elf_storage_policy_ec_k': 'elf_storage_policy_ec_k',
         'elf_storage_policy_ec_m': 'elf_storage_policy_ec_m',
         'elf_storage_policy_replica_num': 'elf_storage_policy_replica_num',
+        'elf_storage_policy_stripe_num': 'elf_storage_policy_stripe_num',
         'elf_storage_policy_thin_provision': 'elf_storage_policy_thin_provision',
         'entity_async_status': 'entityAsyncStatus',
         'guest_size_usage': 'guest_size_usage',
@@ -73,6 +76,7 @@ class VmVolume(object):
         'mounting': 'mounting',
         'name': 'name',
         'path': 'path',
+        'provision_policy': 'provision_policy',
         'resident_in_cache': 'resident_in_cache',
         'sharing': 'sharing',
         'size': 'size',
@@ -94,6 +98,7 @@ class VmVolume(object):
         self._elf_storage_policy_ec_k = None
         self._elf_storage_policy_ec_m = None
         self._elf_storage_policy_replica_num = None
+        self._elf_storage_policy_stripe_num = None
         self._elf_storage_policy_thin_provision = None
         self._entity_async_status = None
         self._guest_size_usage = None
@@ -106,6 +111,7 @@ class VmVolume(object):
         self._mounting = None
         self._name = None
         self._path = None
+        self._provision_policy = None
         self._resident_in_cache = None
         self._sharing = None
         self._size = None
@@ -125,6 +131,7 @@ class VmVolume(object):
         self.elf_storage_policy_ec_k = kwargs.get("elf_storage_policy_ec_k", None)
         self.elf_storage_policy_ec_m = kwargs.get("elf_storage_policy_ec_m", None)
         self.elf_storage_policy_replica_num = kwargs.get("elf_storage_policy_replica_num", None)
+        self.elf_storage_policy_stripe_num = kwargs.get("elf_storage_policy_stripe_num", None)
         self.elf_storage_policy_thin_provision = kwargs.get("elf_storage_policy_thin_provision", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
         self.guest_size_usage = kwargs.get("guest_size_usage", None)
@@ -143,6 +150,7 @@ class VmVolume(object):
             self.name = kwargs["name"]
         if "path" in kwargs:
             self.path = kwargs["path"]
+        self.provision_policy = kwargs.get("provision_policy", None)
         self.resident_in_cache = kwargs.get("resident_in_cache", None)
         if "sharing" in kwargs:
             self.sharing = kwargs["sharing"]
@@ -284,6 +292,27 @@ class VmVolume(object):
         """
 
         self._elf_storage_policy_replica_num = elf_storage_policy_replica_num
+
+    @property
+    def elf_storage_policy_stripe_num(self):
+        """Gets the elf_storage_policy_stripe_num of this VmVolume.  # noqa: E501
+
+
+        :return: The elf_storage_policy_stripe_num of this VmVolume.  # noqa: E501
+        :rtype: int
+        """
+        return self._elf_storage_policy_stripe_num
+
+    @elf_storage_policy_stripe_num.setter
+    def elf_storage_policy_stripe_num(self, elf_storage_policy_stripe_num):
+        """Sets the elf_storage_policy_stripe_num of this VmVolume.
+
+
+        :param elf_storage_policy_stripe_num: The elf_storage_policy_stripe_num of this VmVolume.  # noqa: E501
+        :type elf_storage_policy_stripe_num: int
+        """
+
+        self._elf_storage_policy_stripe_num = elf_storage_policy_stripe_num
 
     @property
     def elf_storage_policy_thin_provision(self):
@@ -548,6 +577,27 @@ class VmVolume(object):
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
 
         self._path = path
+
+    @property
+    def provision_policy(self):
+        """Gets the provision_policy of this VmVolume.  # noqa: E501
+
+
+        :return: The provision_policy of this VmVolume.  # noqa: E501
+        :rtype: str
+        """
+        return self._provision_policy
+
+    @provision_policy.setter
+    def provision_policy(self, provision_policy):
+        """Sets the provision_policy of this VmVolume.
+
+
+        :param provision_policy: The provision_policy of this VmVolume.  # noqa: E501
+        :type provision_policy: str
+        """
+
+        self._provision_policy = provision_policy
 
     @property
     def resident_in_cache(self):

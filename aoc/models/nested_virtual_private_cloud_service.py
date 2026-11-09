@@ -25,32 +25,55 @@ class NestedVirtualPrivateCloudService(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'everoute_cluster': 'NestedEverouteCluster',
         'id': 'str',
-        'internal_cidr': 'str',
-        'tep_ip_pools': 'list[NestedVirtualPrivateCloudServiceTepIpPool]'
+        'internal_cidr': 'str'
     }
 
     attribute_map = {
+        'everoute_cluster': 'everoute_cluster',
         'id': 'id',
-        'internal_cidr': 'internal_cidr',
-        'tep_ip_pools': 'tep_ip_pools'
+        'internal_cidr': 'internal_cidr'
     }
 
     def __init__(self, **kwargs):  # noqa: E501
         """NestedVirtualPrivateCloudService - a model defined in OpenAPI"""  # noqa: E501
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
+        self._everoute_cluster = None
         self._id = None
         self._internal_cidr = None
-        self._tep_ip_pools = None
         self.discriminator = None
 
+        if "everoute_cluster" in kwargs:
+            self.everoute_cluster = kwargs["everoute_cluster"]
         if "id" in kwargs:
             self.id = kwargs["id"]
         if "internal_cidr" in kwargs:
             self.internal_cidr = kwargs["internal_cidr"]
-        if "tep_ip_pools" in kwargs:
-            self.tep_ip_pools = kwargs["tep_ip_pools"]
+
+    @property
+    def everoute_cluster(self):
+        """Gets the everoute_cluster of this NestedVirtualPrivateCloudService.  # noqa: E501
+
+
+        :return: The everoute_cluster of this NestedVirtualPrivateCloudService.  # noqa: E501
+        :rtype: NestedEverouteCluster
+        """
+        return self._everoute_cluster
+
+    @everoute_cluster.setter
+    def everoute_cluster(self, everoute_cluster):
+        """Sets the everoute_cluster of this NestedVirtualPrivateCloudService.
+
+
+        :param everoute_cluster: The everoute_cluster of this NestedVirtualPrivateCloudService.  # noqa: E501
+        :type everoute_cluster: NestedEverouteCluster
+        """
+        if self.local_vars_configuration.client_side_validation and everoute_cluster is None:  # noqa: E501
+            raise ValueError("Invalid value for `everoute_cluster`, must not be `None`")  # noqa: E501
+
+        self._everoute_cluster = everoute_cluster
 
     @property
     def id(self):
@@ -97,29 +120,6 @@ class NestedVirtualPrivateCloudService(object):
             raise ValueError("Invalid value for `internal_cidr`, must not be `None`")  # noqa: E501
 
         self._internal_cidr = internal_cidr
-
-    @property
-    def tep_ip_pools(self):
-        """Gets the tep_ip_pools of this NestedVirtualPrivateCloudService.  # noqa: E501
-
-
-        :return: The tep_ip_pools of this NestedVirtualPrivateCloudService.  # noqa: E501
-        :rtype: list[NestedVirtualPrivateCloudServiceTepIpPool]
-        """
-        return self._tep_ip_pools
-
-    @tep_ip_pools.setter
-    def tep_ip_pools(self, tep_ip_pools):
-        """Sets the tep_ip_pools of this NestedVirtualPrivateCloudService.
-
-
-        :param tep_ip_pools: The tep_ip_pools of this NestedVirtualPrivateCloudService.  # noqa: E501
-        :type tep_ip_pools: list[NestedVirtualPrivateCloudServiceTepIpPool]
-        """
-        if self.local_vars_configuration.client_side_validation and tep_ip_pools is None:  # noqa: E501
-            raise ValueError("Invalid value for `tep_ip_pools`, must not be `None`")  # noqa: E501
-
-        self._tep_ip_pools = tep_ip_pools
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

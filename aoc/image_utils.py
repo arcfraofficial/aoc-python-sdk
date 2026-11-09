@@ -2,7 +2,7 @@ import logging
 from multiprocessing.pool import ThreadPool
 
 from aoc.models import UploadResourceType, UploadTaskStatus
-from aoc.api import UploadTaskApi, ContentLibraryImageApi
+from aoc.api import UploadTaskApi, ContentLibraryImageApi, ElfImageApi
 
 logger = logging.getLogger(__name__)
 
