@@ -10,14 +10,14 @@ Aoc python sdk, require Python 2.7 or 3.4+
 - ### install from whl
 
   ```shell
-  pip install aoc_sdk-1.0.0-py2.py3-none-any.whl
+  pip install aoc_sdk-1.1.0-py2.py3-none-any.whl
   ```
 
 - ### install from tar.gz
 
   ```shell
-  tar xvzf aoc-sdk-1.0.0.tar.gz
-  cd aoc-sdk-1.0.0
+  tar xvzf aoc-sdk-1.1.0.tar.gz
+  cd aoc-sdk-1.1.0
   python setup.py install
   ```
 
@@ -79,7 +79,7 @@ vm_api = VmApi(client)
 from aoc.utils import wait_tasks, login
 conf = Configuration(host="http://aoc.arcfra.com/v2/api")
 api_client = ApiClient(conf)
-login(api_client, "your_username", "your_password")
+login(api_client, "<username>", "<password>")
 ```
 
 > or directly update api_key field of Configuration, token can be retrieved from `login` api from `UserApi`
@@ -90,8 +90,8 @@ from aoc.models import UserSource
 
 user_api = UserApi(client)
 login_res = user_api.login({
-    "username": "your_username",
-    "password": "your_password",
+    "username": "<username>",
+    "password": "<password>",
     "source": UserSource.LOCAL
 })
 
@@ -157,4 +157,43 @@ vms = vm_api.get_vms(
   async_req=True
 )
 print(vms.get()[0].name)
+```
+
+#### Create `ActivePassiveApiClient` instance
+
+AOC introduced multi-management-IP active-passive deployment in version 4.9.0. To access such AOC deployments, you can use `ActivePassiveApiClient` to configure multiple endpoints for the same active-passive cluster. At any given time, it is expected that at most one active endpoint exists. The order of endpoints passed in does not represent the active-passive relationship; the client will select the current active endpoint based on probing results.
+
+```python
+from aoc import ActivePassiveApiClient
+
+client = ActivePassiveApiClient(
+    endpoints=["https://aoc-a.example.com", "https://aoc-b.example.com"],
+    user_config={
+        "name": "<username>",
+        "password": "<password>",
+    },
+)
+```
+
+#### Failover strategies
+
+`ActivePassiveApiClient` supports the following failover strategies:
+
+- `AUTO_FAILOVER`: The default strategy. When there is no cached active endpoint, it attempts to probe and cache the current active endpoint; after a request returns 307, it automatically re-probes and retries once; after a network I/O exception occurs, it clears the cache but does not automatically retry.
+- `MANUAL_FAILOVER`: After a request returns 307, it does not automatically re-probe or retry. Clearing the cache is handled by the caller for failover. The rest of the business logic is consistent with `AUTO_FAILOVER`.
+- `ALWAYS_PROBE`: Does not cache the active endpoint. Re-probes the active endpoint before each request; after a request returns 307, it does not automatically retry.
+
+If you need to specify a failover strategy, you can pass it in when creating the instance:
+
+```python
+from aoc import ActivePassiveApiClient, FailoverStrategy
+
+client = ActivePassiveApiClient(
+    endpoints=["https://aoc-a.example.com", "https://aoc-b.example.com"],
+    user_config={
+        "name": "<username>",
+        "password": "<password>",
+    },
+    failover_strategy=FailoverStrategy.MANUAL_FAILOVER,
+)
 ```

@@ -26,17 +26,22 @@ class Cluster(object):
     """
     openapi_types = {
         'access_write_compress_enabled': 'bool',
+        'allocated_memory_bytes': 'int',
         'allocated_prioritized_space': 'int',
         'allocated_prioritized_space_usage': 'float',
         'application_highest_version': 'str',
         'architecture': 'Architecture',
         'auto_converge': 'bool',
+        'cap_snapshot_unique_size': 'int',
+        'cap_volume_unique_size': 'int',
         'commited_memory_bytes': 'int',
         'connect_state': 'ConnectState',
         'current_cpu_model': 'str',
         'data_reduction_ratio': 'float',
         'data_reduction_saving': 'float',
         'datacenters': 'list[NestedDatacenter]',
+        'dirty_cache_space': 'int',
+        'dirty_cache_usage': 'float',
         'disconnected_date': 'str',
         'disconnected_reason': 'ClusterConnectorErrorCode',
         'dns': 'list[str]',
@@ -44,6 +49,7 @@ class Cluster(object):
         'enable_tiering': 'bool',
         'entity_async_status': 'EntityAsyncStatus',
         'everoute_cluster': 'NestedEverouteCluster',
+        'failure_cache_space': 'int',
         'failure_data_space': 'int',
         'has_metrox': 'bool',
         'host_num': 'int',
@@ -66,6 +72,7 @@ class Cluster(object):
         'max_chunk_num': 'int',
         'max_physical_data_capacity': 'int',
         'max_physical_data_capacity_per_node': 'int',
+        'memory_allocation_rate': 'float',
         'metro_availability_checklist': 'NestedMetroAvailabilityChecklist',
         'mgt_gateway': 'str',
         'mgt_netmask': 'str',
@@ -79,6 +86,8 @@ class Cluster(object):
         'nvme_over_tcp_enabled': 'bool',
         'nvmf_enabled': 'bool',
         'overall_efficiency': 'float',
+        'overcommit_memory_ratio': 'float',
+        'overprovision_ratio': 'float',
         'perf_allocated_data_space': 'int',
         'perf_failure_data_space': 'int',
         'perf_total_data_capacity': 'int',
@@ -132,17 +141,22 @@ class Cluster(object):
 
     attribute_map = {
         'access_write_compress_enabled': 'access_write_compress_enabled',
+        'allocated_memory_bytes': 'allocated_memory_bytes',
         'allocated_prioritized_space': 'allocated_prioritized_space',
         'allocated_prioritized_space_usage': 'allocated_prioritized_space_usage',
         'application_highest_version': 'application_highest_version',
         'architecture': 'architecture',
         'auto_converge': 'auto_converge',
+        'cap_snapshot_unique_size': 'cap_snapshot_unique_size',
+        'cap_volume_unique_size': 'cap_volume_unique_size',
         'commited_memory_bytes': 'commited_memory_bytes',
         'connect_state': 'connect_state',
         'current_cpu_model': 'current_cpu_model',
         'data_reduction_ratio': 'data_reduction_ratio',
         'data_reduction_saving': 'data_reduction_saving',
         'datacenters': 'datacenters',
+        'dirty_cache_space': 'dirty_cache_space',
+        'dirty_cache_usage': 'dirty_cache_usage',
         'disconnected_date': 'disconnected_date',
         'disconnected_reason': 'disconnected_reason',
         'dns': 'dns',
@@ -150,6 +164,7 @@ class Cluster(object):
         'enable_tiering': 'enable_tiering',
         'entity_async_status': 'entityAsyncStatus',
         'everoute_cluster': 'everoute_cluster',
+        'failure_cache_space': 'failure_cache_space',
         'failure_data_space': 'failure_data_space',
         'has_metrox': 'has_metrox',
         'host_num': 'host_num',
@@ -172,6 +187,7 @@ class Cluster(object):
         'max_chunk_num': 'max_chunk_num',
         'max_physical_data_capacity': 'max_physical_data_capacity',
         'max_physical_data_capacity_per_node': 'max_physical_data_capacity_per_node',
+        'memory_allocation_rate': 'memory_allocation_rate',
         'metro_availability_checklist': 'metro_availability_checklist',
         'mgt_gateway': 'mgt_gateway',
         'mgt_netmask': 'mgt_netmask',
@@ -185,6 +201,8 @@ class Cluster(object):
         'nvme_over_tcp_enabled': 'nvme_over_tcp_enabled',
         'nvmf_enabled': 'nvmf_enabled',
         'overall_efficiency': 'overall_efficiency',
+        'overcommit_memory_ratio': 'overcommit_memory_ratio',
+        'overprovision_ratio': 'overprovision_ratio',
         'perf_allocated_data_space': 'perf_allocated_data_space',
         'perf_failure_data_space': 'perf_failure_data_space',
         'perf_total_data_capacity': 'perf_total_data_capacity',
@@ -241,17 +259,22 @@ class Cluster(object):
         self.local_vars_configuration = kwargs.get("local_vars_configuration", Configuration.get_default_copy())
 
         self._access_write_compress_enabled = None
+        self._allocated_memory_bytes = None
         self._allocated_prioritized_space = None
         self._allocated_prioritized_space_usage = None
         self._application_highest_version = None
         self._architecture = None
         self._auto_converge = None
+        self._cap_snapshot_unique_size = None
+        self._cap_volume_unique_size = None
         self._commited_memory_bytes = None
         self._connect_state = None
         self._current_cpu_model = None
         self._data_reduction_ratio = None
         self._data_reduction_saving = None
         self._datacenters = None
+        self._dirty_cache_space = None
+        self._dirty_cache_usage = None
         self._disconnected_date = None
         self._disconnected_reason = None
         self._dns = None
@@ -259,6 +282,7 @@ class Cluster(object):
         self._enable_tiering = None
         self._entity_async_status = None
         self._everoute_cluster = None
+        self._failure_cache_space = None
         self._failure_data_space = None
         self._has_metrox = None
         self._host_num = None
@@ -281,6 +305,7 @@ class Cluster(object):
         self._max_chunk_num = None
         self._max_physical_data_capacity = None
         self._max_physical_data_capacity_per_node = None
+        self._memory_allocation_rate = None
         self._metro_availability_checklist = None
         self._mgt_gateway = None
         self._mgt_netmask = None
@@ -294,6 +319,8 @@ class Cluster(object):
         self._nvme_over_tcp_enabled = None
         self._nvmf_enabled = None
         self._overall_efficiency = None
+        self._overcommit_memory_ratio = None
+        self._overprovision_ratio = None
         self._perf_allocated_data_space = None
         self._perf_failure_data_space = None
         self._perf_total_data_capacity = None
@@ -346,12 +373,15 @@ class Cluster(object):
         self.discriminator = None
 
         self.access_write_compress_enabled = kwargs.get("access_write_compress_enabled", None)
+        self.allocated_memory_bytes = kwargs.get("allocated_memory_bytes", None)
         self.allocated_prioritized_space = kwargs.get("allocated_prioritized_space", None)
         self.allocated_prioritized_space_usage = kwargs.get("allocated_prioritized_space_usage", None)
         self.application_highest_version = kwargs.get("application_highest_version", None)
         if "architecture" in kwargs:
             self.architecture = kwargs["architecture"]
         self.auto_converge = kwargs.get("auto_converge", None)
+        self.cap_snapshot_unique_size = kwargs.get("cap_snapshot_unique_size", None)
+        self.cap_volume_unique_size = kwargs.get("cap_volume_unique_size", None)
         self.commited_memory_bytes = kwargs.get("commited_memory_bytes", None)
         if "connect_state" in kwargs:
             self.connect_state = kwargs["connect_state"]
@@ -359,6 +389,8 @@ class Cluster(object):
         self.data_reduction_ratio = kwargs.get("data_reduction_ratio", None)
         self.data_reduction_saving = kwargs.get("data_reduction_saving", None)
         self.datacenters = kwargs.get("datacenters", None)
+        self.dirty_cache_space = kwargs.get("dirty_cache_space", None)
+        self.dirty_cache_usage = kwargs.get("dirty_cache_usage", None)
         self.disconnected_date = kwargs.get("disconnected_date", None)
         self.disconnected_reason = kwargs.get("disconnected_reason", None)
         if "dns" in kwargs:
@@ -367,6 +399,7 @@ class Cluster(object):
         self.enable_tiering = kwargs.get("enable_tiering", None)
         self.entity_async_status = kwargs.get("entity_async_status", None)
         self.everoute_cluster = kwargs.get("everoute_cluster", None)
+        self.failure_cache_space = kwargs.get("failure_cache_space", None)
         self.failure_data_space = kwargs.get("failure_data_space", None)
         self.has_metrox = kwargs.get("has_metrox", None)
         self.host_num = kwargs.get("host_num", None)
@@ -391,6 +424,7 @@ class Cluster(object):
         self.max_chunk_num = kwargs.get("max_chunk_num", None)
         self.max_physical_data_capacity = kwargs.get("max_physical_data_capacity", None)
         self.max_physical_data_capacity_per_node = kwargs.get("max_physical_data_capacity_per_node", None)
+        self.memory_allocation_rate = kwargs.get("memory_allocation_rate", None)
         self.metro_availability_checklist = kwargs.get("metro_availability_checklist", None)
         self.mgt_gateway = kwargs.get("mgt_gateway", None)
         self.mgt_netmask = kwargs.get("mgt_netmask", None)
@@ -406,6 +440,8 @@ class Cluster(object):
         self.nvme_over_tcp_enabled = kwargs.get("nvme_over_tcp_enabled", None)
         self.nvmf_enabled = kwargs.get("nvmf_enabled", None)
         self.overall_efficiency = kwargs.get("overall_efficiency", None)
+        self.overcommit_memory_ratio = kwargs.get("overcommit_memory_ratio", None)
+        self.overprovision_ratio = kwargs.get("overprovision_ratio", None)
         self.perf_allocated_data_space = kwargs.get("perf_allocated_data_space", None)
         self.perf_failure_data_space = kwargs.get("perf_failure_data_space", None)
         self.perf_total_data_capacity = kwargs.get("perf_total_data_capacity", None)
@@ -480,6 +516,27 @@ class Cluster(object):
         """
 
         self._access_write_compress_enabled = access_write_compress_enabled
+
+    @property
+    def allocated_memory_bytes(self):
+        """Gets the allocated_memory_bytes of this Cluster.  # noqa: E501
+
+
+        :return: The allocated_memory_bytes of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._allocated_memory_bytes
+
+    @allocated_memory_bytes.setter
+    def allocated_memory_bytes(self, allocated_memory_bytes):
+        """Sets the allocated_memory_bytes of this Cluster.
+
+
+        :param allocated_memory_bytes: The allocated_memory_bytes of this Cluster.  # noqa: E501
+        :type allocated_memory_bytes: int
+        """
+
+        self._allocated_memory_bytes = allocated_memory_bytes
 
     @property
     def allocated_prioritized_space(self):
@@ -587,6 +644,48 @@ class Cluster(object):
         """
 
         self._auto_converge = auto_converge
+
+    @property
+    def cap_snapshot_unique_size(self):
+        """Gets the cap_snapshot_unique_size of this Cluster.  # noqa: E501
+
+
+        :return: The cap_snapshot_unique_size of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_snapshot_unique_size
+
+    @cap_snapshot_unique_size.setter
+    def cap_snapshot_unique_size(self, cap_snapshot_unique_size):
+        """Sets the cap_snapshot_unique_size of this Cluster.
+
+
+        :param cap_snapshot_unique_size: The cap_snapshot_unique_size of this Cluster.  # noqa: E501
+        :type cap_snapshot_unique_size: int
+        """
+
+        self._cap_snapshot_unique_size = cap_snapshot_unique_size
+
+    @property
+    def cap_volume_unique_size(self):
+        """Gets the cap_volume_unique_size of this Cluster.  # noqa: E501
+
+
+        :return: The cap_volume_unique_size of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._cap_volume_unique_size
+
+    @cap_volume_unique_size.setter
+    def cap_volume_unique_size(self, cap_volume_unique_size):
+        """Sets the cap_volume_unique_size of this Cluster.
+
+
+        :param cap_volume_unique_size: The cap_volume_unique_size of this Cluster.  # noqa: E501
+        :type cap_volume_unique_size: int
+        """
+
+        self._cap_volume_unique_size = cap_volume_unique_size
 
     @property
     def commited_memory_bytes(self):
@@ -715,6 +814,48 @@ class Cluster(object):
         """
 
         self._datacenters = datacenters
+
+    @property
+    def dirty_cache_space(self):
+        """Gets the dirty_cache_space of this Cluster.  # noqa: E501
+
+
+        :return: The dirty_cache_space of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._dirty_cache_space
+
+    @dirty_cache_space.setter
+    def dirty_cache_space(self, dirty_cache_space):
+        """Sets the dirty_cache_space of this Cluster.
+
+
+        :param dirty_cache_space: The dirty_cache_space of this Cluster.  # noqa: E501
+        :type dirty_cache_space: int
+        """
+
+        self._dirty_cache_space = dirty_cache_space
+
+    @property
+    def dirty_cache_usage(self):
+        """Gets the dirty_cache_usage of this Cluster.  # noqa: E501
+
+
+        :return: The dirty_cache_usage of this Cluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._dirty_cache_usage
+
+    @dirty_cache_usage.setter
+    def dirty_cache_usage(self, dirty_cache_usage):
+        """Sets the dirty_cache_usage of this Cluster.
+
+
+        :param dirty_cache_usage: The dirty_cache_usage of this Cluster.  # noqa: E501
+        :type dirty_cache_usage: float
+        """
+
+        self._dirty_cache_usage = dirty_cache_usage
 
     @property
     def disconnected_date(self):
@@ -864,6 +1005,27 @@ class Cluster(object):
         """
 
         self._everoute_cluster = everoute_cluster
+
+    @property
+    def failure_cache_space(self):
+        """Gets the failure_cache_space of this Cluster.  # noqa: E501
+
+
+        :return: The failure_cache_space of this Cluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._failure_cache_space
+
+    @failure_cache_space.setter
+    def failure_cache_space(self, failure_cache_space):
+        """Sets the failure_cache_space of this Cluster.
+
+
+        :param failure_cache_space: The failure_cache_space of this Cluster.  # noqa: E501
+        :type failure_cache_space: int
+        """
+
+        self._failure_cache_space = failure_cache_space
 
     @property
     def failure_data_space(self):
@@ -1332,6 +1494,27 @@ class Cluster(object):
         self._max_physical_data_capacity_per_node = max_physical_data_capacity_per_node
 
     @property
+    def memory_allocation_rate(self):
+        """Gets the memory_allocation_rate of this Cluster.  # noqa: E501
+
+
+        :return: The memory_allocation_rate of this Cluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._memory_allocation_rate
+
+    @memory_allocation_rate.setter
+    def memory_allocation_rate(self, memory_allocation_rate):
+        """Sets the memory_allocation_rate of this Cluster.
+
+
+        :param memory_allocation_rate: The memory_allocation_rate of this Cluster.  # noqa: E501
+        :type memory_allocation_rate: float
+        """
+
+        self._memory_allocation_rate = memory_allocation_rate
+
+    @property
     def metro_availability_checklist(self):
         """Gets the metro_availability_checklist of this Cluster.  # noqa: E501
 
@@ -1607,6 +1790,48 @@ class Cluster(object):
         """
 
         self._overall_efficiency = overall_efficiency
+
+    @property
+    def overcommit_memory_ratio(self):
+        """Gets the overcommit_memory_ratio of this Cluster.  # noqa: E501
+
+
+        :return: The overcommit_memory_ratio of this Cluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._overcommit_memory_ratio
+
+    @overcommit_memory_ratio.setter
+    def overcommit_memory_ratio(self, overcommit_memory_ratio):
+        """Sets the overcommit_memory_ratio of this Cluster.
+
+
+        :param overcommit_memory_ratio: The overcommit_memory_ratio of this Cluster.  # noqa: E501
+        :type overcommit_memory_ratio: float
+        """
+
+        self._overcommit_memory_ratio = overcommit_memory_ratio
+
+    @property
+    def overprovision_ratio(self):
+        """Gets the overprovision_ratio of this Cluster.  # noqa: E501
+
+
+        :return: The overprovision_ratio of this Cluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._overprovision_ratio
+
+    @overprovision_ratio.setter
+    def overprovision_ratio(self, overprovision_ratio):
+        """Sets the overprovision_ratio of this Cluster.
+
+
+        :param overprovision_ratio: The overprovision_ratio of this Cluster.  # noqa: E501
+        :type overprovision_ratio: float
+        """
+
+        self._overprovision_ratio = overprovision_ratio
 
     @property
     def perf_allocated_data_space(self):
