@@ -32,6 +32,7 @@ class ContentLibraryVmTemplate(object):
         'cpu': 'NestedCpu',
         'cpu_model': 'str',
         'created_at': 'str',
+        'datastores': 'list[NestedDatastore]',
         'description': 'str',
         'entity_async_status': 'EntityAsyncStatus',
         'firmware': 'VmFirmware',
@@ -48,10 +49,12 @@ class ContentLibraryVmTemplate(object):
         'os': 'str',
         'size': 'int',
         'template_config': 'NestedTemplateConfig',
+        'usage': 'ContentLibraryVmTemplateUsage',
         'vcpu': 'int',
         'video_type': 'str',
         'vm_disks': 'list[NestedContentLibraryVmTemplateDisk]',
         'vm_nics': 'list[NestedContentLibraryVmTemplateNic]',
+        'vm_template_configs': 'list[NestedVmTemplateConfig]',
         'vm_template_uuids': 'list[str]',
         'vm_templates': 'list[NestedVmTemplate]',
         'win_opt': 'bool',
@@ -66,6 +69,7 @@ class ContentLibraryVmTemplate(object):
         'cpu': 'cpu',
         'cpu_model': 'cpu_model',
         'created_at': 'createdAt',
+        'datastores': 'datastores',
         'description': 'description',
         'entity_async_status': 'entityAsyncStatus',
         'firmware': 'firmware',
@@ -82,10 +86,12 @@ class ContentLibraryVmTemplate(object):
         'os': 'os',
         'size': 'size',
         'template_config': 'template_config',
+        'usage': 'usage',
         'vcpu': 'vcpu',
         'video_type': 'video_type',
         'vm_disks': 'vm_disks',
         'vm_nics': 'vm_nics',
+        'vm_template_configs': 'vm_template_configs',
         'vm_template_uuids': 'vm_template_uuids',
         'vm_templates': 'vm_templates',
         'win_opt': 'win_opt',
@@ -103,6 +109,7 @@ class ContentLibraryVmTemplate(object):
         self._cpu = None
         self._cpu_model = None
         self._created_at = None
+        self._datastores = None
         self._description = None
         self._entity_async_status = None
         self._firmware = None
@@ -119,10 +126,12 @@ class ContentLibraryVmTemplate(object):
         self._os = None
         self._size = None
         self._template_config = None
+        self._usage = None
         self._vcpu = None
         self._video_type = None
         self._vm_disks = None
         self._vm_nics = None
+        self._vm_template_configs = None
         self._vm_template_uuids = None
         self._vm_templates = None
         self._win_opt = None
@@ -139,6 +148,7 @@ class ContentLibraryVmTemplate(object):
         self.cpu_model = kwargs.get("cpu_model", None)
         if "created_at" in kwargs:
             self.created_at = kwargs["created_at"]
+        self.datastores = kwargs.get("datastores", None)
         if "description" in kwargs:
             self.description = kwargs["description"]
         self.entity_async_status = kwargs.get("entity_async_status", None)
@@ -160,11 +170,13 @@ class ContentLibraryVmTemplate(object):
         if "size" in kwargs:
             self.size = kwargs["size"]
         self.template_config = kwargs.get("template_config", None)
+        self.usage = kwargs.get("usage", None)
         if "vcpu" in kwargs:
             self.vcpu = kwargs["vcpu"]
         self.video_type = kwargs.get("video_type", None)
         self.vm_disks = kwargs.get("vm_disks", None)
         self.vm_nics = kwargs.get("vm_nics", None)
+        self.vm_template_configs = kwargs.get("vm_template_configs", None)
         if "vm_template_uuids" in kwargs:
             self.vm_template_uuids = kwargs["vm_template_uuids"]
         self.vm_templates = kwargs.get("vm_templates", None)
@@ -323,6 +335,27 @@ class ContentLibraryVmTemplate(object):
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
 
         self._created_at = created_at
+
+    @property
+    def datastores(self):
+        """Gets the datastores of this ContentLibraryVmTemplate.  # noqa: E501
+
+
+        :return: The datastores of this ContentLibraryVmTemplate.  # noqa: E501
+        :rtype: list[NestedDatastore]
+        """
+        return self._datastores
+
+    @datastores.setter
+    def datastores(self, datastores):
+        """Sets the datastores of this ContentLibraryVmTemplate.
+
+
+        :param datastores: The datastores of this ContentLibraryVmTemplate.  # noqa: E501
+        :type datastores: list[NestedDatastore]
+        """
+
+        self._datastores = datastores
 
     @property
     def description(self):
@@ -671,6 +704,27 @@ class ContentLibraryVmTemplate(object):
         self._template_config = template_config
 
     @property
+    def usage(self):
+        """Gets the usage of this ContentLibraryVmTemplate.  # noqa: E501
+
+
+        :return: The usage of this ContentLibraryVmTemplate.  # noqa: E501
+        :rtype: ContentLibraryVmTemplateUsage
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """Sets the usage of this ContentLibraryVmTemplate.
+
+
+        :param usage: The usage of this ContentLibraryVmTemplate.  # noqa: E501
+        :type usage: ContentLibraryVmTemplateUsage
+        """
+
+        self._usage = usage
+
+    @property
     def vcpu(self):
         """Gets the vcpu of this ContentLibraryVmTemplate.  # noqa: E501
 
@@ -755,6 +809,27 @@ class ContentLibraryVmTemplate(object):
         """
 
         self._vm_nics = vm_nics
+
+    @property
+    def vm_template_configs(self):
+        """Gets the vm_template_configs of this ContentLibraryVmTemplate.  # noqa: E501
+
+
+        :return: The vm_template_configs of this ContentLibraryVmTemplate.  # noqa: E501
+        :rtype: list[NestedVmTemplateConfig]
+        """
+        return self._vm_template_configs
+
+    @vm_template_configs.setter
+    def vm_template_configs(self, vm_template_configs):
+        """Sets the vm_template_configs of this ContentLibraryVmTemplate.
+
+
+        :param vm_template_configs: The vm_template_configs of this ContentLibraryVmTemplate.  # noqa: E501
+        :type vm_template_configs: list[NestedVmTemplateConfig]
+        """
+
+        self._vm_template_configs = vm_template_configs
 
     @property
     def vm_template_uuids(self):

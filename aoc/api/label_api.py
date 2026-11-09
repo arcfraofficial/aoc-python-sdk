@@ -38,6 +38,8 @@ class LabelApi(object):
         :type add_labels_to_resources_params: AddLabelsToResourcesParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -69,6 +71,8 @@ class LabelApi(object):
         :type add_labels_to_resources_params: AddLabelsToResourcesParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -97,7 +101,8 @@ class LabelApi(object):
 
         all_params = [
             'add_labels_to_resources_params',
-            'content_language'
+            'content_language',
+            'x_skip_resources'
         ]
         all_params.extend(
             [
@@ -133,6 +138,8 @@ class LabelApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'x_skip_resources' in local_var_params:
+            header_params['x-skip-resources'] = local_var_params['x_skip_resources']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -495,6 +502,8 @@ class LabelApi(object):
         :type get_labels_request_body: GetLabelsRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -526,6 +535,8 @@ class LabelApi(object):
         :type get_labels_request_body: GetLabelsRequestBody
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -554,7 +565,8 @@ class LabelApi(object):
 
         all_params = [
             'get_labels_request_body',
-            'content_language'
+            'content_language',
+            'x_skip_resources'
         ]
         all_params.extend(
             [
@@ -590,6 +602,8 @@ class LabelApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'x_skip_resources' in local_var_params:
+            header_params['x-skip-resources'] = local_var_params['x_skip_resources']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -799,6 +813,8 @@ class LabelApi(object):
         :type body: AddLabelsToResourcesParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -830,6 +846,8 @@ class LabelApi(object):
         :type body: AddLabelsToResourcesParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -858,7 +876,8 @@ class LabelApi(object):
 
         all_params = [
             'body',
-            'content_language'
+            'content_language',
+            'x_skip_resources'
         ]
         all_params.extend(
             [
@@ -894,6 +913,8 @@ class LabelApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'x_skip_resources' in local_var_params:
+            header_params['x-skip-resources'] = local_var_params['x_skip_resources']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -952,6 +973,8 @@ class LabelApi(object):
         :type label_updation_params: LabelUpdationParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -983,6 +1006,8 @@ class LabelApi(object):
         :type label_updation_params: LabelUpdationParams
         :param content_language:
         :type content_language: ContentLanguage
+        :param x_skip_resources:
+        :type x_skip_resources: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1011,7 +1036,8 @@ class LabelApi(object):
 
         all_params = [
             'label_updation_params',
-            'content_language'
+            'content_language',
+            'x_skip_resources'
         ]
         all_params.extend(
             [
@@ -1047,6 +1073,8 @@ class LabelApi(object):
         header_params = dict(local_var_params.get('_headers', {}))
         if 'content_language' in local_var_params:
             header_params['content-language'] = local_var_params['content_language']  # noqa: E501
+        if 'x_skip_resources' in local_var_params:
+            header_params['x-skip-resources'] = local_var_params['x_skip_resources']  # noqa: E501
 
         form_params = []
         local_var_files = {}
